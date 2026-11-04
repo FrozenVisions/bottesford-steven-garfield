@@ -95,28 +95,6 @@ export const faqs = [
 ]
 
 export const wanted = {
-  rock: [
-    "Led Zeppelin",
-    "Deep Purple",
-    "Black Sabbath",
-    "Pink Floyd",
-    "The Who",
-    "Cream",
-    "Jimi Hendrix",
-    "The Doors",
-    "Fleetwood Mac",
-    "Free",
-    "Traffic",
-    "Jethro Tull",
-    "King Crimson",
-    "Yes",
-    "Genesis",
-    "Rolling Stones",
-    "The Kinks",
-    "Small Faces",
-    "Steppenwolf",
-    "Santana",
-  ],
   styles: [
     "psychedelic rock",
     "blues rock",

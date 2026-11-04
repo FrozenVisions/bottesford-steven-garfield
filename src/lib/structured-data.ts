@@ -1,5 +1,5 @@
 import { insidePlaces, origin, placeSlug } from "@/lib/places"
-import { contact, faqs, seo, site, siteUrl, wanted } from "@/lib/site"
+import { contact, faqs, seo, site, siteUrl } from "@/lib/site"
 
 export function structuredData() {
   const url = siteUrl()
@@ -37,7 +37,6 @@ export function structuredData() {
           })),
         ],
         knowsAbout: [
-          ...wanted.rock.map((name) => `${name} vinyl records`),
           "late 1960s rock vinyl",
           "early 1970s rock vinyl",
           "all types of vinyl record collections",

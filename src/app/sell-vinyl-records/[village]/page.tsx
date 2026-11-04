@@ -175,13 +175,6 @@ async function VillageContent({ params }: { params: Promise<{ village: string }>
               them. Original UK pressings and gatefold sleeves are a joy to me,
               but I will look at plain, played, well-loved copies too.
             </p>
-            <ul className="mt-5 flex flex-wrap gap-2">
-              {wanted.rock.map((name) => (
-                <li key={name} className="border border-foreground px-3 py-1 text-sm">
-                  {name}
-                </li>
-              ))}
-            </ul>
           </div>
           <div>
             <h2 className="text-3xl">Every other kind of record too</h2>
