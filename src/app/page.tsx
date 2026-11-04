@@ -33,7 +33,14 @@ export default function Home() {
 
       <header className="border-b border-border">
         <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-5 py-4">
-          <p className="text-sm tracking-[0.16em] uppercase">Steven Garfield</p>
+          <div className="flex items-center gap-6">
+            <p className="text-sm tracking-[0.16em] uppercase">Steven Garfield</p>
+            <nav aria-label="Main">
+              <Link href="/blog" className="text-sm font-semibold underline-offset-4 hover:underline">
+                Blog
+              </Link>
+            </nav>
+          </div>
           <a href={contact.phoneHref} className={cn(callClass, "hidden sm:inline-flex")}>
             Call {contact.phoneDisplay}
           </a>
@@ -217,6 +224,9 @@ export default function Home() {
         <div className="mx-auto flex max-w-5xl flex-col gap-2 px-5 py-8 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
           <p>
             {site.name}, {site.place}, {site.county}, {site.postcode}
+          </p>
+          <p>
+            <Link href="/blog" className="underline underline-offset-4">Blog</Link>
           </p>
           <p>Steven Garfield, also Steven Gee. I buy vinyl, within ten miles.</p>
         </div>

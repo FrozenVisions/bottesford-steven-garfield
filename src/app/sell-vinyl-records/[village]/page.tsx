@@ -105,9 +105,16 @@ async function VillageContent({ params }: { params: Promise<{ village: string }>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />
       <header className="border-b border-border">
         <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-5 py-4">
-          <Link href="/" className="text-sm tracking-[0.16em] uppercase underline-offset-4 hover:underline">
-            Steven Garfield
-          </Link>
+          <div className="flex items-center gap-6">
+            <Link href="/" className="text-sm tracking-[0.16em] uppercase underline-offset-4 hover:underline">
+              Steven Garfield
+            </Link>
+            <nav aria-label="Main">
+              <Link href="/blog" className="text-sm font-semibold underline-offset-4 hover:underline">
+                Blog
+              </Link>
+            </nav>
+          </div>
           <a href={contact.phoneHref} className={cn(buttonVariants({ size: "lg" }), "hidden h-12 px-5 text-base sm:inline-flex")}>
             Call {contact.phoneDisplay}
           </a>
@@ -241,6 +248,10 @@ async function VillageContent({ params }: { params: Promise<{ village: string }>
         <div className="mx-auto flex max-w-5xl flex-col gap-2 px-5 py-8 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
           <p>
             {site.name}, {site.place}, {site.county}, {site.postcode}
+          </p>
+          <p className="flex gap-4">
+            <Link href="/" className="underline underline-offset-4">Home</Link>
+            <Link href="/blog" className="underline underline-offset-4">Blog</Link>
           </p>
           <p>Steven Garfield, also Steven Gee. I buy vinyl, within ten miles.</p>
         </div>

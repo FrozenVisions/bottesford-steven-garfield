@@ -39,3 +39,7 @@ The repo includes `.github/workflows/pages.yml`. Once this code is in a GitHub r
 3. The live address appears in the workflow summary, usually `https://<username>.github.io/<repository>/`.
 
 GitHub Pages can only serve static files, so the Pages build leaves out the server-side enquiry route. On the live site the form checks the details and then opens an email to Steven with the note filled in. Phone and email links work as normal.
+
+## Blog
+
+Posts live in `content/blog/` as Markdown files with a short frontmatter block. They are built into static pages at `/blog/` and `/blog/<slug>/`, listed newest first, and added to `sitemap.xml`. See `content/blog/README.md` for how to add one.
