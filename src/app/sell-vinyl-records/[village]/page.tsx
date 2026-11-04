@@ -1,0 +1,256 @@
+import type { Metadata } from "next"
+import Link from "next/link"
+import { notFound } from "next/navigation"
+import { Suspense } from "react"
+import { EnquiryForm } from "@/components/enquiry-form"
+import { buttonVariants } from "@/components/ui/button"
+import {
+  compass,
+  formatMiles,
+  insidePlaces,
+  nearestInside,
+  placeBySlug,
+  placeSlug,
+} from "@/lib/places"
+import { contact, site, siteUrl, wanted } from "@/lib/site"
+import { cn } from "cn"
+
+export function generateStaticParams() {
+  return insidePlaces.map((place) => ({ village: placeSlug(place) }))
+}
+
+function copy(slug: string) {
+  const place = placeBySlug(slug)
+  if (!place) return null
+  const miles = formatMiles(place.miles)
+  return {
+    place,
+    miles,
+    direction: compass(place.bearing),
+    title: `Sell Vinyl Records in ${place.name} | Steven Garfield`,
+    description: `Selling vinyl records in ${place.name}, ${place.county}? I am Steven Garfield (Steven Gee), ${miles} miles away in Bottesford. I buy all types of record collections and mainly want late 1960s and early 1970s rock. Call ${contact.phoneDisplay}.`,
+  }
+}
+
+export async function generateMetadata(props: PageProps<"/sell-vinyl-records/[village]">): Promise<Metadata> {
+  const { village } = await props.params
+  const page = copy(village)
+  if (!page) return {}
+  return {
+    title: page.title,
+    description: page.description,
+    keywords: [
+      `sell vinyl records ${page.place.name}`,
+      `vinyl record buyer ${page.place.name}`,
+      `sell record collection ${page.place.name}`,
+      `we buy records ${page.place.name}`,
+      `old LPs wanted ${page.place.name}`,
+      `${page.place.name} ${page.place.county} vinyl`,
+      "late 60s rock vinyl wanted",
+      "early 70s rock records wanted",
+      "Steven Garfield",
+      "Steven Gee",
+    ],
+    alternates: { canonical: `/sell-vinyl-records/${village}` },
+    openGraph: {
+      title: page.title,
+      description: page.description,
+      type: "website",
+      locale: "en_GB",
+      url: `/sell-vinyl-records/${village}`,
+    },
+  }
+}
+
+export default function VillagePage(props: PageProps<"/sell-vinyl-records/[village]">) {
+  return (
+    <Suspense fallback={null}>
+      <VillageContent params={props.params} />
+    </Suspense>
+  )
+}
+
+async function VillageContent({ params }: { params: Promise<{ village: string }> }) {
+  const { village } = await params
+  const page = copy(village)
+  if (!page) notFound()
+  const { place, miles, direction } = page
+  const neighbours = nearestInside(place)
+  const url = `${siteUrl()}/sell-vinyl-records/${village}`
+
+  const data = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": `${url}#service`,
+        name: `Buying vinyl record collections in ${place.name}`,
+        description: page.description,
+        provider: { "@id": `${siteUrl()}/#steven-garfield` },
+        areaServed: { "@type": "Place", name: `${place.name}, ${place.county}` },
+        url,
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Steven Garfield", item: siteUrl() },
+          { "@type": "ListItem", position: 2, name: `Sell vinyl records in ${place.name}`, item: url },
+        ],
+      },
+    ],
+  }
+
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />
+      <header className="border-b border-border">
+        <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-5 py-4">
+          <Link href="/" className="text-sm tracking-[0.16em] uppercase underline-offset-4 hover:underline">
+            Steven Garfield
+          </Link>
+          <a href={contact.phoneHref} className={cn(buttonVariants({ size: "lg" }), "hidden h-12 px-5 text-base sm:inline-flex")}>
+            Call {contact.phoneDisplay}
+          </a>
+        </div>
+      </header>
+
+      <main className="mx-auto flex w-full max-w-5xl flex-col gap-14 px-5 pt-10 pb-28 sm:pb-20">
+        <nav aria-label="Breadcrumb" className="text-sm">
+          <ol className="flex flex-wrap gap-2">
+            <li>
+              <Link href="/" className="underline underline-offset-4">Home</Link>
+            </li>
+            <li aria-hidden="true">/</li>
+            <li aria-current="page">{place.name}</li>
+          </ol>
+        </nav>
+
+        <section className="flex max-w-3xl flex-col gap-6">
+          <p className="text-sm font-semibold tracking-[0.14em] uppercase">
+            {place.name} · {place.county} · {miles} miles from Bottesford
+          </p>
+          <h1 className="text-4xl leading-[1.05] text-balance sm:text-6xl">
+            Selling vinyl records in {place.name}?
+          </h1>
+          <p className="text-lg leading-8 text-muted-foreground">
+            I am Steven Garfield, or Steven Gee as my card at the village hall has it. I live in Bottesford, and {place.name} lies
+            {" "}{miles} miles {direction} of the middle of my village, so your collection is
+            well inside my ten-mile round. I will come to your house in{" "}
+            {place.name}, sit down with the records, and look at every one of
+            them properly.
+          </p>
+          <p className="text-lg leading-8 text-muted-foreground">
+            I will look at all types of record collection. What I am mainly
+            hoping to find is rock from the late nineteen-sixties and early
+            seventies. If you have a few boxes from {place.name} that have not
+            been played for years, ring me before they go to the tip.
+          </p>
+          <div className="flex flex-col gap-3 sm:flex-row">
+            <a href={contact.phoneHref} className={cn(buttonVariants({ size: "lg" }), "h-12 px-5 text-base")}>
+              Call {contact.phoneDisplay}
+            </a>
+            <a
+              href={`mailto:${contact.email}`}
+              className={cn(buttonVariants({ size: "lg", variant: "outline" }), "h-12 px-5 text-base")}
+            >
+              Write to me
+            </a>
+          </div>
+        </section>
+
+        <section className="grid gap-10 md:grid-cols-2">
+          <div>
+            <h2 className="text-3xl">What I am hoping to find in {place.name}</h2>
+            <p className="mt-4 leading-7 text-muted-foreground">
+              Albums, singles and box sets, in their sleeves if you still have
+              them. Original UK pressings and gatefold sleeves are a joy to me,
+              but I will look at plain, played, well-loved copies too.
+            </p>
+            <ul className="mt-5 flex flex-wrap gap-2">
+              {wanted.rock.map((name) => (
+                <li key={name} className="border border-foreground px-3 py-1 text-sm">
+                  {name}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h2 className="text-3xl">Every other kind of record too</h2>
+            <p className="mt-4 leading-7 text-muted-foreground">
+              I collect for my own shelves, so I never turn a good record away.
+              From {place.name} I am happy to look at:
+            </p>
+            <ul className="mt-5 grid gap-x-6 gap-y-1 text-lg sm:grid-cols-2">
+              {wanted.other.map((name) => (
+                <li key={name} className="border-b border-border py-2">
+                  {name}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        <section className="max-w-3xl">
+          <h2 className="text-3xl">Nearby villages I also visit</h2>
+          <p className="mt-4 leading-7 text-muted-foreground">
+            If a neighbour in one of these places has records to sell, send them
+            my way.
+          </p>
+          <ul className="mt-5 flex flex-wrap gap-3">
+            {neighbours.map((other) => (
+              <li key={other.name}>
+                <Link
+                  href={`/sell-vinyl-records/${placeSlug(other)}`}
+                  className="inline-block border border-foreground px-4 py-2 underline-offset-4 hover:underline"
+                >
+                  Sell vinyl in {other.name}
+                </Link>
+              </li>
+            ))}
+            <li>
+              <Link href="/" className="inline-block border border-foreground px-4 py-2 underline-offset-4 hover:underline">
+                Bottesford
+              </Link>
+            </li>
+          </ul>
+        </section>
+
+        <section id="contact" className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
+          <div>
+            <h2 className="text-3xl sm:text-4xl">Ring me, or write</h2>
+            <p className="mt-4 leading-7 text-muted-foreground">
+              Call{" "}
+              <a className="text-foreground underline decoration-primary underline-offset-4" href={contact.phoneHref}>
+                {contact.phoneDisplay}
+              </a>
+              , or email{" "}
+              <a className="text-foreground underline decoration-primary underline-offset-4 break-all" href={`mailto:${contact.email}`}>
+                {contact.email}
+              </a>
+              . Tell me you are in {place.name} and what kind of records you
+              have. My card is also on the notice board at {site.hall}.
+            </p>
+          </div>
+          <div className="border border-border bg-card p-5 sm:p-7">
+            <EnquiryForm />
+          </div>
+        </section>
+      </main>
+
+      <footer className="border-t border-border">
+        <div className="mx-auto flex max-w-5xl flex-col gap-2 px-5 py-8 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
+          <p>
+            {site.name}, {site.place}, {site.county}, {site.postcode}
+          </p>
+          <p>Steven Garfield, also Steven Gee. I buy vinyl, within ten miles.</p>
+        </div>
+      </footer>
+
+      <div className="fixed inset-x-0 bottom-0 z-20 border-t border-border bg-background/95 p-3 backdrop-blur sm:hidden">
+        <a href={contact.phoneHref} className={cn(buttonVariants({ size: "lg" }), "h-12 w-full px-5 text-base")}>
+          Call {contact.phoneDisplay}
+        </a>
+      </div>
+    </>
+  )
+}
