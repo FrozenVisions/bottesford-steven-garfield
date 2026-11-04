@@ -1,10 +1,13 @@
 import Link from "next/link"
+import { ContactStrip } from "@/components/contact-strip"
 import { buttonVariants } from "@/components/ui/button"
 import { contact, site } from "@/lib/site"
 import { cn } from "cn"
 
 export function SiteHeader() {
   return (
+    <>
+    <ContactStrip />
     <header className="border-b border-border">
       <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-5 py-4">
         <div className="flex items-center gap-6">
@@ -22,6 +25,7 @@ export function SiteHeader() {
         </a>
       </div>
     </header>
+    </>
   )
 }
 

@@ -1,5 +1,7 @@
 import type { Metadata } from "next"
 import Link from "next/link"
+import { ContactStrip } from "@/components/contact-strip"
+import { HowItWorks } from "@/components/how-it-works"
 import { notFound } from "next/navigation"
 import { Suspense } from "react"
 import { EnquiryForm } from "@/components/enquiry-form"
@@ -102,6 +104,7 @@ async function VillageContent({ params }: { params: Promise<{ village: string }>
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />
+      <ContactStrip />
       <header className="border-b border-border">
         <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-5 py-4">
           <div className="flex items-center gap-6">
@@ -220,6 +223,8 @@ async function VillageContent({ params }: { params: Promise<{ village: string }>
             </li>
           </ul>
         </section>
+
+        <HowItWorks />
 
         <section id="contact" className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
           <div>

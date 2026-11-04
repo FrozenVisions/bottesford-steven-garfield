@@ -1,4 +1,7 @@
 import { EnquiryForm } from "@/components/enquiry-form"
+import { ContactStrip } from "@/components/contact-strip"
+import { HowItWorks } from "@/components/how-it-works"
+import { CarIcon, CrateIcon, RecordIcon, SpinningRecord } from "@/components/illustrations"
 import { RangeMap } from "@/components/range-map"
 import { buttonVariants } from "@/components/ui/button"
 import Link from "next/link"
@@ -31,6 +34,7 @@ export default function Home() {
         Skip to contact
       </a>
 
+      <ContactStrip />
       <header className="border-b border-border">
         <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-5 py-4">
           <div className="flex items-center gap-6">
@@ -75,34 +79,32 @@ export default function Home() {
               </a>
             </div>
           </div>
-          <div className="mx-auto grid size-64 place-items-center rounded-full bg-[#111111] shadow-[0_20px_50px_rgba(0,0,0,0.25)] sm:size-72" aria-hidden="true">
-            <div className="grid size-32 place-items-center rounded-full bg-[#f5a800] text-[#111111]">
-              <span className="text-center leading-none">
-                <span className="block font-[family-name:var(--font-fraunces)] text-6xl font-bold">30</span>
-                <span className="text-xs font-bold tracking-[0.2em]">MILES</span>
-              </span>
-            </div>
-          </div>
+          <SpinningRecord label="30" />
         </section>
 
+        <HowItWorks />
+
         <section className="grid gap-8 md:grid-cols-3" aria-label="What I buy">
-          <article className="border-t border-foreground pt-4">
-            <h2 className="text-2xl">I come to you</h2>
+          <article className="border-t-4 border-foreground pt-4">
+            <CarIcon />
+            <h2 className="mt-3 text-2xl">I come to you</h2>
             <p className="mt-3 leading-7 text-muted-foreground">
               There is no shop. If you are within 30 miles of Bottesford, I
               will come and see the collection in the comfort of your own home.
             </p>
           </article>
-          <article className="border-t border-foreground pt-4">
-            <h2 className="text-2xl">1960s and 1970s rock</h2>
+          <article className="border-t-4 border-foreground pt-4">
+            <RecordIcon />
+            <h2 className="mt-3 text-2xl">1960s and 1970s rock</h2>
             <p className="mt-3 leading-7 text-muted-foreground">
               Any rock from those years. The loud and the quiet, the famous
               and the one that never left its sleeve. Lofts, shelves, boxes
               from a house being cleared, any situation or quantity always considered.
             </p>
           </article>
-          <article className="border-t border-foreground pt-4">
-            <h2 className="text-2xl">Whatever else belongs with me</h2>
+          <article className="border-t-4 border-foreground pt-4">
+            <CrateIcon />
+            <h2 className="mt-3 text-2xl">Whatever else belongs with me</h2>
             <p className="mt-3 leading-7 text-muted-foreground">
               I am interested in viewing more than 60s and 70s rock. If you have
               other records, I would like the opportunity to view and buy them.
