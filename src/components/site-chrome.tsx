@@ -11,7 +11,7 @@ export function SiteHeader() {
     <header className="border-b border-border">
       <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-5 py-4">
         <div className="flex items-center gap-6">
-          <Link href="/" className="text-sm tracking-[0.16em] uppercase underline-offset-4 hover:underline">
+          <Link href="/" className="font-heading text-2xl font-bold tracking-wide uppercase underline-offset-4 hover:underline">
             Steven Gee
           </Link>
           <nav aria-label="Main">
@@ -43,6 +43,7 @@ export function SiteFooter() {
           </p>
           <p>Email {contact.email} (best) or call {contact.phoneDisplay}.</p>
           <p>Steven Gee. I buy vinyl, within 30 miles of Bottesford.</p>
+          <p>Photos: Pexels</p>
         </div>
       </footer>
       <div className="fixed inset-x-0 bottom-0 z-20 border-t border-border bg-background/95 p-3 backdrop-blur sm:hidden">

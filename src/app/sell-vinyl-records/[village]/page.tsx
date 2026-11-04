@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
+import { Photo } from "@/components/photo"
 import { ContactStrip } from "@/components/contact-strip"
 import { HowItWorks } from "@/components/how-it-works"
 import { notFound } from "next/navigation"
@@ -108,7 +109,7 @@ async function VillageContent({ params }: { params: Promise<{ village: string }>
       <header className="border-b border-border">
         <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-5 py-4">
           <div className="flex items-center gap-6">
-            <Link href="/" className="text-sm tracking-[0.16em] uppercase underline-offset-4 hover:underline">
+            <Link href="/" className="font-heading text-2xl font-bold tracking-wide uppercase underline-offset-4 hover:underline">
               Steven Gee
             </Link>
             <nav aria-label="Main">
@@ -134,11 +135,12 @@ async function VillageContent({ params }: { params: Promise<{ village: string }>
           </ol>
         </nav>
 
-        <section className="flex max-w-3xl flex-col gap-6">
+        <div className="grid items-center gap-8 rounded-3xl bg-card p-5 sm:p-8 md:grid-cols-[1.2fr_0.8fr]">
+        <section className="flex flex-col gap-6">
           <p className="text-sm font-semibold tracking-[0.14em] uppercase">
             {place.name} · {place.county} · {miles} miles from Bottesford
           </p>
-          <h1 className="text-4xl leading-[1.05] text-balance sm:text-6xl">
+          <h1 className="text-4xl leading-[1.05] text-balance uppercase sm:text-6xl">
             Selling vinyl records in {place.name}?
           </h1>
           <p className="text-lg leading-8 text-muted-foreground">
@@ -166,6 +168,8 @@ async function VillageContent({ params }: { params: Promise<{ village: string }>
             </a>
           </div>
         </section>
+          <Photo src="/images/holding-record.webp" alt="Someone holding a record from a home collection" className="aspect-[4/5] w-full rounded-2xl object-cover" />
+        </div>
 
         <section className="grid gap-10 md:grid-cols-2">
           <div>
@@ -219,7 +223,7 @@ async function VillageContent({ params }: { params: Promise<{ village: string }>
 
         <HowItWorks />
 
-        <section id="contact" className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
+        <section id="contact" className="grid gap-8 rounded-3xl bg-card p-5 sm:p-8 lg:grid-cols-[0.8fr_1.2fr]">
           <div>
             <h2 className="text-3xl sm:text-4xl">Email me, or ring</h2>
             <p className="mt-4 leading-7 text-muted-foreground">
@@ -253,6 +257,7 @@ async function VillageContent({ params }: { params: Promise<{ village: string }>
           </p>
           <p>Email {contact.email} (best) or call {contact.phoneDisplay}.</p>
           <p>Steven Gee. I buy vinyl, within 30 miles of Bottesford.</p>
+          <p>Photos: Pexels</p>
         </div>
       </footer>
 

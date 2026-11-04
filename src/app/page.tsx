@@ -1,7 +1,7 @@
 import { EnquiryForm } from "@/components/enquiry-form"
 import { ContactStrip } from "@/components/contact-strip"
 import { HowItWorks } from "@/components/how-it-works"
-import { CarIcon, CrateIcon, RecordIcon, SpinningRecord } from "@/components/illustrations"
+import { Photo } from "@/components/photo"
 import { RangeMap } from "@/components/range-map"
 import { buttonVariants } from "@/components/ui/button"
 import Link from "next/link"
@@ -15,8 +15,6 @@ const callClass = cn(
   "h-12 px-5 text-base"
 )
 
-const near = insidePlaces.filter((place) => place.miles <= 5)
-const far = insidePlaces.filter((place) => place.miles > 5)
 
 export default function Home() {
   const data = structuredData()
@@ -38,7 +36,7 @@ export default function Home() {
       <header className="border-b border-border">
         <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-5 py-4">
           <div className="flex items-center gap-6">
-            <p className="text-sm tracking-[0.16em] uppercase">Steven Gee</p>
+            <p className="font-heading text-2xl font-bold tracking-wide uppercase">Steven Gee</p>
             <nav aria-label="Main">
               <Link href="/blog" className="text-sm font-semibold underline-offset-4 hover:underline">
                 Blog
@@ -52,12 +50,13 @@ export default function Home() {
       </header>
 
       <main className="mx-auto flex w-full max-w-5xl flex-col gap-20 px-5 pt-12 pb-28 sm:pb-20">
-        <section className="grid items-center gap-10 md:grid-cols-[1.3fr_0.7fr]">
+        <section className="grid items-center gap-8 rounded-3xl bg-card p-5 shadow-sm sm:p-8 md:grid-cols-[0.9fr_1.1fr]">
+          <Photo src="/images/record-bins.webp" alt="Rows of vinyl records in browser boxes" className="order-first aspect-[4/3] w-full rounded-2xl object-cover md:aspect-[4/5]" />
           <div className="flex flex-col gap-6">
             <p className="text-sm font-semibold tracking-[0.14em] text-foreground uppercase">
               {site.place} · {site.postcode} · 30 miles
             </p>
-            <h1 className="text-4xl leading-[1.05] text-balance sm:text-6xl">
+            <h1 className="text-4xl leading-[1.05] text-balance uppercase sm:text-6xl">
               I buy vinyl collections near Bottesford
             </h1>
             <p className="max-w-xl text-lg leading-8 text-muted-foreground">
@@ -79,36 +78,41 @@ export default function Home() {
               </a>
             </div>
           </div>
-          <SpinningRecord label="30" />
         </section>
 
         <HowItWorks />
 
         <section className="grid gap-8 md:grid-cols-3" aria-label="What I buy">
-          <article className="border-t-4 border-foreground pt-4">
-            <CarIcon />
-            <h2 className="mt-3 text-2xl">I come to you</h2>
+          <article className="overflow-hidden rounded-2xl border-2 border-foreground bg-card">
+            <Photo src="/images/holding-record.webp" alt="Someone holding a record from a home collection" className="aspect-[4/3] w-full object-cover" />
+            <div className="p-5">
+            <h2 className="text-2xl uppercase">I come to you</h2>
             <p className="mt-3 leading-7 text-muted-foreground">
               There is no shop. If you are within 30 miles of Bottesford, I
               will come and see the collection in the comfort of your own home.
             </p>
+            </div>
           </article>
-          <article className="border-t-4 border-foreground pt-4">
-            <RecordIcon />
-            <h2 className="mt-3 text-2xl">1960s and 1970s rock</h2>
+          <article className="overflow-hidden rounded-2xl border-2 border-foreground bg-card">
+            <Photo src="/images/turntable-needle.webp" alt="A turntable needle on a spinning record" className="aspect-[4/3] w-full object-cover" />
+            <div className="p-5">
+            <h2 className="text-2xl uppercase">1960s and 1970s rock</h2>
             <p className="mt-3 leading-7 text-muted-foreground">
               Any rock from those years. The loud and the quiet, the famous
               and the one that never left its sleeve. Lofts, shelves, boxes
               from a house being cleared, any situation or quantity always considered.
             </p>
+            </div>
           </article>
-          <article className="border-t-4 border-foreground pt-4">
-            <CrateIcon />
-            <h2 className="mt-3 text-2xl">Whatever else belongs with me</h2>
+          <article className="overflow-hidden rounded-2xl border-2 border-foreground bg-card">
+            <Photo src="/images/record-shelves.webp" alt="Shelves of records in many styles" className="aspect-[4/3] w-full object-cover" />
+            <div className="p-5">
+            <h2 className="text-2xl uppercase">Whatever else belongs with me</h2>
             <p className="mt-3 leading-7 text-muted-foreground">
               I am interested in viewing more than 60s and 70s rock. If you have
               other records, I would like the opportunity to view and buy them.
             </p>
+            </div>
           </article>
         </section>
 
@@ -133,41 +137,32 @@ export default function Home() {
             <p className="mt-4 max-w-xl leading-7 text-muted-foreground">
               I live in Bottesford. I will travel 30 miles from home to look at
               a vinyl collection, or even further if you have a very large or
-              unusual collection. The places below are some of those nearest
+              unusual collection. Open the list for some of the places nearest
               to me.
             </p>
             <div className="mt-8">
               <RangeMap />
             </div>
           </div>
-          <div className="grid gap-8">
-            {[
-              { title: "Within five miles", places: near },
-              { title: "Five to ten miles", places: far },
-            ].map((band) => (
-              <div key={band.title}>
-                <h3 className="text-xl">{band.title}</h3>
-                <ul className="mt-4 grid gap-x-6 gap-y-1 sm:grid-cols-2">
-                  {band.places.map((place) => (
-                    <li key={place.name} className="flex items-baseline justify-between gap-3 border-b border-border py-2 text-sm">
-                      <span>
-                        <Link
-                          href={`/sell-vinyl-records/${placeSlug(place)}`}
-                          className="underline decoration-primary underline-offset-4"
-                        >
-                          Sell vinyl in {place.name}
-                        </Link>
-                        <span className="block text-muted-foreground">{place.county}</span>
-                      </span>
-                      <span className="shrink-0 text-muted-foreground">
-                        {formatMiles(place.miles)} miles
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
+          <details className="group rounded-2xl border-2 border-foreground bg-card">
+            <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 text-lg font-semibold [&::-webkit-details-marker]:hidden">
+              See nearby areas ({insidePlaces.length})
+              <span aria-hidden="true" className="text-2xl transition-transform group-open:rotate-180">▾</span>
+            </summary>
+            <ul className="grid max-h-80 gap-x-6 overflow-y-auto border-t border-border px-5 py-3 sm:grid-cols-2">
+              {insidePlaces.map((place) => (
+                <li key={place.name} className="flex items-baseline justify-between gap-3 border-b border-border py-2 text-sm">
+                  <Link
+                    href={`/sell-vinyl-records/${placeSlug(place)}`}
+                    className="underline decoration-primary underline-offset-4"
+                  >
+                    {place.name}
+                  </Link>
+                  <span className="shrink-0 text-muted-foreground">{formatMiles(place.miles)} mi</span>
+                </li>
+              ))}
+            </ul>
+          </details>
         </section>
 
         <section>
@@ -184,7 +179,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="contact" className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
+        <section id="contact" className="grid gap-8 rounded-3xl bg-card p-5 sm:p-8 lg:grid-cols-[0.8fr_1.2fr]">
           <div>
             <h2 className="text-3xl sm:text-4xl">Email me, or ring</h2>
             <p className="mt-4 leading-7 text-muted-foreground">
@@ -201,10 +196,11 @@ export default function Home() {
               round and look. Tell me your location, too. My card is also on the notice board at {site.hall}.
             </p>
           </div>
-          <div className="border border-border bg-card p-5 sm:p-7">
+          <div className="rounded-2xl border border-border bg-background p-5 sm:p-7">
             <EnquiryForm />
           </div>
         </section>
+        <Photo src="/images/record-shop-crates.webp" alt="Crates of records" className="aspect-[16/7] w-full rounded-3xl object-cover" />
       </main>
 
       <footer className="border-t border-border">
@@ -217,6 +213,7 @@ export default function Home() {
           </p>
           <p>Email {contact.email} (best) or call {contact.phoneDisplay}.</p>
           <p>Steven Gee. I buy vinyl, within 30 miles of Bottesford.</p>
+          <p>Photos: Pexels</p>
         </div>
       </footer>
 

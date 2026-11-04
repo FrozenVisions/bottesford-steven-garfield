@@ -43,3 +43,13 @@ GitHub Pages can only serve static files, so the Pages build leaves out the serv
 ## Blog
 
 Posts live in `content/blog/` as Markdown files with a short frontmatter block. They are built into static pages at `/blog/` and `/blog/<slug>/`, listed newest first, and added to `sitemap.xml`. See `content/blog/README.md` for how to add one.
+
+## Photo credits
+
+Photos are from Pexels and used under the Pexels licence (free for commercial use, attribution not required). They were resized and saved as WebP in `public/images/`.
+
+- `record-bins.webp`: Mick Haupt, https://www.pexels.com/photo/a-vinyl-records-in-the-music-store-6131935/
+- `record-shop-crates.webp`: Mick Haupt, https://www.pexels.com/photo/a-vinyl-records-in-the-music-store-6131925/
+- `holding-record.webp`: cottonbro studio, https://www.pexels.com/photo/a-person-holding-a-vinyl-record-6867598/
+- `turntable-needle.webp`: Stefan, https://www.pexels.com/photo/close-up-of-turntable-playing-vinyl-record-30858638/
+- `record-shelves.webp`: Iryna Varanovich, https://www.pexels.com/photo/cozy-vinyl-record-store-with-albums-on-display-34786466/

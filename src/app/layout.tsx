@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { Fraunces, Outfit } from "next/font/google"
+import { Oswald, Outfit } from "next/font/google"
 import "./globals.css"
 import { seo, siteUrl } from "@/lib/site"
 
@@ -8,8 +8,9 @@ const outfit = Outfit({
   variable: "--font-outfit",
 })
 
-const fraunces = Fraunces({
+const fraunces = Oswald({
   subsets: ["latin"],
+  weight: ["500", "700"],
   variable: "--font-fraunces",
 })
 
