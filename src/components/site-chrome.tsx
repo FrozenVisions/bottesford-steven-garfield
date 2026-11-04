@@ -17,8 +17,8 @@ export function SiteHeader() {
             </Link>
           </nav>
         </div>
-        <a href={contact.phoneHref} className={cn(buttonVariants({ size: "lg" }), "hidden h-12 px-5 text-base sm:inline-flex")}>
-          Call {contact.phoneDisplay}
+        <a href={`mailto:${contact.email}`} className={cn(buttonVariants({ size: "lg" }), "hidden h-12 px-5 text-base sm:inline-flex")}>
+          Email me
         </a>
       </div>
     </header>
@@ -37,12 +37,13 @@ export function SiteFooter() {
             <Link href="/" className="underline underline-offset-4">Home</Link>
             <Link href="/blog" className="underline underline-offset-4">Blog</Link>
           </p>
+          <p>Email {contact.email} (best) or call {contact.phoneDisplay}.</p>
           <p>Steven Garfield, also Steven Gee. I buy vinyl, within ten miles.</p>
         </div>
       </footer>
       <div className="fixed inset-x-0 bottom-0 z-20 border-t border-border bg-background/95 p-3 backdrop-blur sm:hidden">
-        <a href={contact.phoneHref} className={cn(buttonVariants({ size: "lg" }), "h-12 w-full px-5 text-base")}>
-          Call {contact.phoneDisplay}
+        <a href={`mailto:${contact.email}`} className={cn(buttonVariants({ size: "lg" }), "h-12 w-full px-5 text-base")}>
+          Email me
         </a>
       </div>
     </>

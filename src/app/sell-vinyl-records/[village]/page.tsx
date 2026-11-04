@@ -115,8 +115,8 @@ async function VillageContent({ params }: { params: Promise<{ village: string }>
               </Link>
             </nav>
           </div>
-          <a href={contact.phoneHref} className={cn(buttonVariants({ size: "lg" }), "hidden h-12 px-5 text-base sm:inline-flex")}>
-            Call {contact.phoneDisplay}
+          <a href={`mailto:${contact.email}`} className={cn(buttonVariants({ size: "lg" }), "hidden h-12 px-5 text-base sm:inline-flex")}>
+            Email me
           </a>
         </div>
       </header>
@@ -150,17 +150,17 @@ async function VillageContent({ params }: { params: Promise<{ village: string }>
             I will look at all types of record collection. What I am mainly
             hoping to find is rock from the late nineteen-sixties and early
             seventies. If you have a few boxes from {place.name} that have not
-            been played for years, ring me before they go to the tip.
+            been played for years, email me before they go to the tip.
           </p>
           <div className="flex flex-col gap-3 sm:flex-row">
-            <a href={contact.phoneHref} className={cn(buttonVariants({ size: "lg" }), "h-12 px-5 text-base")}>
-              Call {contact.phoneDisplay}
+            <a href={`mailto:${contact.email}`} className={cn(buttonVariants({ size: "lg" }), "h-12 px-5 text-base")}>
+              Email me
             </a>
             <a
-              href={`mailto:${contact.email}`}
+              href={contact.phoneHref}
               className={cn(buttonVariants({ size: "lg", variant: "outline" }), "h-12 px-5 text-base")}
             >
-              Write to me
+              Or call {contact.phoneDisplay}
             </a>
           </div>
         </section>
@@ -224,18 +224,19 @@ async function VillageContent({ params }: { params: Promise<{ village: string }>
 
         <section id="contact" className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
           <div>
-            <h2 className="text-3xl sm:text-4xl">Ring me, or write</h2>
+            <h2 className="text-3xl sm:text-4xl">Email me, or ring</h2>
             <p className="mt-4 leading-7 text-muted-foreground">
-              Call{" "}
-              <a className="text-foreground underline decoration-primary underline-offset-4" href={contact.phoneHref}>
-                {contact.phoneDisplay}
-              </a>
-              , or email{" "}
+              Email is best:{" "}
               <a className="text-foreground underline decoration-primary underline-offset-4 break-all" href={`mailto:${contact.email}`}>
                 {contact.email}
               </a>
-              . Tell me you are in {place.name} and what kind of records you
-              have. My card is also on the notice board at {site.hall}.
+              . I am happy to take a phone call too, on{" "}
+              <a className="text-foreground underline decoration-primary underline-offset-4" href={contact.phoneHref}>
+                {contact.phoneDisplay}
+              </a>
+              . Give me a rough idea of what is in the collection, or attach a
+              few photos to the email. No full list is needed, as I can come
+              round and look. Tell me you are in {place.name}. My card is also on the notice board at {site.hall}.
             </p>
           </div>
           <div className="border border-border bg-card p-5 sm:p-7">
@@ -253,13 +254,14 @@ async function VillageContent({ params }: { params: Promise<{ village: string }>
             <Link href="/" className="underline underline-offset-4">Home</Link>
             <Link href="/blog" className="underline underline-offset-4">Blog</Link>
           </p>
+          <p>Email {contact.email} (best) or call {contact.phoneDisplay}.</p>
           <p>Steven Garfield, also Steven Gee. I buy vinyl, within ten miles.</p>
         </div>
       </footer>
 
       <div className="fixed inset-x-0 bottom-0 z-20 border-t border-border bg-background/95 p-3 backdrop-blur sm:hidden">
-        <a href={contact.phoneHref} className={cn(buttonVariants({ size: "lg" }), "h-12 w-full px-5 text-base")}>
-          Call {contact.phoneDisplay}
+        <a href={`mailto:${contact.email}`} className={cn(buttonVariants({ size: "lg" }), "h-12 w-full px-5 text-base")}>
+          Email me
         </a>
       </div>
     </>

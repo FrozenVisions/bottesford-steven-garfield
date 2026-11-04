@@ -41,8 +41,8 @@ export default function Home() {
               </Link>
             </nav>
           </div>
-          <a href={contact.phoneHref} className={cn(callClass, "hidden sm:inline-flex")}>
-            Call {contact.phoneDisplay}
+          <a href={`mailto:${contact.email}`} className={cn(callClass, "hidden sm:inline-flex")}>
+            Email me
           </a>
         </div>
       </header>
@@ -63,14 +63,14 @@ export default function Home() {
               rock, I still want to see it. I collect for my own shelves.
             </p>
             <div className="flex flex-col gap-3 sm:flex-row">
-              <a href={contact.phoneHref} className={callClass}>
-                Call {contact.phoneDisplay}
+              <a href={`mailto:${contact.email}`} className={callClass}>
+                Email me
               </a>
               <a
-                href={`mailto:${contact.email}`}
+                href={contact.phoneHref}
                 className={cn(buttonVariants({ size: "lg", variant: "outline" }), "h-12 px-5 text-base")}
               >
-                Write to me
+                Or call {contact.phoneDisplay}
               </a>
             </div>
           </div>
@@ -200,18 +200,19 @@ export default function Home() {
 
         <section id="contact" className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
           <div>
-            <h2 className="text-3xl sm:text-4xl">Ring me, or write</h2>
+            <h2 className="text-3xl sm:text-4xl">Email me, or ring</h2>
             <p className="mt-4 leading-7 text-muted-foreground">
-              Call{" "}
-              <a className="text-foreground underline decoration-primary underline-offset-4" href={contact.phoneHref}>
-                {contact.phoneDisplay}
-              </a>
-              , or email{" "}
+              Email is best:{" "}
               <a className="text-foreground underline decoration-primary underline-offset-4 break-all" href={`mailto:${contact.email}`}>
                 {contact.email}
               </a>
-              . Tell me the village, and whether there is sixties and seventies
-              rock among the records. My card is also on the notice board at {site.hall}.
+              . I am happy to take a phone call too, on{" "}
+              <a className="text-foreground underline decoration-primary underline-offset-4" href={contact.phoneHref}>
+                {contact.phoneDisplay}
+              </a>
+              . Give me a rough idea of what is in the collection, or attach a
+              few photos to the email. No full list is needed, as I can come
+              round and look. Tell me the village, too. My card is also on the notice board at {site.hall}.
             </p>
           </div>
           <div className="border border-border bg-card p-5 sm:p-7">
@@ -228,13 +229,14 @@ export default function Home() {
           <p>
             <Link href="/blog" className="underline underline-offset-4">Blog</Link>
           </p>
+          <p>Email {contact.email} (best) or call {contact.phoneDisplay}.</p>
           <p>Steven Garfield, also Steven Gee. I buy vinyl, within ten miles.</p>
         </div>
       </footer>
 
       <div className="fixed inset-x-0 bottom-0 z-20 border-t border-border bg-background/95 p-3 backdrop-blur sm:hidden">
-        <a href={contact.phoneHref} className={cn(callClass, "w-full")}>
-          Call {contact.phoneDisplay}
+        <a href={`mailto:${contact.email}`} className={cn(callClass, "w-full")}>
+          Email me
         </a>
       </div>
     </>

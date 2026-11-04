@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og"
 
 export const alt =
-  "Steven Garfield. I buy all types of vinyl collections within ten miles of Bottesford, mainly late 1960s and early 1970s rock. Call 07359 456528."
+  "Steven Garfield. I buy all types of vinyl collections within ten miles of Bottesford, mainly late 1960s and early 1970s rock. Email diotima2003@yahoo.co.uk or call 07359 456528."
 export const dynamic = "force-static"
 export const size = { width: 1200, height: 630 }
 export const contentType = "image/png"

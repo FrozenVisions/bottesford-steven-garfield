@@ -22,7 +22,7 @@ export const site = {
 export const seo = {
   title: "Steven Garfield | Vinyl Buyer near Bottesford, NG13",
   description:
-    "I am Steven Garfield. I buy vinyl record collections within 10 miles of Bottesford, NG13. Call 07359 456528. I come for 1960s and 1970s rock of any kind, and for other records I want in my own collection.",
+    "I am Steven Garfield. I buy vinyl record collections within 10 miles of Bottesford, NG13. Email diotima2003@yahoo.co.uk or call 07359 456528. I come for 1960s and 1970s rock of any kind, and for other records I want in my own collection.",
   keywords: [
     "Steven Garfield",
     "Steven Garfield Bottesford",
@@ -97,7 +97,7 @@ export const faqs = [
   {
     question: "How do I contact Steven Garfield?",
     answer:
-      "Ring me on 07359 456528, or write to diotima2003@yahoo.co.uk. My card is also on the notice board at Bottesford VC Hall, Belvoir Road, NG13 0BG.",
+      "Email is best: diotima2003@yahoo.co.uk. I am happy to take a phone call too, on 07359 456528. A rough idea of what is in the collection, or a few photos attached to the email, is plenty. No full list is needed, as I can come round and look. My card is also on the notice board at Bottesford VC Hall, Belvoir Road, NG13 0BG.",
   },
 ]
 

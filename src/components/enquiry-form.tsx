@@ -49,6 +49,7 @@ export function EnquiryForm() {
         `Village: ${result.village}`,
         "",
         note.collection.trim(),
+        "(If you have a few photos of the records, attach them to this email. No full list needed.)",
       ]
         .filter((line, index) => line || index === 4)
         .join("\n")
@@ -57,7 +58,7 @@ export function EnquiryForm() {
       )}&body=${encodeURIComponent(body)}`
       setStatus({
         state: "success",
-        message: `Your email app should now open with the note ready to send. If it does not, please ring me on ${contact.phoneDisplay} or write to ${contact.email}.`,
+        message: `Your email app should now open with the note ready to send. If you have a few photos of the records, attach them before you send. If it does not open, email me at ${contact.email} or call ${contact.phoneDisplay}.`,
       })
       return
     }
@@ -182,12 +183,12 @@ export function EnquiryForm() {
       ) : null}
 
       <div className="grid gap-2">
-        <Label htmlFor="collection">Tell me what you have</Label>
+        <Label htmlFor="collection">A rough idea of what is in it</Label>
         <Textarea
           id="collection"
           name="collection"
           required
-          placeholder="A couple of hundred LPs in the spare room. Mostly seventies rock, and a few other records kept with them."
+          placeholder="A rough idea is plenty, for example: a couple of hundred LPs in the spare room, mostly seventies rock. No full list needed. I can come round and look."
           aria-invalid={status.state === "error" && status.field === "collection"}
           aria-describedby={status.state === "error" && status.field === "collection" ? errorId : undefined}
           className="min-h-32 bg-card md:text-base"

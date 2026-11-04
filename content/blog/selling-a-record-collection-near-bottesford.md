@@ -24,8 +24,9 @@ I will still look. I collect for my own shelves, and I am glad of anything that 
 
 ## How to get in touch
 
-- Ring me on [07359 456528](tel:+447359456528).
-- Or write to [diotima2003@yahoo.co.uk](mailto:diotima2003@yahoo.co.uk).
+Email is best: [diotima2003@yahoo.co.uk](mailto:diotima2003@yahoo.co.uk). I am happy to take a phone call too, on [07359 456528](tel:+447359456528).
+
+- Email me at [diotima2003@yahoo.co.uk](mailto:diotima2003@yahoo.co.uk), or call [07359 456528](tel:+447359456528).
 - My card is also on the notice board at Bottesford VC Hall, Belvoir Road, NG13 0BG.
 
-When you get in touch, tell me the village, and whether there is any sixties and seventies rock among the records.
+When you get in touch, tell me the village and give me a rough idea of what is in the collection, or attach a few photos to the email. There is no need for a full list, as I can come round and look.
