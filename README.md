@@ -25,7 +25,7 @@ Villages are measured in a straight line from the centre of Bottesford, using Op
 
 ## SEO
 
-- Every village inside the ten-mile line has its own page at `/sell-vinyl-records/<village>`, generated from `src/lib/places.ts`, with its own title, description, canonical URL, keywords and structured data. They are all listed in `/sitemap.xml`.
+- Every village on the list has its own page at `/sell-vinyl-records/<village>`, generated from `src/lib/places.ts`, with its own title, description, canonical URL, keywords and structured data. They are all listed in `/sitemap.xml`.
 - Home page and village pages share `LocalBusiness`, `Service`, `FAQPage` and breadcrumb JSON-LD.
 - Keywords, the artist, style and label lists live in `src/lib/site.ts`.
 - Before launch, set `NEXT_PUBLIC_SITE_URL` to the real address (for example `https://www.example.co.uk`) so the sitemap, canonical links and share image point at it.

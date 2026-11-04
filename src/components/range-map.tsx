@@ -78,7 +78,7 @@ export function RangeMap() {
         fontWeight="700"
         fontFamily="Georgia, serif"
       >
-        10 miles
+        30 miles
       </text>
     </svg>
   )

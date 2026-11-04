@@ -15,7 +15,7 @@ export const site = {
   postcode: "NG13",
   county: "Leicestershire",
   country: "United Kingdom",
-  radiusMiles: 10,
+  radiusMiles: 30,
   hall: "the Post Office in the High Street, Bottesford",
 }
 
