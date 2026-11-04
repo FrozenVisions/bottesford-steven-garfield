@@ -60,7 +60,7 @@ export function validateEnquiry(input: EnquiryInput): EnquiryResult {
     return {
       ok: false,
       field: "village",
-      message: "Please tell me the records are within ten miles of Bottesford.",
+      message: "Please tell me the records are within 30 miles of Bottesford.",
     }
   }
 

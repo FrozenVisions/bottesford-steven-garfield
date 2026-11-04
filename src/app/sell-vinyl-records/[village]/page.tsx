@@ -27,8 +27,8 @@ function copy(slug: string) {
     place,
     miles,
     direction: compass(place.bearing),
-    title: `Sell Vinyl Records in ${place.name} | Steven Garfield`,
-    description: `Selling vinyl records in ${place.name}, ${place.county}? I am Steven Garfield (Steven Gee), ${miles} miles away in Bottesford. I buy all types of record collections and mainly want late 1960s and early 1970s rock. Call ${contact.phoneDisplay}.`,
+    title: `Sell Vinyl Records in ${place.name} | Steven Gee`,
+    description: `Selling vinyl records in ${place.name}, ${place.county}? I am Steven Gee, ${miles} miles away in Bottesford. I buy all types of record collections and mainly want late 1960s and early 1970s rock. Email ${contact.email} or call ${contact.phoneDisplay}.`,
   }
 }
 
@@ -48,7 +48,6 @@ export async function generateMetadata(props: PageProps<"/sell-vinyl-records/[vi
       `${page.place.name} ${page.place.county} vinyl`,
       "late 60s rock vinyl wanted",
       "early 70s rock records wanted",
-      "Steven Garfield",
       "Steven Gee",
     ],
     alternates: { canonical: `/sell-vinyl-records/${village}` },
@@ -86,14 +85,14 @@ async function VillageContent({ params }: { params: Promise<{ village: string }>
         "@id": `${url}#service`,
         name: `Buying vinyl record collections in ${place.name}`,
         description: page.description,
-        provider: { "@id": `${siteUrl()}/#steven-garfield` },
+        provider: { "@id": `${siteUrl()}/#steven-gee` },
         areaServed: { "@type": "Place", name: `${place.name}, ${place.county}` },
         url,
       },
       {
         "@type": "BreadcrumbList",
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Steven Garfield", item: siteUrl() },
+          { "@type": "ListItem", position: 1, name: "Steven Gee", item: siteUrl() },
           { "@type": "ListItem", position: 2, name: `Sell vinyl records in ${place.name}`, item: url },
         ],
       },
@@ -107,7 +106,7 @@ async function VillageContent({ params }: { params: Promise<{ village: string }>
         <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-5 py-4">
           <div className="flex items-center gap-6">
             <Link href="/" className="text-sm tracking-[0.16em] uppercase underline-offset-4 hover:underline">
-              Steven Garfield
+              Steven Gee
             </Link>
             <nav aria-label="Main">
               <Link href="/blog" className="text-sm font-semibold underline-offset-4 hover:underline">
@@ -140,14 +139,14 @@ async function VillageContent({ params }: { params: Promise<{ village: string }>
             Selling vinyl records in {place.name}?
           </h1>
           <p className="text-lg leading-8 text-muted-foreground">
-            I am Steven Garfield, or Steven Gee as my card at the village hall has it. I live in Bottesford, and {place.name} lies
-            {" "}{miles} miles {direction} of the middle of my village, so your collection is
-            well inside my ten-mile round. I will come to your house in{" "}
-            {place.name}, sit down with the records, and look at every one of
-            them properly.
+            I am Steven Gee. I live in Bottesford, and {place.name} lies
+            {" "}{miles} miles {direction} of my home, so your collection is
+            within my 30-mile round. I will come and view your records in the comfort of your own home
+            in {place.name}. Any situation or quantity always considered.
           </p>
           <p className="text-lg leading-8 text-muted-foreground">
-            I will look at all types of record collection. What I am mainly
+            I will look at all types of record collection, and I may be interested
+            in buying more than rock, as I collect all kinds of music for my own shelves. What I am mainly
             hoping to find is rock from the late nineteen-sixties and early
             seventies. If you have a few boxes from {place.name} that have not
             been played for years, email me before they go to the tip.
@@ -255,7 +254,7 @@ async function VillageContent({ params }: { params: Promise<{ village: string }>
             <Link href="/blog" className="underline underline-offset-4">Blog</Link>
           </p>
           <p>Email {contact.email} (best) or call {contact.phoneDisplay}.</p>
-          <p>Steven Garfield, also Steven Gee. I buy vinyl, within ten miles.</p>
+          <p>Steven Gee. I buy vinyl, within 30 miles of Bottesford.</p>
         </div>
       </footer>
 

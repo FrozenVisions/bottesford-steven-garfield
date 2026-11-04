@@ -2,7 +2,7 @@ import { EnquiryForm } from "@/components/enquiry-form"
 import { RangeMap } from "@/components/range-map"
 import { buttonVariants } from "@/components/ui/button"
 import Link from "next/link"
-import { formatMiles, insidePlaces, outsidePlaces, placeSlug } from "@/lib/places"
+import { formatMiles, insidePlaces, placeSlug } from "@/lib/places"
 import { structuredData } from "@/lib/structured-data"
 import { contact, faqs, site, wanted } from "@/lib/site"
 import { cn } from "cn"
@@ -34,7 +34,7 @@ export default function Home() {
       <header className="border-b border-border">
         <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-5 py-4">
           <div className="flex items-center gap-6">
-            <p className="text-sm tracking-[0.16em] uppercase">Steven Garfield</p>
+            <p className="text-sm tracking-[0.16em] uppercase">Steven Gee</p>
             <nav aria-label="Main">
               <Link href="/blog" className="text-sm font-semibold underline-offset-4 hover:underline">
                 Blog
@@ -51,16 +51,17 @@ export default function Home() {
         <section className="grid items-center gap-10 md:grid-cols-[1.3fr_0.7fr]">
           <div className="flex flex-col gap-6">
             <p className="text-sm font-semibold tracking-[0.14em] text-foreground uppercase">
-              {site.place} · {site.postcode} · ten miles, no further
+              {site.place} · {site.postcode} · 30 miles
             </p>
             <h1 className="text-4xl leading-[1.05] text-balance sm:text-6xl">
               I buy vinyl collections near Bottesford
             </h1>
             <p className="max-w-xl text-lg leading-8 text-muted-foreground">
-              I am Steven Garfield. I will come to the house and sit with the
-              records. Rock from the nineteen-sixties and seventies, any type
-              of it, is the music I have loved longest. If the rest is not
-              rock, I still want to see it. I collect for my own shelves.
+              I am Steven. I will come to your home and view your records.
+              Rock from the nineteen-sixties and seventies, any type of it, is
+              the music I have loved longest. If the rest is not rock, that is
+              OK: I still may be interested in buying it, as I collect all
+              kinds of music for my own shelves.
             </p>
             <div className="flex flex-col gap-3 sm:flex-row">
               <a href={`mailto:${contact.email}`} className={callClass}>
@@ -77,7 +78,7 @@ export default function Home() {
           <div className="mx-auto grid size-64 place-items-center rounded-full bg-[#111111] shadow-[0_20px_50px_rgba(0,0,0,0.25)] sm:size-72" aria-hidden="true">
             <div className="grid size-32 place-items-center rounded-full bg-[#f5a800] text-[#111111]">
               <span className="text-center leading-none">
-                <span className="block font-[family-name:var(--font-fraunces)] text-6xl font-bold">10</span>
+                <span className="block font-[family-name:var(--font-fraunces)] text-6xl font-bold">30</span>
                 <span className="text-xs font-bold tracking-[0.2em]">MILES</span>
               </span>
             </div>
@@ -88,8 +89,8 @@ export default function Home() {
           <article className="border-t border-foreground pt-4">
             <h2 className="text-2xl">I come to you</h2>
             <p className="mt-3 leading-7 text-muted-foreground">
-              There is no shop. If you are within ten miles of Bottesford, I
-              will come and see the collection where it has lived.
+              There is no shop. If you are within 30 miles of Bottesford, I
+              will come and see the collection in the comfort of your own home.
             </p>
           </article>
           <article className="border-t border-foreground pt-4">
@@ -97,14 +98,14 @@ export default function Home() {
             <p className="mt-3 leading-7 text-muted-foreground">
               Any rock from those years. The loud and the quiet, the famous
               and the one that never left its sleeve. Lofts, shelves, boxes
-              from a house being cleared.
+              from a house being cleared, any situation or quantity always considered.
             </p>
           </article>
           <article className="border-t border-foreground pt-4">
             <h2 className="text-2xl">Whatever else belongs with me</h2>
             <p className="mt-3 leading-7 text-muted-foreground">
-              I am eager to collect more than those two decades. If another
-              record ought to be on my shelves, I want the chance to know it.
+              I am interested in viewing more than 60s and 70s rock. If you have
+              other records, I would like the opportunity to view and buy them.
             </p>
           </article>
         </section>
@@ -118,13 +119,6 @@ export default function Home() {
             first love: {wanted.styles.join(", ")}. Original UK pressings,
             gatefold sleeves and the old label designs ({wanted.labels.join(", ")}) make me smile, though I will look at any copy.
           </p>
-          <ul className="mt-6 flex flex-wrap gap-2">
-            {wanted.rock.map((name) => (
-              <li key={name} className="border border-foreground px-3 py-1 text-sm">
-                {name}
-              </li>
-            ))}
-          </ul>
           <p className="mt-6 max-w-2xl leading-7 text-muted-foreground">
             And all the rest, too: {wanted.other.join(", ")}. I collect for my
             own shelves, so a good record is never turned away.
@@ -133,12 +127,12 @@ export default function Home() {
 
         <section className="grid items-start gap-10 lg:grid-cols-[minmax(0,540px)_1fr]" id="area">
           <div>
-            <h2 className="text-3xl sm:text-4xl">Ten miles from my village</h2>
+            <h2 className="text-3xl sm:text-4xl">30 miles from my home</h2>
             <p className="mt-4 max-w-xl leading-7 text-muted-foreground">
-              I live in Bottesford. Ten miles, in a straight line from the
-              middle of the village, is as far as I go. If you are in Muston,
-              Redmile, Orston, Belvoir, or another place inside the circle, I
-              can come and look at a vinyl collection.
+              I live in Bottesford. I will travel 30 miles from home to look at
+              a vinyl collection, or even further if you have a very large or
+              unusual collection. The places below are some of those nearest
+              to me.
             </p>
             <div className="mt-8">
               <RangeMap />
@@ -171,16 +165,6 @@ export default function Home() {
                 </ul>
               </div>
             ))}
-            <div>
-              <h3 className="text-xl">Where I stop, beyond ten miles</h3>
-              <ul className="mt-4 grid gap-2 sm:grid-cols-2">
-                {outsidePlaces.map((place) => (
-                  <li key={place.name} className="text-sm text-muted-foreground">
-                    {place.name}, {formatMiles(place.miles)} miles from Bottesford
-                  </li>
-                ))}
-              </ul>
-            </div>
           </div>
         </section>
 
@@ -212,7 +196,7 @@ export default function Home() {
               </a>
               . Give me a rough idea of what is in the collection, or attach a
               few photos to the email. No full list is needed, as I can come
-              round and look. Tell me the village, too. My card is also on the notice board at {site.hall}.
+              round and look. Tell me your location, too. My card is also on the notice board at {site.hall}.
             </p>
           </div>
           <div className="border border-border bg-card p-5 sm:p-7">
@@ -230,7 +214,7 @@ export default function Home() {
             <Link href="/blog" className="underline underline-offset-4">Blog</Link>
           </p>
           <p>Email {contact.email} (best) or call {contact.phoneDisplay}.</p>
-          <p>Steven Garfield, also Steven Gee. I buy vinyl, within ten miles.</p>
+          <p>Steven Gee. I buy vinyl, within 30 miles of Bottesford.</p>
         </div>
       </footer>
 

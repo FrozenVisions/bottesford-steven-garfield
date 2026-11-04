@@ -1,5 +1,5 @@
 /**
- * Public contact details for Steven Garfield.
+ * Public contact details for Steven Gee.
  * Phone and email are shown on the page and in the local-business listing.
  */
 export const contact = {
@@ -9,29 +9,27 @@ export const contact = {
 }
 
 export const site = {
-  name: "Steven Garfield",
+  name: "Steven Gee",
   alias: "Steven Gee",
   place: "Bottesford",
   postcode: "NG13",
   county: "Leicestershire",
   country: "United Kingdom",
   radiusMiles: 10,
-  hall: "Bottesford VC Hall, Belvoir Road, NG13 0BG",
+  hall: "the Post Office in the High Street, Bottesford",
 }
 
 export const seo = {
-  title: "Steven Garfield | Vinyl Buyer near Bottesford, NG13",
+  title: "Steven Gee | Vinyl Buyer near Bottesford, NG13",
   description:
-    "I am Steven Garfield. I buy vinyl record collections within 10 miles of Bottesford, NG13. Email diotima2003@yahoo.co.uk or call 07359 456528. I come for 1960s and 1970s rock of any kind, and for other records I want in my own collection.",
+    "I am Steven Gee. I buy vinyl record collections within 30 miles of Bottesford, NG13. Email diotima2003@yahoo.co.uk or call 07359 456528. I come for 1960s and 1970s rock of any kind, and for other records I want in my own collection.",
   keywords: [
-    "Steven Garfield",
-    "Steven Garfield Bottesford",
     "Steven Gee",
     "Steven Gee Bottesford",
     "Steven Gee vinyl",
     "Steven Gee records",
     "Steven Gee NG13",
-    "Steven Gee Garfield",
+    "Steven Gee vinyl buyer",
     "vinyl buyer Bottesford",
     "buy vinyl records NG13",
     "sell vinyl collection",
@@ -70,34 +68,29 @@ export const seo = {
 
 export const faqs = [
   {
-    question: "Is Steven Gee the same person as Steven Garfield?",
-    answer:
-      "Yes. I write my name as Steven Gee on the notice boards at Bottesford VC Hall, and my name is Steven Garfield. If you saw my card in the village hall, you have found the right man. Ring me on 07359 456528.",
-  },
-  {
     question: "Who buys vinyl record collections near Bottesford?",
     answer:
-      "I do. I am Steven Garfield, and I live in Bottesford, NG13, in the Vale of Belvoir. If the records are within ten miles, I will come and see them. That takes in Bingham, Grantham, Newark-on-Trent, Radcliffe-on-Trent and the villages of the Vale of Belvoir.",
+      "I do. I am Steven Gee, and I live in Bottesford, NG13, in the Vale of Belvoir. If the records are within 30 miles of my home, I will come and see them in the comfort of your own home.",
   },
   {
-    question: "Does Steven Garfield buy 1960s and 1970s rock?",
+    question: "Does Steven Gee buy 1960s and 1970s rock?",
     answer:
-      "Yes. Those two decades of rock are the music I have loved longest, and I mean any type of it. I would rather sit with the records in your house than have them posted to me.",
+      "Yes. Those two decades of rock are the music I have loved longest, and I mean any type of it. I would rather view the records in your home than have them posted to me.",
   },
   {
     question: "Will he look at records that are not rock?",
     answer:
-      "I will. I collect for my own shelves, and I am glad of anything that belongs there. Tell me about the whole collection, not only the rock.",
+      "Yes. I collect all kinds of music for my own shelves, and I may be interested in buying it. Tell me about the whole collection, not only the rock.",
   },
   {
     question: "How far from Bottesford will he travel?",
     answer:
-      "Ten miles, in a straight line from the middle of Bottesford, and no further. Melton Mowbray, Ancaster, Southwell and Nottingham are outside my round.",
+      "Up to 30 miles from my home in Bottesford, or even further if you have a very large or unusual collection.",
   },
   {
-    question: "How do I contact Steven Garfield?",
+    question: "How do I contact Steven Gee?",
     answer:
-      "Email is best: diotima2003@yahoo.co.uk. I am happy to take a phone call too, on 07359 456528. A rough idea of what is in the collection, or a few photos attached to the email, is plenty. No full list is needed, as I can come round and look. My card is also on the notice board at Bottesford VC Hall, Belvoir Road, NG13 0BG.",
+      "Email is best: diotima2003@yahoo.co.uk. I am happy to take a phone call too, on 07359 456528. A rough idea of what is in the collection, or a few photos attached to the email, is plenty. No full list is needed, as I can come round and look. My card is also on the Post Office notice board in the High Street, Bottesford.",
   },
 ]
 

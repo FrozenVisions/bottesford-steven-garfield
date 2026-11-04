@@ -18,7 +18,7 @@ export function RangeMap() {
     <svg
       viewBox="0 0 540 520"
       role="img"
-      aria-label="Map of villages within ten straight-line miles of Bottesford. The full list is beside the map."
+      aria-label="Map of some of the villages nearest to Bottesford. The full list is beside the map."
       className="h-auto w-full max-w-[540px]"
     >
       <circle cx={cx} cy={cy} r={ring} fill="#ffffff" stroke="#111111" strokeWidth="3" />

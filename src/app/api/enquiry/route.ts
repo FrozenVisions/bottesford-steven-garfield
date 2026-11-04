@@ -74,6 +74,6 @@ export async function POST(request: Request) {
 
   return Response.json({
     ok: true,
-    message: `I have your note. If the records are in ${result.village}, inside ten miles of Bottesford, I will be glad to come and see them.`,
+    message: `I have your note. If the records are in ${result.village}, within 30 miles of Bottesford, I will be glad to come and see them.`,
   })
 }

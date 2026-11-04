@@ -20,7 +20,7 @@ export async function generateMetadata(props: PageProps<"/blog/[slug]">): Promis
     ? [/^https?:\/\//.test(post.image) ? post.image : `${new URL(siteUrl()).origin}${assetPath(post.image)}`]
     : undefined
   return {
-    title: `${post.title} | Steven Garfield`,
+    title: `${post.title} | Steven Gee`,
     description: post.description,
     alternates: { canonical: url },
     openGraph: {
@@ -28,10 +28,10 @@ export async function generateMetadata(props: PageProps<"/blog/[slug]">): Promis
       description: post.description,
       type: "article",
       locale: "en_GB",
-      siteName: "Steven Garfield",
+      siteName: "Steven Gee",
       url,
       publishedTime: post.date,
-      authors: ["Steven Garfield"],
+      authors: ["Steven Gee"],
       ...(images ? { images } : {}),
     },
     twitter: { card: "summary_large_image", title: post.title, description: post.description, ...(images ? { images } : {}) },
@@ -49,7 +49,7 @@ export default async function BlogPostPage(props: PageProps<"/blog/[slug]">) {
     headline: post.title,
     description: post.description,
     datePublished: post.date,
-    author: { "@type": "Person", name: "Steven Garfield" },
+    author: { "@type": "Person", name: "Steven Gee" },
     mainEntityOfPage: url,
     url,
   }
@@ -70,7 +70,7 @@ export default async function BlogPostPage(props: PageProps<"/blog/[slug]">) {
         <article className="flex max-w-3xl flex-col gap-6">
           <header className="flex flex-col gap-3">
             <p className="text-sm text-muted-foreground">
-              <time dateTime={post.date}>{formatDate(post.date)}</time> · Steven Garfield
+              <time dateTime={post.date}>{formatDate(post.date)}</time> · Steven Gee
             </p>
             <h1 className="text-4xl leading-[1.05] text-balance sm:text-5xl">{post.title}</h1>
             <p className="text-lg leading-8 text-muted-foreground">{post.description}</p>

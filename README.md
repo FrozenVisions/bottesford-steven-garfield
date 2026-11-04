@@ -1,6 +1,6 @@
-# Steven Garfield
+# Steven Gee
 
-A one-page site in Steven Garfield’s own voice (he writes his name as Steven Gee on the village hall notice boards, so the site mentions both). He buys vinyl record collections within ten miles of Bottesford, NG13, and he comes to see them. Sixties and seventies rock, of any type, is what he mainly wants. He also collects other records for himself.
+A one-page site in Steven Gee’s own voice. He buys vinyl record collections within 30 miles of Bottesford, NG13, and he comes to see them. Sixties and seventies rock, of any type, is what he mainly wants. He also collects other records for himself.
 
 Call **07359 456528** or email **diotima2003@yahoo.co.uk**.
 
@@ -19,7 +19,7 @@ Phone and email live in `src/lib/site.ts`. Changing them updates the page, the c
 
 Notes left through the form are written to `data/enquiries.json` on the machine running the site. That file is not committed.
 
-## The ten-mile line
+## The village pages
 
 Villages are measured in a straight line from the centre of Bottesford, using OpenStreetMap place points. Melton Mowbray, Ancaster, Southwell and Nottingham sit outside the circle, so the form turns those away.
 

@@ -177,7 +177,7 @@ export function EnquiryForm() {
               value="yes"
               className="mt-1 size-5 accent-[#0b3d91]"
             />
-            <span>These records are within ten miles of Bottesford.</span>
+            <span>These records are within 30 miles of Bottesford.</span>
           </label>
         </div>
       ) : null}

@@ -8,9 +8,9 @@ export function structuredData() {
     "@graph": [
       {
         "@type": "LocalBusiness",
-        "@id": `${url}/#steven-garfield`,
+        "@id": `${url}/#steven-gee`,
         name: site.name,
-        alternateName: [site.alias, "Steven Gee Garfield"],
+        alternateName: [site.alias, "Steven Gee vinyl buyer"],
         description: seo.description,
         url,
         telephone: "+447359456528",
