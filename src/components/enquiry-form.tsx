@@ -96,8 +96,8 @@ export function EnquiryForm() {
   const errorId = status.state === "error" ? "enquiry-error" : undefined
 
   return (
-    <form onSubmit={onSubmit} className="grid gap-4" noValidate>
-      <div className="grid gap-2">
+    <form onSubmit={onSubmit} className="grid grid-cols-[minmax(0,1fr)] gap-4 [&_input]:min-w-0 [&_select]:w-full [&_select]:min-w-0 [&_textarea]:min-w-0" noValidate>
+      <div className="grid min-w-0 gap-2">
         <Label htmlFor="name">Your name</Label>
         <Input
           id="name"
@@ -110,8 +110,8 @@ export function EnquiryForm() {
         />
       </div>
 
-      <div className="grid gap-4 sm:grid-cols-2">
-        <div className="grid gap-2">
+      <div className="grid grid-cols-[minmax(0,1fr)] gap-4 sm:grid-cols-2">
+        <div className="grid min-w-0 gap-2">
           <Label htmlFor="phone">Phone</Label>
           <Input
             id="phone"
@@ -125,7 +125,7 @@ export function EnquiryForm() {
             className="h-11 bg-card md:text-base"
           />
         </div>
-        <div className="grid gap-2">
+        <div className="grid min-w-0 gap-2">
           <Label htmlFor="email">Email, if you have one</Label>
           <Input
             id="email"
@@ -139,7 +139,7 @@ export function EnquiryForm() {
         </div>
       </div>
 
-      <div className="grid gap-2">
+      <div className="grid min-w-0 gap-2">
         <Label htmlFor="village">Village</Label>
         <select
           id="village"
@@ -161,7 +161,7 @@ export function EnquiryForm() {
 
       {showOther ? (
         <div className="grid gap-3">
-          <div className="grid gap-2">
+          <div className="grid min-w-0 gap-2">
             <Label htmlFor="otherVillage">Village name</Label>
             <Input
               id="otherVillage"
@@ -182,7 +182,7 @@ export function EnquiryForm() {
         </div>
       ) : null}
 
-      <div className="grid gap-2">
+      <div className="grid min-w-0 gap-2">
         <Label htmlFor="collection">A rough idea of what is in it</Label>
         <Textarea
           id="collection"
@@ -216,7 +216,7 @@ export function EnquiryForm() {
         type="submit"
         size="lg"
         disabled={status.state === "saving"}
-        className="h-12 px-6 text-base sm:w-fit"
+        className="h-auto min-h-12 px-4 py-3 text-base whitespace-normal sm:w-fit sm:px-6"
       >
         {status.state === "saving" ? "Sending…" : "Ask me to come and see them"}
       </Button>

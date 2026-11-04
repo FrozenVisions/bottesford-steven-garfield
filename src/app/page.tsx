@@ -49,7 +49,7 @@ export default function Home() {
         </div>
       </header>
 
-      <main className="mx-auto flex w-full max-w-5xl flex-col gap-20 px-5 pt-12 pb-28 sm:pb-20">
+      <main className="mx-auto flex w-full max-w-5xl flex-col gap-20 px-5 pt-12 pb-16 sm:pb-20">
         <section className="grid items-center gap-8 rounded-3xl bg-card p-5 shadow-sm sm:p-8 md:grid-cols-[0.9fr_1.1fr]">
           <Photo src="/images/record-bins.webp" alt="Rows of vinyl records in browser boxes" className="order-first aspect-[4/3] w-full rounded-2xl object-cover md:aspect-[4/5]" />
           <div className="flex flex-col gap-6">
@@ -179,7 +179,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="contact" className="grid gap-8 rounded-3xl bg-card p-5 sm:p-8 lg:grid-cols-[0.8fr_1.2fr]">
+        <section id="contact" className="grid grid-cols-1 gap-8 [&>*]:min-w-0 rounded-3xl bg-card p-5 sm:p-8 lg:grid-cols-[0.8fr_1.2fr]">
           <div>
             <h2 className="text-3xl sm:text-4xl">Email me, or ring</h2>
             <p className="mt-4 leading-7 text-muted-foreground">
@@ -196,14 +196,14 @@ export default function Home() {
               round and look. Tell me your location, too. My card is also on the notice board at {site.hall}.
             </p>
           </div>
-          <div className="rounded-2xl border border-border bg-background p-5 sm:p-7">
+          <div className="min-w-0 rounded-2xl border border-border bg-background p-4 sm:p-7">
             <EnquiryForm />
           </div>
         </section>
         <Photo src="/images/record-shop-crates.webp" alt="Crates of records" className="aspect-[16/7] w-full rounded-3xl object-cover" />
       </main>
 
-      <footer className="border-t border-border">
+      <footer className="border-t border-border pb-24 sm:pb-0">
         <div className="mx-auto flex max-w-5xl flex-col gap-2 px-5 py-8 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
           <p>
             {site.name}, {site.place}, {site.county}, {site.postcode}

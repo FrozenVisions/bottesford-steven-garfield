@@ -124,7 +124,7 @@ async function VillageContent({ params }: { params: Promise<{ village: string }>
         </div>
       </header>
 
-      <main className="mx-auto flex w-full max-w-5xl flex-col gap-14 px-5 pt-10 pb-28 sm:pb-20">
+      <main className="mx-auto flex w-full max-w-5xl flex-col gap-14 px-5 pt-10 pb-16 sm:pb-20">
         <nav aria-label="Breadcrumb" className="text-sm">
           <ol className="flex flex-wrap gap-2">
             <li>
@@ -223,7 +223,7 @@ async function VillageContent({ params }: { params: Promise<{ village: string }>
 
         <HowItWorks />
 
-        <section id="contact" className="grid gap-8 rounded-3xl bg-card p-5 sm:p-8 lg:grid-cols-[0.8fr_1.2fr]">
+        <section id="contact" className="grid grid-cols-1 gap-8 [&>*]:min-w-0 rounded-3xl bg-card p-5 sm:p-8 lg:grid-cols-[0.8fr_1.2fr]">
           <div>
             <h2 className="text-3xl sm:text-4xl">Email me, or ring</h2>
             <p className="mt-4 leading-7 text-muted-foreground">
@@ -240,13 +240,13 @@ async function VillageContent({ params }: { params: Promise<{ village: string }>
               round and look. Tell me you are in {place.name}. My card is also on the notice board at {site.hall}.
             </p>
           </div>
-          <div className="border border-border bg-card p-5 sm:p-7">
+          <div className="border border-border bg-card p-4 sm:p-7">
             <EnquiryForm />
           </div>
         </section>
       </main>
 
-      <footer className="border-t border-border">
+      <footer className="border-t border-border pb-24 sm:pb-0">
         <div className="mx-auto flex max-w-5xl flex-col gap-2 px-5 py-8 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
           <p>
             {site.name}, {site.place}, {site.county}, {site.postcode}
