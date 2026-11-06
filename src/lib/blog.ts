@@ -8,6 +8,7 @@ export type BlogPost = {
   date: string
   description: string
   image?: string
+  imageAlt?: string
   html: string
 }
 
@@ -43,6 +44,7 @@ export function getAllPosts(): BlogPost[] {
         date: data.date,
         description: data.description,
         image: data.image || undefined,
+        imageAlt: data.imageAlt || undefined,
         html: marked.parse(body, { async: false }) as string,
       }
     })
