@@ -1,7 +1,10 @@
+import { BrandName } from "@/components/brand-name"
 import { EnquiryForm } from "@/components/enquiry-form"
 import { ContactStrip } from "@/components/contact-strip"
+import { SectionRule } from "@/components/druid-ornaments"
 import { HowItWorks } from "@/components/how-it-works"
 import { Photo } from "@/components/photo"
+import { PhotoCredits } from "@/components/photo-credits"
 import { RangeMap } from "@/components/range-map"
 import { buttonVariants } from "@/components/ui/button"
 import Link from "next/link"
@@ -36,7 +39,7 @@ export default function Home() {
       <header className="border-b border-border">
         <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-5 py-4">
           <div className="flex items-center gap-6">
-            <p className="font-heading text-2xl font-bold tracking-wide uppercase">Pink Moon</p>
+            <BrandName />
             <nav aria-label="Main">
               <Link href="/blog" className="text-sm font-semibold underline-offset-4 hover:underline">
                 Blog
@@ -50,7 +53,7 @@ export default function Home() {
       </header>
 
       <main className="mx-auto flex w-full max-w-5xl flex-col gap-20 px-5 pt-12 pb-16 sm:pb-20">
-        <section className="grid items-center gap-8 rounded-3xl bg-card p-5 shadow-sm sm:p-8 md:grid-cols-[0.9fr_1.1fr]">
+        <section className="grid items-center gap-8 rounded-3xl border border-border bg-card p-5 shadow-sm sm:p-8 md:grid-cols-[0.9fr_1.1fr]">
           <Photo src="/images/record-bins.webp" alt="Rows of vinyl records in browser boxes" className="order-first aspect-[4/3] w-full rounded-2xl object-cover md:aspect-[4/5]" />
           <div className="flex flex-col gap-6">
             <p className="text-sm font-semibold tracking-[0.14em] text-foreground uppercase">
@@ -80,6 +83,7 @@ export default function Home() {
           </div>
         </section>
 
+        <SectionRule className="-my-10" />
         <HowItWorks />
 
         <figure>
@@ -123,6 +127,14 @@ export default function Home() {
           </article>
         </section>
 
+        <SectionRule className="-my-10" />
+        <figure>
+          <Photo src="/images/oak-in-the-mist.webp" alt="A large oak tree standing in pink mist beside a still pond" className="aspect-[16/9] w-full rounded-3xl object-cover" />
+          <figcaption className="mt-2 text-sm leading-6 text-muted-foreground">
+            Oak in the mist, by <a className="underline underline-offset-4" href="https://www.geograph.org.uk/photo/2271111">Sally</a> (<a className="underline underline-offset-4" href="https://creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0</a>). The same pink light I named Pink Moon after.
+          </figcaption>
+        </figure>
+
         <section aria-labelledby="wanted">
           <h2 id="wanted" className="text-3xl sm:text-4xl">
             What I am hoping to find
@@ -142,6 +154,13 @@ export default function Home() {
           <Photo src="/images/druid-stonehenge.webp" alt="The ancient standing stones of Stonehenge on green grass under a grey sky" className="aspect-[16/8] w-full rounded-3xl object-cover" />
           <figcaption className="mt-2 text-sm text-muted-foreground">
             The old stones the druids are remembered by, by <a className="underline underline-offset-4" href="https://unsplash.com/photos/a-large-stone-structure-in-the-middle-of-a-field-yP8HHiF2okM">Priyank V on Unsplash</a>. Records from the sixties and seventies feel much the same to me: made to last, and worth standing in a field for.
+          </figcaption>
+        </figure>
+
+        <figure>
+          <Photo src="/images/castlerigg-circle.webp" alt="Castlerigg stone circle, standing stones in a green field with misty hills behind" className="aspect-[16/9] w-full rounded-3xl object-cover" />
+          <figcaption className="mt-2 text-sm leading-6 text-muted-foreground">
+            Castlerigg stone circle on a misty morning, by <a className="underline underline-offset-4" href="https://commons.wikimedia.org/wiki/File:Castlerigg_Stone_Circle_with_Latrigg_behind.jpg">Dominic Nelson</a> (<a className="underline underline-offset-4" href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>).
           </figcaption>
         </figure>
 
@@ -179,12 +198,20 @@ export default function Home() {
           </details>
         </section>
 
+        <figure>
+          <Photo src="/images/stanton-drew-moon.webp" alt="Standing stones of the north-east circle at Stanton Drew under a bright moon at night" className="aspect-[16/10] w-full rounded-3xl object-cover" />
+          <figcaption className="mt-2 text-sm leading-6 text-muted-foreground">
+            The north-east circle at Stanton Drew under the moon, by <a className="underline underline-offset-4" href="https://www.geograph.org.uk/photo/8229296">Neil Owen</a> (<a className="underline underline-offset-4" href="https://creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0</a>).
+          </figcaption>
+        </figure>
+
+        <SectionRule className="-my-10" />
         <section>
           <h2 className="text-3xl sm:text-4xl">What people ask me</h2>
           <div className="mt-6 divide-y divide-border border-y border-border">
             {faqs.map((item) => (
               <details key={item.question} className="group py-4">
-                <summary className="cursor-pointer text-lg font-[family-name:var(--font-fraunces)]">
+                <summary className="cursor-pointer text-lg font-heading">
                   {item.question}
                 </summary>
                 <p className="mt-3 max-w-3xl leading-7 text-muted-foreground">{item.answer}</p>
@@ -193,7 +220,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="contact" className="grid grid-cols-1 gap-8 [&>*]:min-w-0 rounded-3xl bg-card p-5 sm:p-8 lg:grid-cols-[0.8fr_1.2fr]">
+        <section id="contact" className="grid grid-cols-1 gap-8 [&>*]:min-w-0 rounded-3xl border border-border bg-card p-5 sm:p-8 lg:grid-cols-[0.8fr_1.2fr]">
           <div>
             <h2 className="text-3xl sm:text-4xl">Email me, or ring</h2>
             <p className="mt-4 leading-7 text-muted-foreground">
@@ -218,16 +245,18 @@ export default function Home() {
       </main>
 
       <footer className="border-t border-border pb-24 sm:pb-0">
-        <div className="mx-auto flex max-w-5xl flex-col gap-2 px-5 py-8 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
-          <p>
-            {site.name}, {site.place}, {site.county}, {site.postcode}
-          </p>
-          <p>
-            <Link href="/blog" className="underline underline-offset-4">Blog</Link>
-          </p>
-          <p>Email {contact.email} (best) or call {contact.phoneDisplay}.</p>
-          <p>Steven Gee. I buy vinyl, within 30 miles of Bottesford.</p>
-          <p>Photos: Pexels, plus Unsplash photos by <a className="underline underline-offset-4" href="https://unsplash.com/photos/a-very-large-pink-full-moon-rising-over-a-forest-g7iIhEsy5TI">Maciek Sulkowski</a>, <a className="underline underline-offset-4" href="https://unsplash.com/photos/a-large-stone-structure-in-the-middle-of-a-field-yP8HHiF2okM">Priyank V</a> and <a className="underline underline-offset-4" href="https://unsplash.com/photos/the-stonehenge-monument-in-the-middle-of-a-field-MWbiKdcycHU">Iryna Marienko</a></p>
+        <div className="mx-auto flex max-w-5xl flex-col gap-3 px-5 py-8 text-sm text-muted-foreground">
+          <div className="flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between">
+            <p>
+              {site.name}, {site.place}, {site.county}, {site.postcode}
+            </p>
+            <p>
+              <Link href="/blog" className="underline underline-offset-4">Blog</Link>
+            </p>
+            <p>Email {contact.email} (best) or call {contact.phoneDisplay}.</p>
+            <p>Steven Gee. I buy vinyl, within 30 miles of Bottesford.</p>
+          </div>
+          <p className="max-w-3xl leading-6"><PhotoCredits /></p>
         </div>
       </footer>
 

@@ -53,3 +53,15 @@ Photos are from Pexels and used under the Pexels licence (free for commercial us
 - `holding-record.webp`: cottonbro studio, https://www.pexels.com/photo/a-person-holding-a-vinyl-record-6867598/
 - `turntable-needle.webp`: Stefan, https://www.pexels.com/photo/close-up-of-turntable-playing-vinyl-record-30858638/
 - `record-shelves.webp`: Iryna Varanovich, https://www.pexels.com/photo/cozy-vinyl-record-store-with-albums-on-display-34786466/
+
+Unsplash (Unsplash Licence):
+
+- `pink-moon.webp`: Maciek Sulkowski, https://unsplash.com/photos/a-very-large-pink-full-moon-rising-over-a-forest-g7iIhEsy5TI
+- `druid-stonehenge.webp`: Priyank V, https://unsplash.com/photos/a-large-stone-structure-in-the-middle-of-a-field-yP8HHiF2okM
+- `druid-stones-sky.webp`: Iryna Marienko, https://unsplash.com/photos/the-stonehenge-monument-in-the-middle-of-a-field-MWbiKdcycHU
+
+Wikimedia Commons and Geograph, resized to WebP:
+
+- `castlerigg-circle.webp`: Dominic Nelson, Castlerigg Stone Circle with Latrigg behind, CC BY-SA 4.0, https://commons.wikimedia.org/wiki/File:Castlerigg_Stone_Circle_with_Latrigg_behind.jpg
+- `stanton-drew-moon.webp`: Neil Owen, The north east circle at night, Stanton Drew, CC BY-SA 2.0, https://www.geograph.org.uk/photo/8229296
+- `oak-in-the-mist.webp`: Sally, Oak in the mist, CC BY-SA 2.0, https://www.geograph.org.uk/photo/2271111

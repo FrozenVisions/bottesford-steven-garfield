@@ -1,6 +1,9 @@
 import type { Metadata } from "next"
 import Link from "next/link"
+import { BrandName } from "@/components/brand-name"
 import { Photo } from "@/components/photo"
+import { PhotoCredits } from "@/components/photo-credits"
+import { SectionRule } from "@/components/druid-ornaments"
 import { ContactStrip } from "@/components/contact-strip"
 import { HowItWorks } from "@/components/how-it-works"
 import { notFound } from "next/navigation"
@@ -109,9 +112,7 @@ async function VillageContent({ params }: { params: Promise<{ village: string }>
       <header className="border-b border-border">
         <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-5 py-4">
           <div className="flex items-center gap-6">
-            <Link href="/" className="font-heading text-2xl font-bold tracking-wide uppercase underline-offset-4 hover:underline">
-              Pink Moon
-            </Link>
+            <BrandName href="/" />
             <nav aria-label="Main">
               <Link href="/blog" className="text-sm font-semibold underline-offset-4 hover:underline">
                 Blog
@@ -135,7 +136,7 @@ async function VillageContent({ params }: { params: Promise<{ village: string }>
           </ol>
         </nav>
 
-        <div className="grid items-center gap-8 rounded-3xl bg-card p-5 sm:p-8 md:grid-cols-[1.2fr_0.8fr]">
+        <div className="grid items-center gap-8 rounded-3xl border border-border bg-card p-5 sm:p-8 md:grid-cols-[1.2fr_0.8fr]">
         <section className="flex flex-col gap-6">
           <p className="text-sm font-semibold tracking-[0.14em] uppercase">
             {place.name} · {place.county} · {miles} miles from Bottesford
@@ -221,9 +222,16 @@ async function VillageContent({ params }: { params: Promise<{ village: string }>
           </ul>
         </section>
 
+        <SectionRule className="-my-6" />
+        <figure>
+          <Photo src="/images/castlerigg-circle.webp" alt="Castlerigg stone circle, standing stones in a green field with misty hills behind" className="aspect-[16/8] w-full rounded-3xl object-cover" />
+          <figcaption className="mt-2 text-sm leading-6 text-muted-foreground">
+            Castlerigg stone circle on a misty morning, by <a className="underline underline-offset-4" href="https://commons.wikimedia.org/wiki/File:Castlerigg_Stone_Circle_with_Latrigg_behind.jpg">Dominic Nelson</a> (<a className="underline underline-offset-4" href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>).
+          </figcaption>
+        </figure>
         <HowItWorks />
 
-        <section id="contact" className="grid grid-cols-1 gap-8 [&>*]:min-w-0 rounded-3xl bg-card p-5 sm:p-8 lg:grid-cols-[0.8fr_1.2fr]">
+        <section id="contact" className="grid grid-cols-1 gap-8 [&>*]:min-w-0 rounded-3xl border border-border bg-card p-5 sm:p-8 lg:grid-cols-[0.8fr_1.2fr]">
           <div>
             <h2 className="text-3xl sm:text-4xl">Email me, or ring</h2>
             <p className="mt-4 leading-7 text-muted-foreground">
@@ -247,17 +255,19 @@ async function VillageContent({ params }: { params: Promise<{ village: string }>
       </main>
 
       <footer className="border-t border-border pb-24 sm:pb-0">
-        <div className="mx-auto flex max-w-5xl flex-col gap-2 px-5 py-8 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
-          <p>
-            {site.name}, {site.place}, {site.county}, {site.postcode}
-          </p>
-          <p className="flex gap-4">
-            <Link href="/" className="underline underline-offset-4">Home</Link>
-            <Link href="/blog" className="underline underline-offset-4">Blog</Link>
-          </p>
-          <p>Email {contact.email} (best) or call {contact.phoneDisplay}.</p>
-          <p>Steven Gee. I buy vinyl, within 30 miles of Bottesford.</p>
-          <p>Photos: Pexels, plus Unsplash photos by <a className="underline underline-offset-4" href="https://unsplash.com/photos/a-very-large-pink-full-moon-rising-over-a-forest-g7iIhEsy5TI">Maciek Sulkowski</a>, <a className="underline underline-offset-4" href="https://unsplash.com/photos/a-large-stone-structure-in-the-middle-of-a-field-yP8HHiF2okM">Priyank V</a> and <a className="underline underline-offset-4" href="https://unsplash.com/photos/the-stonehenge-monument-in-the-middle-of-a-field-MWbiKdcycHU">Iryna Marienko</a></p>
+        <div className="mx-auto flex max-w-5xl flex-col gap-3 px-5 py-8 text-sm text-muted-foreground">
+          <div className="flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between">
+            <p>
+              {site.name}, {site.place}, {site.county}, {site.postcode}
+            </p>
+            <p className="flex gap-4">
+              <Link href="/" className="underline underline-offset-4">Home</Link>
+              <Link href="/blog" className="underline underline-offset-4">Blog</Link>
+            </p>
+            <p>Email {contact.email} (best) or call {contact.phoneDisplay}.</p>
+            <p>Steven Gee. I buy vinyl, within 30 miles of Bottesford.</p>
+          </div>
+          <p className="max-w-3xl leading-6"><PhotoCredits /></p>
         </div>
       </footer>
 

@@ -1,17 +1,19 @@
 import type { Metadata } from "next"
-import { Oswald, Outfit } from "next/font/google"
+import { Cinzel, Outfit } from "next/font/google"
 import "./globals.css"
 import { seo, siteUrl } from "@/lib/site"
 
 const outfit = Outfit({
   subsets: ["latin"],
   variable: "--font-outfit",
+  display: "swap",
 })
 
-const fraunces = Oswald({
+const cinzel = Cinzel({
   subsets: ["latin"],
-  weight: ["500", "700"],
-  variable: "--font-fraunces",
+  weight: ["500", "600", "700"],
+  variable: "--font-cinzel",
+  display: "swap",
 })
 
 export const metadata: Metadata = {
@@ -45,7 +47,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en-GB"
-      className={`${outfit.variable} ${fraunces.variable} h-full antialiased`}
+      className={`${outfit.variable} ${cinzel.variable} h-full antialiased`}
     >
       <body className="min-h-full bg-background text-foreground">{children}</body>
     </html>

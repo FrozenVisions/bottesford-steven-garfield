@@ -175,7 +175,7 @@ export function EnquiryForm() {
               type="checkbox"
               name="inside"
               value="yes"
-              className="mt-1 size-5 accent-[#0b3d91]"
+              className="mt-1 size-5 accent-[#1e4632]"
             />
             <span>These records are within 30 miles of Bottesford.</span>
           </label>

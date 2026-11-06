@@ -14,23 +14,23 @@ export default function OpenGraphImage() {
           display: "flex",
           width: "100%",
           height: "100%",
-          background: "#fffaf0",
-          color: "#111111",
+          background: "#f3ecdf",
+          color: "#1a2418",
           padding: "64px",
           fontFamily: "Georgia, serif",
         }}
       >
         <div style={{ display: "flex", flexDirection: "column", flex: 1 }}>
-          <div style={{ fontSize: 28, letterSpacing: 4, color: "#333333" }}>
+          <div style={{ fontSize: 28, letterSpacing: 4, color: "#3a4636" }}>
             PINK MOON · BOTTESFORD · NG13 · 30 MILES
           </div>
           <div style={{ fontSize: 76, lineHeight: 1.05, marginTop: 28, maxWidth: 760 }}>
             I buy vinyl collections near Bottesford
           </div>
-          <div style={{ fontSize: 32, marginTop: 28, color: "#333333" }}>
+          <div style={{ fontSize: 32, marginTop: 28, color: "#3a4636" }}>
             1960s and 1970s rock, and whatever else belongs with me
           </div>
-          <div style={{ fontSize: 40, marginTop: "auto", color: "#0b3d91", fontWeight: 700 }}>
+          <div style={{ fontSize: 40, marginTop: "auto", color: "#1e4632", fontWeight: 700 }}>
             07359 456528
           </div>
         </div>
@@ -40,20 +40,31 @@ export default function OpenGraphImage() {
             width: 280,
             height: 280,
             borderRadius: 280,
-            background: "#111111",
+            background: "#1e4632",
             alignSelf: "center",
             alignItems: "center",
             justifyContent: "center",
+            position: "relative",
           }}
         >
+          <div
+            style={{
+              display: "flex",
+              position: "absolute",
+              width: 220,
+              height: 220,
+              borderRadius: 220,
+              border: "8px solid #cfc6b8",
+            }}
+          />
           <div
             style={{
               display: "flex",
               width: 110,
               height: 110,
               borderRadius: 110,
-              background: "#f2a7c3",
-              color: "#111111",
+              background: "#e7a8bc",
+              color: "#1a2418",
               alignItems: "center",
               justifyContent: "center",
               fontSize: 42,
