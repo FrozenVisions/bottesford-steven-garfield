@@ -77,7 +77,7 @@ export default async function BlogPostPage(props: PageProps<"/blog/[slug]">) {
           </header>
           {post.image ? (
             // eslint-disable-next-line @next/next/no-img-element
-            <img src={assetPath(post.image)} alt="The standing stones of Stonehenge under a wide sky, by Iryna Marienko on Unsplash" className="w-full rounded-2xl object-cover" />
+            <img src={assetPath(post.image)} alt={post.imageAlt ?? "The standing stones of Stonehenge under a wide sky, by Iryna Marienko on Unsplash"} className="w-full rounded-2xl object-cover" />
           ) : null}
           <div className="blog-body" dangerouslySetInnerHTML={{ __html: post.html }} />
           <p>
