@@ -36,7 +36,7 @@ export default function Home() {
       <header className="border-b border-border">
         <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-5 py-4">
           <div className="flex items-center gap-6">
-            <p className="font-heading text-2xl font-bold tracking-wide uppercase">Steven Gee</p>
+            <p className="font-heading text-2xl font-bold tracking-wide uppercase">Pink Moon</p>
             <nav aria-label="Main">
               <Link href="/blog" className="text-sm font-semibold underline-offset-4 hover:underline">
                 Blog
@@ -81,6 +81,13 @@ export default function Home() {
         </section>
 
         <HowItWorks />
+
+        <figure>
+          <Photo src="/images/pink-moon.webp" alt="A very large pink full moon rising over a dark forest" className="aspect-[16/8] w-full rounded-3xl object-cover" />
+          <figcaption className="mt-2 text-sm text-muted-foreground">
+            The pink moon, by <a className="underline underline-offset-4" href="https://unsplash.com/photos/a-very-large-pink-full-moon-rising-over-a-forest-g7iIhEsy5TI">Maciek Sulkowski on Unsplash</a>. Pink Moon is just me, Steven Gee, and these are the colours of the evenings I spend with my records.
+          </figcaption>
+        </figure>
 
         <section className="grid gap-8 md:grid-cols-3" aria-label="What I buy">
           <article className="overflow-hidden rounded-2xl border-2 border-foreground bg-card">
@@ -130,6 +137,13 @@ export default function Home() {
             own shelves, so a good record is never turned away.
           </p>
         </section>
+
+        <figure>
+          <Photo src="/images/druid-stonehenge.webp" alt="The ancient standing stones of Stonehenge on green grass under a grey sky" className="aspect-[16/8] w-full rounded-3xl object-cover" />
+          <figcaption className="mt-2 text-sm text-muted-foreground">
+            The old stones the druids are remembered by, by <a className="underline underline-offset-4" href="https://unsplash.com/photos/a-large-stone-structure-in-the-middle-of-a-field-yP8HHiF2okM">Priyank V on Unsplash</a>. Records from the sixties and seventies feel much the same to me: made to last, and worth standing in a field for.
+          </figcaption>
+        </figure>
 
         <section className="grid items-start gap-10 lg:grid-cols-[minmax(0,540px)_1fr]" id="area">
           <div>
@@ -213,7 +227,7 @@ export default function Home() {
           </p>
           <p>Email {contact.email} (best) or call {contact.phoneDisplay}.</p>
           <p>Steven Gee. I buy vinyl, within 30 miles of Bottesford.</p>
-          <p>Photos: Pexels</p>
+          <p>Photos: Pexels, plus Unsplash photos by <a className="underline underline-offset-4" href="https://unsplash.com/photos/a-very-large-pink-full-moon-rising-over-a-forest-g7iIhEsy5TI">Maciek Sulkowski</a>, <a className="underline underline-offset-4" href="https://unsplash.com/photos/a-large-stone-structure-in-the-middle-of-a-field-yP8HHiF2okM">Priyank V</a> and <a className="underline underline-offset-4" href="https://unsplash.com/photos/the-stonehenge-monument-in-the-middle-of-a-field-MWbiKdcycHU">Iryna Marienko</a></p>
         </div>
       </footer>
 

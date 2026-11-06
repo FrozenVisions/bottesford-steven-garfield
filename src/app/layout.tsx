@@ -19,14 +19,14 @@ export const metadata: Metadata = {
   title: seo.title,
   description: seo.description,
   keywords: seo.keywords,
-  authors: [{ name: "Steven Gee" }, { name: "Steven Gee" }],
+  authors: [{ name: "Steven Gee" }],
   alternates: { canonical: "/" },
   openGraph: {
     title: seo.title,
     description: seo.description,
     type: "website",
     locale: "en_GB",
-    siteName: "Steven Gee",
+    siteName: "Pink Moon",
     url: "/",
   },
   twitter: {

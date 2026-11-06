@@ -12,7 +12,7 @@ export function ContactStrip() {
           <span className="font-bold text-[#f5a800]">T</span>{" "}
           <a href={contact.phoneHref} className="underline underline-offset-4">{contact.phoneDisplay}</a>
         </p>
-        <p className="hidden tracking-[0.12em] uppercase sm:block">Mobile vinyl buyer · Bottesford · 30 miles</p>
+        <p className="hidden tracking-[0.12em] uppercase sm:block">Pink Moon · Bottesford · 30 miles</p>
       </div>
     </div>
   )

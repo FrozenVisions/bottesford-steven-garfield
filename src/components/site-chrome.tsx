@@ -12,7 +12,7 @@ export function SiteHeader() {
       <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-5 py-4">
         <div className="flex items-center gap-6">
           <Link href="/" className="font-heading text-2xl font-bold tracking-wide uppercase underline-offset-4 hover:underline">
-            Steven Gee
+            Pink Moon
           </Link>
           <nav aria-label="Main">
             <Link href="/blog" className="text-sm font-semibold underline-offset-4 hover:underline">
@@ -43,7 +43,7 @@ export function SiteFooter() {
           </p>
           <p>Email {contact.email} (best) or call {contact.phoneDisplay}.</p>
           <p>Steven Gee. I buy vinyl, within 30 miles of Bottesford.</p>
-          <p>Photos: Pexels</p>
+          <p>Photos: Pexels, plus Unsplash photos by <a className="underline underline-offset-4" href="https://unsplash.com/photos/a-very-large-pink-full-moon-rising-over-a-forest-g7iIhEsy5TI">Maciek Sulkowski</a>, <a className="underline underline-offset-4" href="https://unsplash.com/photos/a-large-stone-structure-in-the-middle-of-a-field-yP8HHiF2okM">Priyank V</a> and <a className="underline underline-offset-4" href="https://unsplash.com/photos/the-stonehenge-monument-in-the-middle-of-a-field-MWbiKdcycHU">Iryna Marienko</a></p>
         </div>
       </footer>
       <div className="fixed inset-x-0 bottom-0 z-20 border-t border-border bg-background/95 p-3 backdrop-blur sm:hidden">

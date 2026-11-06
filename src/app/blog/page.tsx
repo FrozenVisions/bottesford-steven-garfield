@@ -4,7 +4,7 @@ import { SiteFooter, SiteHeader } from "@/components/site-chrome"
 import { formatDate, getAllPosts } from "@/lib/blog"
 import { siteUrl } from "@/lib/site"
 
-const title = "Blog | Steven Gee, vinyl buyer near Bottesford"
+const title = "Blog | Pink Moon, Steven Gee buys vinyl near Bottesford"
 const description =
   "Notes from Steven Gee on selling a vinyl record collection in Bottesford, NG13, and the villages within 30 miles."
 
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     description,
     type: "website",
     locale: "en_GB",
-    siteName: "Steven Gee",
+    siteName: "Pink Moon",
     url: `${siteUrl()}/blog/`,
   },
   twitter: { card: "summary_large_image", title, description },

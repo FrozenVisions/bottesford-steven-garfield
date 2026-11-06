@@ -20,7 +20,7 @@ export async function generateMetadata(props: PageProps<"/blog/[slug]">): Promis
     ? [/^https?:\/\//.test(post.image) ? post.image : `${new URL(siteUrl()).origin}${assetPath(post.image)}`]
     : undefined
   return {
-    title: `${post.title} | Steven Gee`,
+    title: `${post.title} | Pink Moon`,
     description: post.description,
     alternates: { canonical: url },
     openGraph: {
@@ -28,7 +28,7 @@ export async function generateMetadata(props: PageProps<"/blog/[slug]">): Promis
       description: post.description,
       type: "article",
       locale: "en_GB",
-      siteName: "Steven Gee",
+      siteName: "Pink Moon",
       url,
       publishedTime: post.date,
       authors: ["Steven Gee"],
@@ -77,7 +77,7 @@ export default async function BlogPostPage(props: PageProps<"/blog/[slug]">) {
           </header>
           {post.image ? (
             // eslint-disable-next-line @next/next/no-img-element
-            <img src={assetPath(post.image)} alt="" className="w-full border border-border" />
+            <img src={assetPath(post.image)} alt="The standing stones of Stonehenge under a wide sky, by Iryna Marienko on Unsplash" className="w-full rounded-2xl object-cover" />
           ) : null}
           <div className="blog-body" dangerouslySetInnerHTML={{ __html: post.html }} />
           <p>
