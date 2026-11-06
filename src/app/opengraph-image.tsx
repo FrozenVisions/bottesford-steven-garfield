@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og"
 
 export const alt =
-  "Steven Gee. I buy all types of vinyl collections within 30 miles of Bottesford, mainly late 1960s and early 1970s rock. Email diotima2003@yahoo.co.uk or call 07359 456528."
+  "Pink Moon. I am Steven Gee, and I buy vinyl collections within 30 miles of Bottesford for my own shelves, mainly 1960s and 1970s rock. Email diotima2003@yahoo.co.uk or call 07359 456528."
 export const dynamic = "force-static"
 export const size = { width: 1200, height: 630 }
 export const contentType = "image/png"
@@ -22,7 +22,7 @@ export default function OpenGraphImage() {
       >
         <div style={{ display: "flex", flexDirection: "column", flex: 1 }}>
           <div style={{ fontSize: 28, letterSpacing: 4, color: "#333333" }}>
-            BOTTESFORD · NG13 · 30 MILES
+            PINK MOON · BOTTESFORD · NG13 · 30 MILES
           </div>
           <div style={{ fontSize: 76, lineHeight: 1.05, marginTop: 28, maxWidth: 760 }}>
             I buy vinyl collections near Bottesford
@@ -52,14 +52,14 @@ export default function OpenGraphImage() {
               width: 110,
               height: 110,
               borderRadius: 110,
-              background: "#f5a800",
+              background: "#f2a7c3",
               color: "#111111",
               alignItems: "center",
               justifyContent: "center",
               fontSize: 42,
             }}
           >
-            10
+            30
           </div>
         </div>
       </div>

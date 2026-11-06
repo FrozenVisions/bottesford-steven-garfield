@@ -9,8 +9,9 @@ export function structuredData() {
       {
         "@type": "LocalBusiness",
         "@id": `${url}/#steven-gee`,
-        name: site.name,
-        alternateName: [site.alias, "Steven Gee vinyl buyer"],
+        name: site.brand,
+        alternateName: ["Steven Gee", "Steven Gee vinyl buyer"],
+        founder: { "@type": "Person", name: site.name },
         description: seo.description,
         url,
         telephone: "+447359456528",
@@ -28,7 +29,7 @@ export function structuredData() {
           {
             "@type": "GeoCircle",
             geoMidpoint: { "@type": "GeoCoordinates", latitude: origin.lat, longitude: origin.lon },
-            geoRadius: "16093",
+            geoRadius: "48280",
           },
           ...insidePlaces.map((place) => ({
             "@type": "Place",

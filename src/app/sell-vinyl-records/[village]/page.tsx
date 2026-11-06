@@ -30,7 +30,7 @@ function copy(slug: string) {
     place,
     miles,
     direction: compass(place.bearing),
-    title: `Sell Vinyl Records in ${place.name} | Steven Gee`,
+    title: `Sell Vinyl Records in ${place.name} | Pink Moon`,
     description: `Selling vinyl records in ${place.name}, ${place.county}? I am Steven Gee, ${miles} miles away in Bottesford. I buy all types of record collections and mainly want late 1960s and early 1970s rock. Email ${contact.email} or call ${contact.phoneDisplay}.`,
   }
 }
@@ -95,7 +95,7 @@ async function VillageContent({ params }: { params: Promise<{ village: string }>
       {
         "@type": "BreadcrumbList",
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Steven Gee", item: siteUrl() },
+          { "@type": "ListItem", position: 1, name: "Pink Moon", item: siteUrl() },
           { "@type": "ListItem", position: 2, name: `Sell vinyl records in ${place.name}`, item: url },
         ],
       },
@@ -110,7 +110,7 @@ async function VillageContent({ params }: { params: Promise<{ village: string }>
         <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-5 py-4">
           <div className="flex items-center gap-6">
             <Link href="/" className="font-heading text-2xl font-bold tracking-wide uppercase underline-offset-4 hover:underline">
-              Steven Gee
+              Pink Moon
             </Link>
             <nav aria-label="Main">
               <Link href="/blog" className="text-sm font-semibold underline-offset-4 hover:underline">
@@ -257,7 +257,7 @@ async function VillageContent({ params }: { params: Promise<{ village: string }>
           </p>
           <p>Email {contact.email} (best) or call {contact.phoneDisplay}.</p>
           <p>Steven Gee. I buy vinyl, within 30 miles of Bottesford.</p>
-          <p>Photos: Pexels</p>
+          <p>Photos: Pexels, plus Unsplash photos by <a className="underline underline-offset-4" href="https://unsplash.com/photos/a-very-large-pink-full-moon-rising-over-a-forest-g7iIhEsy5TI">Maciek Sulkowski</a>, <a className="underline underline-offset-4" href="https://unsplash.com/photos/a-large-stone-structure-in-the-middle-of-a-field-yP8HHiF2okM">Priyank V</a> and <a className="underline underline-offset-4" href="https://unsplash.com/photos/the-stonehenge-monument-in-the-middle-of-a-field-MWbiKdcycHU">Iryna Marienko</a></p>
         </div>
       </footer>
 

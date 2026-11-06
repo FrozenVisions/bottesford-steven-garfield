@@ -10,6 +10,7 @@ export const contact = {
 
 export const site = {
   name: "Steven Gee",
+  brand: "Pink Moon",
   alias: "Steven Gee",
   place: "Bottesford",
   postcode: "NG13",
@@ -20,9 +21,9 @@ export const site = {
 }
 
 export const seo = {
-  title: "Steven Gee | Vinyl Buyer near Bottesford, NG13",
+  title: "Pink Moon | Sell Vinyl Records near Bottesford, NG13",
   description:
-    "I am Steven Gee. I buy vinyl record collections within 30 miles of Bottesford, NG13. Email diotima2003@yahoo.co.uk or call 07359 456528. I come for 1960s and 1970s rock of any kind, and for other records I want in my own collection.",
+    "Pink Moon is just me, Steven Gee, buying records for my own shelves. I buy vinyl record collections within 30 miles of Bottesford, NG13. Email diotima2003@yahoo.co.uk or call 07359 456528. I come for 1960s and 1970s rock of any kind, and for other records I want in my own collection.",
   keywords: [
     "Steven Gee",
     "Steven Gee Bottesford",
@@ -30,6 +31,10 @@ export const seo = {
     "Steven Gee records",
     "Steven Gee NG13",
     "Steven Gee vinyl buyer",
+    "Pink Moon",
+    "Pink Moon vinyl",
+    "Pink Moon records Bottesford",
+    "Pink Moon vinyl buyer",
     "vinyl buyer Bottesford",
     "buy vinyl records NG13",
     "sell vinyl collection",
@@ -116,13 +121,10 @@ export const wanted = {
     "Immediate",
   ],
   other: [
-    "jazz",
-    "classical",
     "soul and Motown",
     "country",
     "folk",
     "reggae",
-    "film soundtracks",
     "mixed boxes from the loft",
   ],
 }
