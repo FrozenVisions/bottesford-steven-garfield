@@ -32,19 +32,19 @@ export function RangeMap() {
       aria-label="Map of the 30 miles around Bottesford, with rings at 10 and 20 miles, nearby villages and towns including Nottingham, Grantham, Newark, Melton Mowbray, Leicester, Lincoln. The full list of areas is beside the map."
       className="h-auto w-full max-w-[540px]"
     >
-      <circle cx={cx} cy={cy} r={ring} fill="#ffffff" stroke="#111111" strokeWidth="3" />
+      <circle cx={cx} cy={cy} r={ring} fill="#faf6ee" stroke="#1a2418" strokeWidth="3" />
       {[10, 20].map((m) => (
-        <circle key={m} cx={cx} cy={cy} r={(m / scale) * ring} fill="none" stroke="#595959" strokeWidth="1.5" strokeDasharray="4 6" />
+        <circle key={m} cx={cx} cy={cy} r={(m / scale) * ring} fill="none" stroke="#5c564e" strokeWidth="1.5" strokeDasharray="4 6" />
       ))}
       {[10, 20].map((m) => (
-        <text key={`l${m}`} x={cx + (m / scale) * ring + 4} y={cy - 6} stroke="#ffffff" strokeWidth="4" paintOrder="stroke" fill="#333333" fontSize="13" fontWeight="700" fontFamily="Georgia, serif">
+        <text key={`l${m}`} x={cx + (m / scale) * ring + 4} y={cy - 6} stroke="#faf6ee" strokeWidth="4" paintOrder="stroke" fill="#1a2418" fontSize="13" fontWeight="700" fontFamily="Georgia, serif">
           {m} miles
         </text>
       ))}
       {insidePlaces.map((place) => {
         const { x, y } = point(place.miles, place.bearing)
         return (
-          <circle key={place.name} cx={x} cy={y} r="3" fill="#0b3d91" stroke="#ffffff" strokeWidth="1.5">
+          <circle key={place.name} cx={x} cy={y} r="3" fill="#1e4632" stroke="#faf6ee" strokeWidth="1.5">
             <title>{`${place.name}, ${place.county}`}</title>
           </circle>
         )
@@ -54,8 +54,8 @@ export function RangeMap() {
         const left = x < cx
         return (
           <g key={town.name}>
-            <circle cx={x} cy={y} r="6" fill="#a61c1c" stroke="#ffffff" strokeWidth="2" />
-            <text x={left ? x - 10 : x + 10} y={y + 5} textAnchor={left ? "end" : "start"} stroke="#ffffff" strokeWidth="4" paintOrder="stroke" fill="#111111" fontSize="14" fontWeight="700" fontFamily="Georgia, serif">
+            <circle cx={x} cy={y} r="6" fill="#1a2418" stroke="#faf6ee" strokeWidth="2" />
+            <text x={left ? x - 10 : x + 10} y={y + 5} textAnchor={left ? "end" : "start"} stroke="#faf6ee" strokeWidth="4" paintOrder="stroke" fill="#1a2418" fontSize="14" fontWeight="700" fontFamily="Georgia, serif">
               {town.name}
             </text>
           </g>
@@ -66,8 +66,8 @@ export function RangeMap() {
         y={cy - 9}
         width="18"
         height="18"
-        fill="#111111"
-        stroke="#f5a800"
+        fill="#1e4632"
+        stroke="#c45d78"
         strokeWidth="3"
         transform={`rotate(45 ${cx} ${cy})`}
       />
@@ -75,10 +75,10 @@ export function RangeMap() {
         x={cx}
         y={cy + 30}
         textAnchor="middle"
-        stroke="#ffffff"
+        stroke="#faf6ee"
         strokeWidth="5"
         paintOrder="stroke"
-        fill="#111111"
+        fill="#1a2418"
         fontSize="17"
         fontWeight="700"
         fontFamily="Georgia, serif"
@@ -88,7 +88,7 @@ export function RangeMap() {
       <text
         x={cx + ring + 8}
         y={cy + 6}
-        fill="#111111"
+        fill="#1a2418"
         fontSize="16"
         fontWeight="700"
         fontFamily="Georgia, serif"
