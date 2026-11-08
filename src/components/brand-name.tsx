@@ -11,14 +11,14 @@ function BrandMark() {
     // Plain img so the static GitHub Pages export keeps the base path, same as Photo.
     // eslint-disable-next-line @next/next/no-img-element
     <img
-      src={logoSrc(320)}
-      srcSet={`${logoSrc(160)} 160w, ${logoSrc(320)} 320w, ${logoSrc(480)} 480w`}
-      sizes="(min-width: 640px) 96px, 76px"
-      width={480}
-      height={480}
+      src={logoSrc(960)}
+      srcSet={`${logoSrc(160)} 160w, ${logoSrc(320)} 320w, ${logoSrc(480)} 480w, ${logoSrc(960)} 960w`}
+      sizes="(min-width: 768px) 360px, (min-width: 640px) 300px, min(78vw, 240px)"
+      width={960}
+      height={960}
       alt="Pink Moon Records"
       decoding="async"
-      className="h-[4.75rem] w-auto sm:h-24"
+      className="h-auto w-[min(78vw,240px)] sm:w-[300px] md:w-[360px]"
     />
   )
 }
