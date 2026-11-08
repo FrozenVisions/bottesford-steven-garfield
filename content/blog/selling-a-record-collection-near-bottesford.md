@@ -2,14 +2,10 @@
 title: Selling a vinyl record collection near Bottesford: how it works
 date: 2026-11-04
 image: /images/druid-stones-sky.webp
-description: Who I am, how far I travel from Bottesford, the records I am mainly looking for, and how to get in touch if you have a collection to sell.
+description: Who I am, the records I am mainly looking for, and how to get in touch if you have a collection to sell.
 ---
 
 I am Steven Gee. I live in Bottesford, NG13, in the Vale of Belvoir, and I buy vinyl record collections.
-
-## How far I will travel
-
-Up to 30 miles from my home in Bottesford, or even further if you have a very large or unusual collection.
 
 ## I come to you
 

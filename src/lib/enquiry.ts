@@ -6,7 +6,6 @@ export type EnquiryInput = {
   email: string
   village: string
   collection: string
-  confirmedInside: boolean
 }
 
 export type EnquiryResult =
@@ -43,7 +42,7 @@ export function validateEnquiry(input: EnquiryInput): EnquiryResult {
   }
 
   if (!village) {
-    return { ok: false, field: "village", message: "Tell me which village the records are in." }
+    return { ok: false, field: "village", message: "Tell me your location." }
   }
 
   const known = findPlace(village)
@@ -53,14 +52,6 @@ export function validateEnquiry(input: EnquiryInput): EnquiryResult {
       ok: false,
       field: "village",
       message: `${known.place.name} is ${miles} from Bottesford. I stop at ten.`,
-    }
-  }
-
-  if (!known && !input.confirmedInside) {
-    return {
-      ok: false,
-      field: "village",
-      message: "Please tell me the records are within 30 miles of Bottesford.",
     }
   }
 

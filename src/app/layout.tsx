@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     description: seo.description,
     type: "website",
     locale: "en_GB",
-    siteName: "Pink Moon",
+    siteName: "Pink Moon Records",
     url: "/",
   },
   twitter: {

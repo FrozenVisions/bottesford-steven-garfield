@@ -26,18 +26,11 @@ export function structuredData() {
           addressCountry: "GB",
         },
         geo: { "@type": "GeoCoordinates", latitude: origin.lat, longitude: origin.lon },
-        areaServed: [
-          {
-            "@type": "GeoCircle",
-            geoMidpoint: { "@type": "GeoCoordinates", latitude: origin.lat, longitude: origin.lon },
-            geoRadius: "48280",
-          },
-          ...insidePlaces.map((place) => ({
-            "@type": "Place",
-            name: `${place.name}, ${place.county}`,
-            url: `${url}/sell-vinyl-records/${placeSlug(place)}`,
-          })),
-        ],
+        areaServed: insidePlaces.map((place) => ({
+          "@type": "Place",
+          name: `${place.name}, ${place.county}`,
+          url: `${url}/sell-vinyl-records/${placeSlug(place)}`,
+        })),
         knowsAbout: [
           "late 1960s rock vinyl",
           "early 1970s rock vinyl",
@@ -48,7 +41,6 @@ export function structuredData() {
           itemOffered: {
             "@type": "Service",
             name: "Buying vinyl record collections",
-            areaServed: `Within ${site.radiusMiles} miles of ${site.place}`,
           },
         },
       },

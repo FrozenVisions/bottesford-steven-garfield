@@ -43,7 +43,7 @@ export function SiteFooter() {
               <Link href="/blog" className="underline underline-offset-4">Blog</Link>
             </p>
             <p>Email {contact.email} (best) or call {contact.phoneDisplay}.</p>
-            <p>Steven Gee. I buy vinyl, within 30 miles of Bottesford.</p>
+            <p>Steven Gee. I buy vinyl.</p>
           </div>
           <p className="max-w-3xl leading-6"><PhotoCredits /></p>
         </div>

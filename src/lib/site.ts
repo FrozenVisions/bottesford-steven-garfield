@@ -10,20 +10,19 @@ export const contact = {
 
 export const site = {
   name: "Steven Gee",
-  brand: "Pink Moon",
+  brand: "Pink Moon Records",
   alias: "Steven Gee",
   place: "Bottesford",
   postcode: "NG13",
   county: "Leicestershire",
   country: "United Kingdom",
-  radiusMiles: 30,
   hall: "the Post Office in the High Street, Bottesford",
 }
 
 export const seo = {
-  title: "Pink Moon | Sell Vinyl Records near Bottesford, NG13",
+  title: "Pink Moon Records | Sell Vinyl Records near Bottesford, NG13",
   description:
-    "Pink Moon is just me, Steven Gee, buying records for my own shelves. I buy vinyl record collections within 30 miles of Bottesford, NG13. Email diotima2003@yahoo.co.uk or call 07359 456528. I come for 1960s and 1970s rock of any kind, and for other records I want in my own collection.",
+    "Pink Moon Records is just me, Steven Gee, buying records for my own shelves. I buy vinyl record collections. Email diotima2003@yahoo.co.uk or call 07359 456528. I come for 1960s and 1970s rock of any kind, and for other records I want in my own collection.",
   keywords: [
     "Steven Gee",
     "Steven Gee Bottesford",
@@ -31,6 +30,7 @@ export const seo = {
     "Steven Gee records",
     "Steven Gee NG13",
     "Steven Gee vinyl buyer",
+    "Pink Moon Records",
     "Pink Moon",
     "Pink Moon vinyl",
     "Pink Moon records Bottesford",
@@ -75,7 +75,7 @@ export const faqs = [
   {
     question: "Who buys vinyl record collections near Bottesford?",
     answer:
-      "I do. I am Steven Gee, and I live in Bottesford, NG13, in the Vale of Belvoir. If the records are within 30 miles of my home, I will come and see them in the comfort of your own home.",
+      "I do. I am Steven Gee, and I live in Bottesford, NG13, in the Vale of Belvoir. I will come and see them in the comfort of your own home.",
   },
   {
     question: "Does Steven Gee buy 1960s and 1970s rock?",
@@ -86,11 +86,6 @@ export const faqs = [
     question: "Will he look at records that are not rock?",
     answer:
       "Yes. I collect all kinds of music for my own shelves, and I may be interested in buying it. Tell me about the whole collection, not only the rock.",
-  },
-  {
-    question: "How far from Bottesford will he travel?",
-    answer:
-      "Up to 30 miles from my home in Bottesford, or even further if you have a very large or unusual collection.",
   },
   {
     question: "How do I contact Steven Gee?",
