@@ -2,26 +2,21 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { SiteFooter, SiteHeader } from "@/components/site-chrome"
 import { formatDate, getAllPosts } from "@/lib/blog"
-import { siteUrl } from "@/lib/site"
+import { socialMetadata } from "@/lib/social"
 
-const title = "Blog | Pink Moon Records, Steven Gee buys vinyl near Bottesford"
+const title = "Selling Vinyl Records near Bottesford | Pink Moon Records"
 const description =
-  "Notes from Steven Gee on selling a vinyl record collection in Bottesford, NG13."
+  "Notes on selling vinyl records near Bottesford, in the Vale of Belvoir. Steven Gee of Pink Moon Records buys 1960s and 1970s rock, and other collections."
 
-export const metadata: Metadata = {
+export const metadata: Metadata = socialMetadata({
   title,
   description,
-  alternates: { canonical: `${siteUrl()}/blog/` },
-  openGraph: {
-    title,
-    description,
-    type: "website",
-    locale: "en_GB",
-    siteName: "Pink Moon Records",
-    url: `${siteUrl()}/blog/`,
+  path: "/blog/",
+  image: {
+    url: "/images/pink-moon.webp",
+    alt: "A very large pink full moon rising over a dark forest",
   },
-  twitter: { card: "summary_large_image", title, description },
-}
+})
 
 export default function BlogIndex() {
   const posts = getAllPosts()
@@ -37,8 +32,18 @@ export default function BlogIndex() {
           </ol>
         </nav>
         <section className="flex max-w-3xl flex-col gap-4">
-          <h1 className="text-4xl leading-[1.05] text-balance sm:text-5xl">Blog</h1>
-          <p className="text-lg leading-8 text-muted-foreground">{description}</p>
+          <h1 className="text-4xl leading-[1.05] text-balance sm:text-5xl">Selling vinyl records near Bottesford</h1>
+          <p className="text-lg leading-8 text-muted-foreground">
+            I am Steven Gee, a record buyer in Bottesford, in the Vale of Belvoir.
+            These are short notes on selling a vinyl collection, and on records from a house being cleared.
+          </p>
+          <p className="leading-7 text-muted-foreground">
+            Pages for{" "}
+            <Link href="/sell-vinyl-records/grantham" className="underline underline-offset-4">Grantham</Link>,{" "}
+            <Link href="/sell-vinyl-records/newark-on-trent" className="underline underline-offset-4">Newark</Link> and{" "}
+            <Link href="/sell-vinyl-records/bingham" className="underline underline-offset-4">Bingham</Link>
+            , and the <Link href="/#places" className="underline underline-offset-4">other places I visit</Link>.
+          </p>
         </section>
         {posts.length === 0 ? (
           <p>No posts yet.</p>

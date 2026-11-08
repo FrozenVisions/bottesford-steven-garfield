@@ -22,52 +22,19 @@ export const site = {
 export const seo = {
   title: "Pink Moon Records | Sell Vinyl Records near Bottesford, NG13",
   description:
-    "Pink Moon Records is just me, Steven Gee, buying records for my own shelves. I buy vinyl record collections. Email diotima2003@yahoo.co.uk or call 07359 456528. I come for 1960s and 1970s rock of any kind, and for other records I want in my own collection.",
+    "I am Steven Gee, a record buyer in Bottesford, NG13. Sell vinyl records to Pink Moon Records. I buy 1960s and 1970s rock, and other records, from your home.",
   keywords: [
-    "Steven Gee",
-    "Steven Gee Bottesford",
-    "Steven Gee vinyl",
-    "Steven Gee records",
-    "Steven Gee NG13",
-    "Steven Gee vinyl buyer",
-    "Pink Moon Records",
-    "Pink Moon",
-    "Pink Moon vinyl",
-    "Pink Moon records Bottesford",
-    "Pink Moon vinyl buyer",
-    "vinyl buyer Bottesford",
-    "buy vinyl records NG13",
-    "sell vinyl collection",
-    "sell vinyl records near me",
-    "vinyl record collection buyer",
+    "sell vinyl records",
+    "record buyer",
+    "vinyl collection buyer",
+    "sell my records",
+    "records wanted",
     "1960s rock vinyl",
-    "1970s rock records",
-    "60s 70s rock vinyl buyer",
-    "house clearance vinyl records",
-    "who buys old records",
-    "Vale of Belvoir vinyl",
-    "vinyl buyer Leicestershire",
-    "vinyl buyer Nottinghamshire",
-    "sell records Muston",
-    "sell records Redmile",
-    "sell records Orston",
-    "sell vinyl Belvoir",
-    "sell my record collection Bottesford",
-    "we buy vinyl records near me",
-    "cash for vinyl records Leicestershire",
-    "buy LPs and 45s",
-    "original UK pressings wanted",
-    "first pressing vinyl wanted",
-    "psychedelic rock vinyl wanted",
-    "blues rock vinyl wanted",
-    "progressive rock vinyl wanted",
-    "hard rock vinyl 1970",
-    "vinyl collector Vale of Belvoir",
-    "record collection valuation NG13",
-    "sell old records Grantham area",
-    "sell old records Newark area",
-    "sell old records Bingham area",
-    "vinyl records Nottinghamshire Lincolnshire Leicestershire border",
+    "1970s rock vinyl",
+    "Bottesford",
+    "Vale of Belvoir",
+    "Pink Moon Records",
+    "Steven Gee",
   ],
 }
 
@@ -86,6 +53,11 @@ export const faqs = [
     question: "Will he look at records that are not rock?",
     answer:
       "Yes. I collect all kinds of music for my own shelves, and I may be interested in buying it. Tell me about the whole collection, not only the rock.",
+  },
+  {
+    question: "Can I sell my records to you?",
+    answer:
+      "Yes. Email me or ring, tell me where you are, and I will come and look. Anywhere nearby is fine for a few records, and I will travel any distance for a good collection.",
   },
   {
     question: "How do I contact Steven Gee?",
@@ -132,6 +104,14 @@ export function siteUrl() {
     return `https://${process.env.VERCEL_URL}`
   }
   return "http://127.0.0.1:47221"
+}
+
+/** Absolute URL with a trailing slash, matching the static site. */
+export function absoluteUrl(path = "/") {
+  const base = siteUrl()
+  if (!path || path === "/") return `${base}/`
+  const normalised = path.startsWith("/") ? path : `/${path}`
+  return `${base}${normalised.endsWith("/") ? normalised : `${normalised}/`}`
 }
 
 export function hasPhone() {

@@ -46,14 +46,6 @@ export function validateEnquiry(input: EnquiryInput): EnquiryResult {
   }
 
   const known = findPlace(village)
-  if (known && !known.inside) {
-    const miles = `${known.place.miles.toFixed(1)} miles`
-    return {
-      ok: false,
-      field: "village",
-      message: `${known.place.name} is ${miles} from Bottesford. I stop at ten.`,
-    }
-  }
 
   if (collection.length < 12) {
     return {

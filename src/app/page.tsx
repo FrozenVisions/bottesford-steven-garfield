@@ -6,6 +6,7 @@ import { Photo } from "@/components/photo"
 import { PhotoCredits } from "@/components/photo-credits"
 import { buttonVariants } from "@/components/ui/button"
 import Link from "next/link"
+import { insidePlaces, placeSlug } from "@/lib/places"
 import { structuredData } from "@/lib/structured-data"
 import { contact, faqs, site, wanted } from "@/lib/site"
 import { cn } from "cn"
@@ -14,6 +15,20 @@ const callClass = cn(
   buttonVariants({ size: "lg" }),
   "h-10 px-4 text-sm"
 )
+
+const featuredPlaces = [
+  "Grantham",
+  "Newark-on-Trent",
+  "Bingham",
+  "Muston",
+  "Redmile",
+  "Orston",
+  "Belvoir",
+].map((name) => {
+  const place = insidePlaces.find((item) => item.name === name)
+  if (!place) throw new Error(`Missing place ${name}`)
+  return place
+})
 
 
 export default function Home() {
@@ -36,17 +51,16 @@ export default function Home() {
 
       <main className="mx-auto flex w-full max-w-5xl flex-col gap-20 px-5 pt-5 pb-16 sm:pt-6 sm:pb-20">
         <section className="grid items-center gap-4 rounded-3xl border border-border bg-card p-3 shadow-sm sm:gap-5 sm:p-4 md:grid-cols-[0.9fr_1.1fr]">
-          <Photo src="/images/record-bins.webp" alt="Rows of vinyl records in browser boxes" className="order-first aspect-[4/3] w-full rounded-2xl object-cover md:aspect-[4/5]" />
+          <Photo src="/images/record-bins.webp" alt="Rows of vinyl records in boxes" className="order-first aspect-[4/3] w-full rounded-2xl object-cover md:aspect-[4/5]" />
           <div className="flex flex-col gap-3">
             <h1 className="text-2xl leading-[1.1] text-balance uppercase sm:text-4xl">
-              I buy vinyl collections
+              I buy vinyl records near Bottesford
             </h1>
             <p className="max-w-xl text-base leading-6 text-muted-foreground">
-              I am Steven. I will come to your home and view your records.
-              Rock from the nineteen-sixties and seventies, any type of it, is
-              the music I have loved longest. If the rest is not rock, that is
-              OK: I still may be interested in buying it, as I collect all
-              kinds of music for my own shelves.
+              I am Steven Gee, a record buyer in Bottesford, NG13, in the Vale of
+              Belvoir. If you want to sell vinyl records, I will come to your
+              home and view them. Rock from the nineteen-sixties and seventies
+              is what I have loved longest. Other records are welcome too.
             </p>
             <div className="flex flex-col gap-2 sm:flex-row">
               <a href={`mailto:${contact.email}`} className={callClass}>
@@ -68,7 +82,7 @@ export default function Home() {
         <figure>
           <Photo src="/images/pink-moon.webp" alt="A very large pink full moon rising over a dark forest" className="aspect-[16/8] w-full rounded-3xl object-cover" />
           <figcaption className="mt-2 text-sm text-muted-foreground">
-            The pink moon, by <a className="underline underline-offset-4" href="https://unsplash.com/photos/a-very-large-pink-full-moon-rising-over-a-forest-g7iIhEsy5TI">Maciek Sulkowski on Unsplash</a>. Pink Moon is just me, Steven Gee, and these are the colours of the evenings I spend with my records.
+            The pink moon, by <a className="underline underline-offset-4" href="https://unsplash.com/photos/a-very-large-pink-full-moon-rising-over-a-forest-g7iIhEsy5TI">Maciek Sulkowski on Unsplash</a>. Pink Moon Records is just me, Steven Gee, and these are the colours of the evenings I spend with my records.
           </figcaption>
         </figure>
 
@@ -98,8 +112,8 @@ export default function Home() {
             <div className="p-5">
             <h2 className="text-2xl uppercase">Whatever else belongs with me</h2>
             <p className="mt-3 leading-7 text-muted-foreground">
-              I am interested in viewing more than 60s and 70s rock. If you have
-              other records, I would like the opportunity to view and buy them.
+              I am a vinyl collection buyer, so other records are welcome too.
+              If you have them, I would like to come and see them.
             </p>
             </div>
           </article>
@@ -118,9 +132,9 @@ export default function Home() {
             What I am hoping to find
           </h2>
           <p className="mt-4 max-w-2xl leading-7 text-muted-foreground">
-            Late 1960s and early 1970s rock LPs, singles and box sets are my
-            first love: {wanted.styles.join(", ")}. Original UK pressings,
-            gatefold sleeves and the old label designs ({wanted.labels.join(", ")}) make me smile, though I will look at any copy.
+            The records wanted first are late 1960s and early 1970s rock LPs,
+            singles and box sets: {wanted.styles.join(", ")}. Original UK
+            pressings, gatefold sleeves and the old label designs ({wanted.labels.join(", ")}) make me smile, though I will look at any copy.
           </p>
           <p className="mt-6 max-w-2xl leading-7 text-muted-foreground">
             And all the rest, too: {wanted.other.join(", ")}. I collect for my
@@ -150,6 +164,34 @@ export default function Home() {
         </figure>
 
         <SectionRule className="-my-10" />
+        <section id="places" aria-labelledby="places-heading">
+          <h2 id="places-heading" className="text-3xl sm:text-4xl">
+            Where I will come
+          </h2>
+          <p className="mt-4 max-w-2xl leading-7 text-muted-foreground">
+            I live in Bottesford, in the Vale of Belvoir. I will come anywhere
+            nearby for a few records, and any distance for a good collection.
+            That includes Grantham, Newark, Melton Mowbray, Bingham and Nottingham.
+          </p>
+          <ul className="mt-5 flex flex-wrap gap-3">
+            {featuredPlaces.map((place) => (
+              <li key={place.name}>
+                <Link
+                  href={`/sell-vinyl-records/${placeSlug(place)}`}
+                  className="inline-block border border-foreground px-4 py-2 underline-offset-4 hover:underline"
+                >
+                  {place.aliases?.[0] ?? place.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-5 leading-7 text-muted-foreground">
+            <Link href="/blog" className="underline underline-offset-4">
+              Notes on selling a record collection
+            </Link>
+          </p>
+        </section>
+
         <section>
           <h2 className="text-3xl sm:text-4xl">What people ask me</h2>
           <div className="mt-6 divide-y divide-border border-y border-border">

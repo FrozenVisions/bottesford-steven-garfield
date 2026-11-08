@@ -5,6 +5,7 @@ import { marked } from "marked"
 export type BlogPost = {
   slug: string
   title: string
+  seoTitle?: string
   date: string
   description: string
   image?: string
@@ -38,9 +39,17 @@ export function getAllPosts(): BlogPost[] {
       if (!data.title || !data.date || !data.description) {
         throw new Error(`content/blog/${file} needs title, date and description in its frontmatter`)
       }
+      const title = data.seoTitle || `${data.title} | Pink Moon Records`
+      if (title.length < 50 || title.length > 60) {
+        throw new Error(`content/blog/${file} title is ${title.length} characters; set seoTitle to 50–60`)
+      }
+      if (data.description.length < 150 || data.description.length > 160) {
+        throw new Error(`content/blog/${file} description is ${data.description.length} characters; aim for 150–160`)
+      }
       return {
         slug,
         title: data.title,
+        seoTitle: title,
         date: data.date,
         description: data.description,
         image: data.image || undefined,

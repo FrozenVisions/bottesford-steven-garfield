@@ -16,6 +16,7 @@
    ```
 
    - `title`, `date` (YYYY-MM-DD) and `description` are required. The build stops with an error if one is missing.
+   - `description` is the search snippet, about 150–160 characters. `seoTitle` is the browser title, about 50–60 characters, and should end with `| Pink Moon Records`. The `title` is the heading on the page.
    - `image` is optional. Put the picture in `public/blog/` and write its path starting with `/blog/`. It is used at the top of the post and as the social preview image.
 3. Commit the file to `main`. The GitHub Pages workflow rebuilds the site, and the post appears on `/blog/`, newest first, and in `sitemap.xml`.
 

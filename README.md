@@ -19,13 +19,13 @@ Phone and email live in `src/lib/site.ts`. Changing them updates the page, the c
 
 Notes left through the form are written to `data/enquiries.json` on the machine running the site. That file is not committed.
 
-## The village pages
+## The area pages
 
-Villages are measured in a straight line from the centre of Bottesford, using OpenStreetMap place points. Melton Mowbray, Ancaster, Southwell and Nottingham sit outside the circle, so the form turns those away.
+Each place in `src/lib/places.ts` has a page at `/sell-vinyl-records/<place>/`. The enquiry form accepts those places, and any other location someone types in.
 
 ## SEO
 
-- Every village on the list has its own page at `/sell-vinyl-records/<village>`, generated from `src/lib/places.ts`, with its own title, description, canonical URL, keywords and structured data. They are all listed in `/sitemap.xml`.
+- Every place on the list has its own page at `/sell-vinyl-records/<place>/`, generated from `src/lib/places.ts`, with its own title, description, canonical URL and structured data. They are all listed in `/sitemap.xml`.
 - Home page and village pages share `LocalBusiness`, `Service`, `FAQPage` and breadcrumb JSON-LD.
 - Keywords, the artist, style and label lists live in `src/lib/site.ts`.
 - Sitemap, canonical links and the share image use `https://pinkmoonrecords.co.uk`, which the Pages workflow sets as `NEXT_PUBLIC_SITE_URL`.

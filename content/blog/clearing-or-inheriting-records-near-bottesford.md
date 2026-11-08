@@ -1,9 +1,10 @@
 ---
 title: Clearing a house of records near Bottesford, or a collection you have inherited
+seoTitle: Clearing Records near Bottesford | Pink Moon Records
 date: 2026-11-06
 image: /images/pink-moon.webp
 imageAlt: A very large pink full moon rising over a dark forest, by Maciek Sulkowski on Unsplash
-description: If you are clearing a house, moving somewhere smaller, or sorting records left to you, I will come and look. I am Steven Gee. Email is best.
+description: House clearance or inherited records near Bottesford. Steven Gee of Pink Moon Records buys 1960s and 1970s rock vinyl, and other records, from your home.
 ---
 
 If you are clearing a house near Bottesford, moving to somewhere smaller, or sorting records that a parent or relative left behind, you do not have to work out every sleeve before you speak to me.
@@ -12,7 +13,7 @@ I am Steven Gee. I live in Bottesford, NG13, in the Vale of Belvoir. Pink Moon i
 
 ## Lofts, shelves and boxes
 
-A clearance rarely looks tidy. The records may be in boxes in the loft, still on the shelves, or piled in a room that is being emptied. They may not have been played for years. That is a common way for a collection to turn up around here: in Bottesford itself, in villages such as Muston, Redmile, Orston and Belvoir, and in places a little further off, such as Bingham, Grantham and Newark-on-Trent. The round takes in parts of Leicestershire, Nottinghamshire and Lincolnshire. Tell me where you are and I will say if I can come.
+A clearance rarely looks tidy. The records may be in boxes in the loft, still on the shelves, or piled in a room that is being emptied. They may not have been played for years. That is a common way for a collection to turn up around here: in [Bottesford](/) itself, in villages such as [Muston](/sell-vinyl-records/muston/), [Redmile](/sell-vinyl-records/redmile/), [Orston](/sell-vinyl-records/orston/) and [Belvoir](/sell-vinyl-records/belvoir/), and in places a little further off, such as [Bingham](/sell-vinyl-records/bingham/), [Grantham](/sell-vinyl-records/grantham/) and [Newark-on-Trent](/sell-vinyl-records/newark-on-trent/). The round takes in parts of Leicestershire, Nottinghamshire and Lincolnshire. Tell me where you are and I will say if I can come.
 
 You do not need a full list, and you do not need to split the rock from everything else. A rough idea is enough. A few photos attached to an email are enough too: the shelves, the boxes, or a sleeve if one happens to be on top. I would rather view the records in your home than have them posted to me. I can come round and look.
 
@@ -35,3 +36,5 @@ I am one man, buying records for myself. I will not ask you to bring them to a c
 Email is best: [diotima2003@yahoo.co.uk](mailto:diotima2003@yahoo.co.uk). I am happy to take a phone call too, on [07359 456528](tel:+447359456528). My card is also on the notice board at the Post Office in the High Street, Bottesford.
 
 When you write, tell me your location, and whether this is a house being cleared, a move to somewhere smaller, or records you have inherited. Give me a rough idea of what is there, or attach a few photos. That is enough for me to come and view them.
+
+I have also written about [selling a record collection](/blog/selling-a-record-collection-near-bottesford/).
