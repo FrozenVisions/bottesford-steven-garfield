@@ -11,18 +11,18 @@ export function SiteHeader() {
     <>
     <ContactStrip />
     <header className="border-b border-border">
-      <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-5 py-2.5 sm:py-3">
-        <div className="flex items-center gap-6">
-          <BrandName href="/" />
+      <div className="mx-auto flex max-w-5xl flex-col items-center px-5 pt-2 pb-1.5 sm:pt-3 sm:pb-2">
+        <BrandName href="/" />
+        <div className="mt-1 flex w-full items-center justify-between gap-3">
           <nav aria-label="Main">
             <Link href="/blog" className="text-sm font-semibold underline-offset-4 hover:underline">
               Blog
             </Link>
           </nav>
+          <a href={`mailto:${contact.email}`} className={cn(buttonVariants({ size: "lg" }), "hidden h-9 px-3.5 text-sm sm:inline-flex")}>
+            Email me
+          </a>
         </div>
-        <a href={`mailto:${contact.email}`} className={cn(buttonVariants({ size: "lg" }), "hidden h-12 px-5 text-base sm:inline-flex")}>
-          Email me
-        </a>
       </div>
     </header>
     </>

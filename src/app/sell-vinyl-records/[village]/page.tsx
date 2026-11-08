@@ -1,10 +1,9 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import { BrandName } from "@/components/brand-name"
 import { Photo } from "@/components/photo"
 import { PhotoCredits } from "@/components/photo-credits"
 import { SectionRule } from "@/components/druid-ornaments"
-import { ContactStrip } from "@/components/contact-strip"
+import { SiteHeader } from "@/components/site-chrome"
 import { HowItWorks } from "@/components/how-it-works"
 import { notFound } from "next/navigation"
 import { Suspense } from "react"
@@ -108,24 +107,9 @@ async function VillageContent({ params }: { params: Promise<{ village: string }>
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />
-      <ContactStrip />
-      <header className="border-b border-border">
-        <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-5 py-2.5 sm:py-3">
-          <div className="flex items-center gap-6">
-            <BrandName href="/" />
-            <nav aria-label="Main">
-              <Link href="/blog" className="text-sm font-semibold underline-offset-4 hover:underline">
-                Blog
-              </Link>
-            </nav>
-          </div>
-          <a href={`mailto:${contact.email}`} className={cn(buttonVariants({ size: "lg" }), "hidden h-12 px-5 text-base sm:inline-flex")}>
-            Email me
-          </a>
-        </div>
-      </header>
+      <SiteHeader />
 
-      <main className="mx-auto flex w-full max-w-5xl flex-col gap-14 px-5 pt-10 pb-16 sm:pb-20">
+      <main className="mx-auto flex w-full max-w-5xl flex-col gap-14 px-5 pt-5 pb-16 sm:pt-6 sm:pb-20">
         <nav aria-label="Breadcrumb" className="text-sm">
           <ol className="flex flex-wrap gap-2">
             <li>
@@ -136,34 +120,34 @@ async function VillageContent({ params }: { params: Promise<{ village: string }>
           </ol>
         </nav>
 
-        <div className="grid items-center gap-8 rounded-3xl border border-border bg-card p-5 sm:p-8 md:grid-cols-[1.2fr_0.8fr]">
-        <section className="flex flex-col gap-6">
-          <p className="text-sm font-semibold tracking-[0.14em] uppercase">
+        <div className="grid items-center gap-4 rounded-3xl border border-border bg-card p-3 sm:gap-5 sm:p-4 md:grid-cols-[1.2fr_0.8fr]">
+        <section className="flex flex-col gap-3">
+          <p className="text-xs font-semibold tracking-[0.12em] uppercase sm:text-sm">
             {place.name} · {place.county} · {miles} miles from Bottesford
           </p>
-          <h1 className="text-4xl leading-[1.05] text-balance uppercase sm:text-6xl">
+          <h1 className="text-2xl leading-[1.1] text-balance uppercase sm:text-4xl">
             Selling vinyl records in {place.name}?
           </h1>
-          <p className="text-lg leading-8 text-muted-foreground">
+          <p className="text-base leading-6 text-muted-foreground">
             I am Steven Gee. I live in Bottesford, and {place.name} lies
             {" "}{miles} miles {direction} of my home, so your collection is
             within my 30-mile round. I will come and view your records in the comfort of your own home
             in {place.name}. Any situation or quantity always considered.
           </p>
-          <p className="text-lg leading-8 text-muted-foreground">
+          <p className="text-base leading-6 text-muted-foreground">
             I will look at all types of record collection, and I may be interested
             in buying more than rock, as I collect all kinds of music for my own shelves. What I am mainly
             hoping to find is rock from the late nineteen-sixties and early
             seventies. If you have a few boxes from {place.name} that have not
             been played for years, email me before they go to the tip.
           </p>
-          <div className="flex flex-col gap-3 sm:flex-row">
-            <a href={`mailto:${contact.email}`} className={cn(buttonVariants({ size: "lg" }), "h-12 px-5 text-base")}>
+          <div className="flex flex-col gap-2 sm:flex-row">
+            <a href={`mailto:${contact.email}`} className={cn(buttonVariants({ size: "lg" }), "h-10 px-4 text-sm")}>
               Email me
             </a>
             <a
               href={contact.phoneHref}
-              className={cn(buttonVariants({ size: "lg", variant: "outline" }), "h-12 px-5 text-base")}
+              className={cn(buttonVariants({ size: "lg", variant: "outline" }), "h-10 px-4 text-sm")}
             >
               Or call {contact.phoneDisplay}
             </a>

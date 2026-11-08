@@ -1,7 +1,6 @@
-import { BrandName } from "@/components/brand-name"
 import { EnquiryForm } from "@/components/enquiry-form"
-import { ContactStrip } from "@/components/contact-strip"
 import { SectionRule } from "@/components/druid-ornaments"
+import { SiteHeader } from "@/components/site-chrome"
 import { HowItWorks } from "@/components/how-it-works"
 import { Photo } from "@/components/photo"
 import { PhotoCredits } from "@/components/photo-credits"
@@ -15,7 +14,7 @@ import { cn } from "cn"
 
 const callClass = cn(
   buttonVariants({ size: "lg" }),
-  "h-12 px-5 text-base"
+  "h-10 px-4 text-sm"
 )
 
 
@@ -35,47 +34,29 @@ export default function Home() {
         Skip to contact
       </a>
 
-      <ContactStrip />
-      <header className="border-b border-border">
-        <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-5 py-2.5 sm:py-3">
-          <div className="flex items-center gap-6">
-            <BrandName href="/" />
-            <nav aria-label="Main">
-              <Link href="/blog" className="text-sm font-semibold underline-offset-4 hover:underline">
-                Blog
-              </Link>
-            </nav>
-          </div>
-          <a href={`mailto:${contact.email}`} className={cn(callClass, "hidden sm:inline-flex")}>
-            Email me
-          </a>
-        </div>
-      </header>
+      <SiteHeader />
 
-      <main className="mx-auto flex w-full max-w-5xl flex-col gap-20 px-5 pt-12 pb-16 sm:pb-20">
-        <section className="grid items-center gap-8 rounded-3xl border border-border bg-card p-5 shadow-sm sm:p-8 md:grid-cols-[0.9fr_1.1fr]">
+      <main className="mx-auto flex w-full max-w-5xl flex-col gap-20 px-5 pt-5 pb-16 sm:pt-6 sm:pb-20">
+        <section className="grid items-center gap-4 rounded-3xl border border-border bg-card p-3 shadow-sm sm:gap-5 sm:p-4 md:grid-cols-[0.9fr_1.1fr]">
           <Photo src="/images/record-bins.webp" alt="Rows of vinyl records in browser boxes" className="order-first aspect-[4/3] w-full rounded-2xl object-cover md:aspect-[4/5]" />
-          <div className="flex flex-col gap-6">
-            <p className="text-sm font-semibold tracking-[0.14em] text-foreground uppercase">
-              {site.place} · {site.postcode} · 30 miles
-            </p>
-            <h1 className="text-4xl leading-[1.05] text-balance uppercase sm:text-6xl">
+          <div className="flex flex-col gap-3">
+            <h1 className="text-2xl leading-[1.1] text-balance uppercase sm:text-4xl">
               I buy vinyl collections near Bottesford
             </h1>
-            <p className="max-w-xl text-lg leading-8 text-muted-foreground">
+            <p className="max-w-xl text-base leading-6 text-muted-foreground">
               I am Steven. I will come to your home and view your records.
               Rock from the nineteen-sixties and seventies, any type of it, is
               the music I have loved longest. If the rest is not rock, that is
               OK: I still may be interested in buying it, as I collect all
               kinds of music for my own shelves.
             </p>
-            <div className="flex flex-col gap-3 sm:flex-row">
+            <div className="flex flex-col gap-2 sm:flex-row">
               <a href={`mailto:${contact.email}`} className={callClass}>
                 Email me
               </a>
               <a
                 href={contact.phoneHref}
-                className={cn(buttonVariants({ size: "lg", variant: "outline" }), "h-12 px-5 text-base")}
+                className={cn(buttonVariants({ size: "lg", variant: "outline" }), "h-10 px-4 text-sm")}
               >
                 Or call {contact.phoneDisplay}
               </a>
