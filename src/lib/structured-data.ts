@@ -17,6 +17,7 @@ export function structuredData() {
         telephone: "+447359456528",
         email: contact.email,
         image: `${url}/opengraph-image`,
+        logo: `${url}/images/pink-moon-logo-480.webp`,
         address: {
           "@type": "PostalAddress",
           addressLocality: site.place,

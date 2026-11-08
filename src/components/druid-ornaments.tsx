@@ -1,38 +1,5 @@
 /** Lightweight druid ornaments. Decorative only: hidden from assistive tech. */
 
-export function StoneMoonMark({ className }: { className?: string }) {
-  const heights = [12, 8, 11, 7, 13, 8, 11, 7, 10]
-  const stones = heights.map((height, index) => {
-    const angle = (index / heights.length) * Math.PI * 2 - Math.PI / 2
-    const x = 32 + Math.cos(angle) * 20
-    const y = 32 + Math.sin(angle) * 20
-    return { height, x, y }
-  })
-  return (
-    <svg viewBox="0 0 64 64" className={className} aria-hidden="true">
-      <circle cx="32" cy="32" r="30" fill="#f3ecdf" stroke="#5c564e" strokeWidth="1.5" />
-      <circle cx="32" cy="32" r="21" fill="none" stroke="#1e4632" strokeWidth="1" />
-      {stones.map(({ height, x, y }) => (
-        <rect
-          key={`${x}-${y}`}
-          x={x - 1.7}
-          y={y - height / 2}
-          width="3.4"
-          height={height}
-          rx="1"
-          fill="#6a645c"
-        />
-      ))}
-      <mask id="pink-moon-cut">
-        <rect width="64" height="64" fill="black" />
-        <circle cx="32" cy="33" r="9" fill="white" />
-        <circle cx="36.5" cy="31" r="7.2" fill="black" />
-      </mask>
-      <circle cx="32" cy="33" r="9" fill="#e7a8bc" mask="url(#pink-moon-cut)" />
-    </svg>
-  )
-}
-
 export function OakLeaf({ className }: { className?: string }) {
   return (
     <svg viewBox="0 0 24 24" className={className} aria-hidden="true">
