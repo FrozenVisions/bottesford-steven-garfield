@@ -54,7 +54,7 @@ export default function Home() {
           <Photo src="/images/record-bins.webp" alt="Rows of vinyl records in boxes" className="order-first aspect-[4/3] w-full rounded-2xl object-cover md:aspect-[4/5]" />
           <div className="flex flex-col gap-3">
             <h1 className="text-2xl leading-[1.1] text-balance uppercase sm:text-4xl">
-              I buy vinyl records near Bottesford
+              I buy vinyl collections
             </h1>
             <p className="max-w-xl text-base leading-6 text-muted-foreground">
               I am Steven Gee, a record buyer in Bottesford, NG13, in the Vale of
@@ -164,33 +164,24 @@ export default function Home() {
         </figure>
 
         <SectionRule className="-my-10" />
-        <section id="places" aria-labelledby="places-heading">
-          <h2 id="places-heading" className="text-3xl sm:text-4xl">
-            Where I will come
-          </h2>
-          <p className="mt-4 max-w-2xl leading-7 text-muted-foreground">
-            I live in Bottesford, in the Vale of Belvoir. I will come anywhere
-            nearby for a few records, and any distance for a good collection.
-            That includes Grantham, Newark, Melton Mowbray, Bingham and Nottingham.
-          </p>
-          <ul className="mt-5 flex flex-wrap gap-3">
-            {featuredPlaces.map((place) => (
-              <li key={place.name}>
+        <p id="places" className="max-w-2xl leading-7 text-muted-foreground">
+          I will come nearby for a few records, and any distance for a good collection, including{" "}
+          {featuredPlaces.map((place, index) => {
+            const label = place.aliases?.[0] ?? place.name
+            const separator = index === 0 ? "" : index === featuredPlaces.length - 1 ? " and " : ", "
+            return (
+              <span key={place.name}>
+                {separator}
                 <Link
                   href={`/sell-vinyl-records/${placeSlug(place)}`}
-                  className="inline-block border border-foreground px-4 py-2 underline-offset-4 hover:underline"
+                  className="underline underline-offset-4"
                 >
-                  {place.aliases?.[0] ?? place.name}
+                  {label}
                 </Link>
-              </li>
-            ))}
-          </ul>
-          <p className="mt-5 leading-7 text-muted-foreground">
-            <Link href="/blog" className="underline underline-offset-4">
-              Notes on selling a record collection
-            </Link>
-          </p>
-        </section>
+              </span>
+            )
+          })}.
+        </p>
 
         <section>
           <h2 className="text-3xl sm:text-4xl">What people ask me</h2>
