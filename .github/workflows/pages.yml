@@ -29,8 +29,10 @@ jobs:
       - name: Build static site
         env:
           NEXT_PUBLIC_STATIC_SITE: "true"
-          NEXT_PUBLIC_SITE_URL: ${{ steps.pages.outputs.base_url }}
-          NEXT_PUBLIC_BASE_PATH: ${{ steps.pages.outputs.base_path }}
+          # Apex is served at /. configure-pages still reports the project
+          # path /bottesford-steven-garfield until the Pages custom domain is saved.
+          NEXT_PUBLIC_SITE_URL: https://pinkmoonrecords.co.uk
+          NEXT_PUBLIC_BASE_PATH: ""
         run: |
           rm -rf src/app/api
           npm run build
