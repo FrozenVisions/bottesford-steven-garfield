@@ -37,7 +37,7 @@ export function EnquiryForm() {
         village,
         collection: String(data.get("collection") ?? ""),
       }
-      const result = validateEnquiry({ ...note, confirmedInside: data.get("inside") === "yes" })
+      const result = validateEnquiry(note)
       if (!result.ok) {
         setStatus({ state: "error", message: result.message, field: result.field })
         return
@@ -46,7 +46,7 @@ export function EnquiryForm() {
         `Name: ${note.name.trim()}`,
         `Phone: ${note.phone.trim()}`,
         note.email.trim() ? `Email: ${note.email.trim()}` : "",
-        `Village: ${result.village}`,
+        `Location: ${result.village}`,
         "",
         note.collection.trim(),
         "(If you have a few photos of the records, attach them to this email. No full list needed.)",
@@ -140,7 +140,7 @@ export function EnquiryForm() {
       </div>
 
       <div className="grid min-w-0 gap-2">
-        <Label htmlFor="village">Village</Label>
+        <Label htmlFor="village">Your location</Label>
         <select
           id="village"
           name="village"
@@ -155,14 +155,14 @@ export function EnquiryForm() {
               {place.name}, {place.county}
             </option>
           ))}
-          <option value="other">My village is not in the list</option>
+          <option value="other">My location is not in the list</option>
         </select>
       </div>
 
       {showOther ? (
         <div className="grid gap-3">
           <div className="grid min-w-0 gap-2">
-            <Label htmlFor="otherVillage">Village name</Label>
+            <Label htmlFor="otherVillage">Your location</Label>
             <Input
               id="otherVillage"
               name="otherVillage"
@@ -170,15 +170,6 @@ export function EnquiryForm() {
               className="h-11 bg-card md:text-base"
             />
           </div>
-          <label className="flex items-start gap-3 text-sm leading-5 text-foreground">
-            <input
-              type="checkbox"
-              name="inside"
-              value="yes"
-              className="mt-1 size-5 accent-[#1e4632]"
-            />
-            <span>These records are within 30 miles of Bottesford.</span>
-          </label>
         </div>
       ) : null}
 

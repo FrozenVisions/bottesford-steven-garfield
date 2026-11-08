@@ -20,7 +20,7 @@ export async function generateMetadata(props: PageProps<"/blog/[slug]">): Promis
     ? [/^https?:\/\//.test(post.image) ? post.image : `${new URL(siteUrl()).origin}${assetPath(post.image)}`]
     : undefined
   return {
-    title: `${post.title} | Pink Moon`,
+    title: `${post.title} | Pink Moon Records`,
     description: post.description,
     alternates: { canonical: url },
     openGraph: {
@@ -28,7 +28,7 @@ export async function generateMetadata(props: PageProps<"/blog/[slug]">): Promis
       description: post.description,
       type: "article",
       locale: "en_GB",
-      siteName: "Pink Moon",
+      siteName: "Pink Moon Records",
       url,
       publishedTime: post.date,
       authors: ["Steven Gee"],

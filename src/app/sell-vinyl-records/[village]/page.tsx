@@ -32,7 +32,7 @@ function copy(slug: string) {
     place,
     miles,
     direction: compass(place.bearing),
-    title: `Sell Vinyl Records in ${place.name} | Pink Moon`,
+    title: `Sell Vinyl Records in ${place.name} | Pink Moon Records`,
     description: `Selling vinyl records in ${place.name}, ${place.county}? I am Steven Gee, ${miles} miles away in Bottesford. I buy all types of record collections and mainly want late 1960s and early 1970s rock. Email ${contact.email} or call ${contact.phoneDisplay}.`,
   }
 }
@@ -97,7 +97,7 @@ async function VillageContent({ params }: { params: Promise<{ village: string }>
       {
         "@type": "BreadcrumbList",
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Pink Moon", item: siteUrl() },
+          { "@type": "ListItem", position: 1, name: "Pink Moon Records", item: siteUrl() },
           { "@type": "ListItem", position: 2, name: `Sell vinyl records in ${place.name}`, item: url },
         ],
       },
@@ -130,8 +130,7 @@ async function VillageContent({ params }: { params: Promise<{ village: string }>
           </h1>
           <p className="text-base leading-6 text-muted-foreground">
             I am Steven Gee. I live in Bottesford, and {place.name} lies
-            {" "}{miles} miles {direction} of my home, so your collection is
-            within my 30-mile round. I will come and view your records in the comfort of your own home
+            {" "}{miles} miles {direction} of my home. I will come and view your records in the comfort of your own home
             in {place.name}. Any situation or quantity always considered.
           </p>
           <p className="text-base leading-6 text-muted-foreground">
@@ -249,7 +248,7 @@ async function VillageContent({ params }: { params: Promise<{ village: string }>
               <Link href="/blog" className="underline underline-offset-4">Blog</Link>
             </p>
             <p>Email {contact.email} (best) or call {contact.phoneDisplay}.</p>
-            <p>Steven Gee. I buy vinyl, within 30 miles of Bottesford.</p>
+            <p>Steven Gee. I buy vinyl.</p>
           </div>
           <p className="max-w-3xl leading-6"><PhotoCredits /></p>
         </div>

@@ -4,10 +4,8 @@ import { SiteHeader } from "@/components/site-chrome"
 import { HowItWorks } from "@/components/how-it-works"
 import { Photo } from "@/components/photo"
 import { PhotoCredits } from "@/components/photo-credits"
-import { RangeMap } from "@/components/range-map"
 import { buttonVariants } from "@/components/ui/button"
 import Link from "next/link"
-import { formatMiles, insidePlaces, placeSlug } from "@/lib/places"
 import { structuredData } from "@/lib/structured-data"
 import { contact, faqs, site, wanted } from "@/lib/site"
 import { cn } from "cn"
@@ -41,7 +39,7 @@ export default function Home() {
           <Photo src="/images/record-bins.webp" alt="Rows of vinyl records in browser boxes" className="order-first aspect-[4/3] w-full rounded-2xl object-cover md:aspect-[4/5]" />
           <div className="flex flex-col gap-3">
             <h1 className="text-2xl leading-[1.1] text-balance uppercase sm:text-4xl">
-              I buy vinyl collections near Bottesford
+              I buy vinyl collections
             </h1>
             <p className="max-w-xl text-base leading-6 text-muted-foreground">
               I am Steven. I will come to your home and view your records.
@@ -80,8 +78,7 @@ export default function Home() {
             <div className="p-5">
             <h2 className="text-2xl uppercase">I come to you</h2>
             <p className="mt-3 leading-7 text-muted-foreground">
-              There is no shop. If you are within 30 miles of Bottesford, I
-              will come and see the collection in the comfort of your own home.
+              There is no shop. I will come and see your records in the comfort of your own home.
             </p>
             </div>
           </article>
@@ -145,40 +142,6 @@ export default function Home() {
           </figcaption>
         </figure>
 
-        <section className="grid items-start gap-10 lg:grid-cols-[minmax(0,540px)_1fr]" id="area">
-          <div>
-            <h2 className="text-3xl sm:text-4xl">30 miles from my home</h2>
-            <p className="mt-4 max-w-xl leading-7 text-muted-foreground">
-              I live in Bottesford. I will travel 30 miles from home to look at
-              a vinyl collection, or even further if you have a very large or
-              unusual collection. Open the list for some of the places nearest
-              to me.
-            </p>
-            <div className="mt-8">
-              <RangeMap />
-            </div>
-          </div>
-          <details className="group rounded-2xl border-2 border-foreground bg-card">
-            <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 text-lg font-semibold [&::-webkit-details-marker]:hidden">
-              See nearby areas ({insidePlaces.length})
-              <span aria-hidden="true" className="text-2xl transition-transform group-open:rotate-180">▾</span>
-            </summary>
-            <ul className="grid max-h-80 gap-x-6 overflow-y-auto border-t border-border px-5 py-3 sm:grid-cols-2">
-              {insidePlaces.map((place) => (
-                <li key={place.name} className="flex items-baseline justify-between gap-3 border-b border-border py-2 text-sm">
-                  <Link
-                    href={`/sell-vinyl-records/${placeSlug(place)}`}
-                    className="underline decoration-primary underline-offset-4"
-                  >
-                    {place.name}
-                  </Link>
-                  <span className="shrink-0 text-muted-foreground">{formatMiles(place.miles)} mi</span>
-                </li>
-              ))}
-            </ul>
-          </details>
-        </section>
-
         <figure>
           <Photo src="/images/stanton-drew-moon.webp" alt="Standing stones of the north-east circle at Stanton Drew under a bright moon at night" className="aspect-[16/10] w-full rounded-3xl object-cover" />
           <figcaption className="mt-2 text-sm leading-6 text-muted-foreground">
@@ -235,7 +198,7 @@ export default function Home() {
               <Link href="/blog" className="underline underline-offset-4">Blog</Link>
             </p>
             <p>Email {contact.email} (best) or call {contact.phoneDisplay}.</p>
-            <p>Steven Gee. I buy vinyl, within 30 miles of Bottesford.</p>
+            <p>Steven Gee. I buy vinyl.</p>
           </div>
           <p className="max-w-3xl leading-6"><PhotoCredits /></p>
         </div>

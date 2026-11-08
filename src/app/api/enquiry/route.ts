@@ -33,7 +33,6 @@ export async function POST(request: Request) {
     email: String(form.get("email") ?? ""),
     village,
     collection: String(form.get("collection") ?? ""),
-    confirmedInside: form.get("inside") === "yes",
   })
 
   if (!result.ok) {
@@ -74,6 +73,6 @@ export async function POST(request: Request) {
 
   return Response.json({
     ok: true,
-    message: `I have your note. If the records are in ${result.village}, within 30 miles of Bottesford, I will be glad to come and see them.`,
+    message: `I have your note. If the records are in ${result.village}, I will be glad to come and see them.`,
   })
 }

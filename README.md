@@ -1,6 +1,6 @@
 # Steven Gee
 
-A one-page site in Steven Gee’s own voice. He buys vinyl record collections within 30 miles of Bottesford, NG13, and he comes to see them. Sixties and seventies rock, of any type, is what he mainly wants. He also collects other records for himself.
+A one-page site in Steven Gee’s own voice. He buys vinyl record collections, and he comes to see them. Sixties and seventies rock, of any type, is what he mainly wants. He also collects other records for himself.
 
 Call **07359 456528** or email **diotima2003@yahoo.co.uk**.
 

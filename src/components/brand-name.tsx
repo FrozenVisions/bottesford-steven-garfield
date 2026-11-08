@@ -16,7 +16,7 @@ function BrandMark() {
       sizes="(min-width: 768px) 360px, (min-width: 640px) 300px, min(78vw, 240px)"
       width={960}
       height={960}
-      alt="Pink Moon Records"
+      alt=""
       decoding="async"
       className="h-auto w-[min(78vw,240px)] sm:w-[300px] md:w-[360px]"
     />
@@ -24,24 +24,26 @@ function BrandMark() {
 }
 
 /**
- * Header brand mark. The picture replaces the old “Pink Moon” wordmark.
- * The home link’s accessible name is “Pink Moon Records”; a visually hidden
- * “Pink Moon” stays in the markup so the brand words are not dropped.
+ * Header brand mark. Tracey’s logo is the picture; the words sit with it
+ * in the same Cinzel heading style as the rest of the page.
  */
 export function BrandName({ href }: { href?: string }) {
   const className =
-    "inline-flex shrink-0 items-center rounded-2xl outline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-foreground"
+    "inline-flex shrink-0 flex-col items-center gap-1 rounded-2xl text-center outline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-foreground"
+  const mark = (
+    <>
+      <BrandMark />
+      <span className="font-heading text-xl font-semibold tracking-[0.03em] uppercase sm:text-2xl">
+        Pink Moon Records
+      </span>
+    </>
+  )
   if (href) {
     return (
-      <Link href={href} aria-label="Pink Moon Records" className={className}>
-        <BrandMark />
-        <span className="sr-only">Pink Moon</span>
+      <Link href={href} className={className}>
+        {mark}
       </Link>
     )
   }
-  return (
-    <p className={className}>
-      <BrandMark />
-    </p>
-  )
+  return <p className={className}>{mark}</p>
 }
