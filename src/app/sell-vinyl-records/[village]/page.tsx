@@ -110,7 +110,7 @@ async function VillageContent({ params }: { params: Promise<{ village: string }>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />
       <ContactStrip />
       <header className="border-b border-border">
-        <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-5 py-4">
+        <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-5 py-2.5 sm:py-3">
           <div className="flex items-center gap-6">
             <BrandName href="/" />
             <nav aria-label="Main">

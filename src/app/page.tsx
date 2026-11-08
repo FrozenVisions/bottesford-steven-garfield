@@ -37,9 +37,9 @@ export default function Home() {
 
       <ContactStrip />
       <header className="border-b border-border">
-        <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-5 py-4">
+        <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-5 py-2.5 sm:py-3">
           <div className="flex items-center gap-6">
-            <BrandName />
+            <BrandName href="/" />
             <nav aria-label="Main">
               <Link href="/blog" className="text-sm font-semibold underline-offset-4 hover:underline">
                 Blog
