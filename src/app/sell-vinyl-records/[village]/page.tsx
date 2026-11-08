@@ -17,7 +17,9 @@ import {
   placeBySlug,
   placeSlug,
 } from "@/lib/places"
-import { contact, site, siteUrl, wanted } from "@/lib/site"
+import { placeDescription, placeTitle } from "@/lib/place-meta"
+import { absoluteUrl, contact, site, wanted } from "@/lib/site"
+import { socialMetadata } from "@/lib/social"
 import { cn } from "cn"
 
 export function generateStaticParams() {
@@ -27,13 +29,16 @@ export function generateStaticParams() {
 function copy(slug: string) {
   const place = placeBySlug(slug)
   if (!place) return null
+  const neighbour = nearestInside(place)[0]
+  if (!neighbour) return null
   const miles = formatMiles(place.miles)
   return {
     place,
     miles,
     direction: compass(place.bearing),
-    title: `Sell Vinyl Records in ${place.name} | Pink Moon Records`,
-    description: `Selling vinyl records in ${place.name}, ${place.county}? I am Steven Gee, ${miles} miles away in Bottesford. I buy all types of record collections and mainly want late 1960s and early 1970s rock. Email ${contact.email} or call ${contact.phoneDisplay}.`,
+    neighbour,
+    title: placeTitle(place.name),
+    description: placeDescription(place, neighbour),
   }
 }
 
@@ -41,29 +46,22 @@ export async function generateMetadata(props: PageProps<"/sell-vinyl-records/[vi
   const { village } = await props.params
   const page = copy(village)
   if (!page) return {}
-  return {
+  return socialMetadata({
     title: page.title,
     description: page.description,
+    path: `/sell-vinyl-records/${village}/`,
     keywords: [
       `sell vinyl records ${page.place.name}`,
-      `vinyl record buyer ${page.place.name}`,
-      `sell record collection ${page.place.name}`,
-      `we buy records ${page.place.name}`,
-      `old LPs wanted ${page.place.name}`,
-      `${page.place.name} ${page.place.county} vinyl`,
-      "late 60s rock vinyl wanted",
-      "early 70s rock records wanted",
-      "Steven Gee",
+      `record buyer ${page.place.name}`,
+      `records wanted ${page.place.name}`,
+      "1960s and 1970s rock vinyl",
+      "Pink Moon Records",
     ],
-    alternates: { canonical: `/sell-vinyl-records/${village}` },
-    openGraph: {
-      title: page.title,
-      description: page.description,
-      type: "website",
-      locale: "en_GB",
-      url: `/sell-vinyl-records/${village}`,
+    image: {
+      url: "/images/holding-record.webp",
+      alt: "Someone holding a vinyl record from a home collection",
     },
-  }
+  })
 }
 
 export default function VillagePage(props: PageProps<"/sell-vinyl-records/[village]">) {
@@ -78,9 +76,9 @@ async function VillageContent({ params }: { params: Promise<{ village: string }>
   const { village } = await params
   const page = copy(village)
   if (!page) notFound()
-  const { place, miles, direction } = page
+  const { place, miles, direction, neighbour } = page
   const neighbours = nearestInside(place)
-  const url = `${siteUrl()}/sell-vinyl-records/${village}`
+  const url = absoluteUrl(`/sell-vinyl-records/${village}`)
 
   const data = {
     "@context": "https://schema.org",
@@ -90,14 +88,14 @@ async function VillageContent({ params }: { params: Promise<{ village: string }>
         "@id": `${url}#service`,
         name: `Buying vinyl record collections in ${place.name}`,
         description: page.description,
-        provider: { "@id": `${siteUrl()}/#steven-gee` },
+        provider: { "@id": `${absoluteUrl("/")}#business` },
         areaServed: { "@type": "Place", name: `${place.name}, ${place.county}` },
         url,
       },
       {
         "@type": "BreadcrumbList",
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Pink Moon Records", item: siteUrl() },
+          { "@type": "ListItem", position: 1, name: "Pink Moon Records", item: absoluteUrl("/") },
           { "@type": "ListItem", position: 2, name: `Sell vinyl records in ${place.name}`, item: url },
         ],
       },
@@ -129,16 +127,14 @@ async function VillageContent({ params }: { params: Promise<{ village: string }>
             Selling vinyl records in {place.name}?
           </h1>
           <p className="text-base leading-6 text-muted-foreground">
-            I am Steven Gee. I live in Bottesford, and {place.name} lies
-            {" "}{miles} miles {direction} of my home. I will come and view your records in the comfort of your own home
-            in {place.name}. Any situation or quantity always considered.
+            I am Steven Gee, a record buyer in Bottesford, NG13. {place.name} is
+            in {place.county}, {miles} miles {direction} of my home, near {neighbour.name}.
+            I will come and view your records at your home.
           </p>
           <p className="text-base leading-6 text-muted-foreground">
-            I will look at all types of record collection, and I may be interested
-            in buying more than rock, as I collect all kinds of music for my own shelves. What I am mainly
-            hoping to find is rock from the late nineteen-sixties and early
-            seventies. If you have a few boxes from {place.name} that have not
-            been played for years, email me before they go to the tip.
+            Sixties and seventies rock vinyl is what I want first, and I collect
+            other records too. If you have a few boxes in {place.name} that have
+            not been played for years, email me before they go to the tip.
           </p>
           <div className="flex flex-col gap-2 sm:flex-row">
             <a href={`mailto:${contact.email}`} className={cn(buttonVariants({ size: "lg" }), "h-10 px-4 text-sm")}>
@@ -184,7 +180,15 @@ async function VillageContent({ params }: { params: Promise<{ village: string }>
           <h2 className="text-3xl">Nearby villages I also visit</h2>
           <p className="mt-4 leading-7 text-muted-foreground">
             If a neighbour in one of these places has records to sell, send them
-            my way.
+            my way. I have also written about{" "}
+            <Link href="/blog/selling-a-record-collection-near-bottesford" className="underline underline-offset-4">
+              selling a record collection
+            </Link>{" "}
+            and about{" "}
+            <Link href="/blog/clearing-or-inheriting-records-near-bottesford" className="underline underline-offset-4">
+              house clearances and inherited records
+            </Link>
+            .
           </p>
           <ul className="mt-5 flex flex-wrap gap-3">
             {neighbours.map((other) => (

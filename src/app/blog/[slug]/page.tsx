@@ -3,7 +3,8 @@ import Link from "next/link"
 import { notFound } from "next/navigation"
 import { SiteFooter, SiteHeader } from "@/components/site-chrome"
 import { assetPath, formatDate, getAllPosts, getPost } from "@/lib/blog"
-import { siteUrl } from "@/lib/site"
+import { absoluteUrl, siteUrl } from "@/lib/site"
+import { socialMetadata } from "@/lib/social"
 
 export const dynamicParams = false
 
@@ -15,43 +16,45 @@ export async function generateMetadata(props: PageProps<"/blog/[slug]">): Promis
   const { slug } = await props.params
   const post = getPost(slug)
   if (!post) return {}
-  const url = `${siteUrl()}/blog/${post.slug}/`
-  const images = post.image
-    ? [/^https?:\/\//.test(post.image) ? post.image : `${new URL(siteUrl()).origin}${assetPath(post.image)}`]
+  const title = post.seoTitle ?? `${post.title} | Pink Moon Records`
+  const image = post.image
+    ? {
+        url: /^https?:\/\//.test(post.image) ? post.image : assetPath(post.image),
+        alt: post.imageAlt ?? "The standing stones of Stonehenge under a wide sky, by Iryna Marienko on Unsplash",
+      }
     : undefined
-  return {
-    title: `${post.title} | Pink Moon Records`,
+  return socialMetadata({
+    title,
     description: post.description,
-    alternates: { canonical: url },
-    openGraph: {
-      title: post.title,
-      description: post.description,
-      type: "article",
-      locale: "en_GB",
-      siteName: "Pink Moon Records",
-      url,
-      publishedTime: post.date,
-      authors: ["Steven Gee"],
-      ...(images ? { images } : {}),
-    },
-    twitter: { card: "summary_large_image", title: post.title, description: post.description, ...(images ? { images } : {}) },
-  }
+    path: `/blog/${post.slug}/`,
+    type: "article",
+    publishedTime: post.date,
+    ...(image ? { image } : {}),
+  })
 }
 
 export default async function BlogPostPage(props: PageProps<"/blog/[slug]">) {
   const { slug } = await props.params
   const post = getPost(slug)
   if (!post) notFound()
-  const url = `${siteUrl()}/blog/${post.slug}/`
+  const url = absoluteUrl(`/blog/${post.slug}`)
   const data = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     headline: post.title,
     description: post.description,
     datePublished: post.date,
-    author: { "@type": "Person", name: "Steven Gee" },
+    author: { "@id": `${absoluteUrl("/")}#steven-gee`, "@type": "Person", name: "Steven Gee" },
+    publisher: { "@type": "Organization", name: "Pink Moon Records", url: absoluteUrl("/") },
     mainEntityOfPage: url,
     url,
+    ...(post.image
+      ? {
+          image: /^https?:\/\//.test(post.image)
+            ? post.image
+            : `${siteUrl()}${post.image.startsWith("/") ? post.image : `/${post.image}`}`,
+        }
+      : {}),
   }
   return (
     <>

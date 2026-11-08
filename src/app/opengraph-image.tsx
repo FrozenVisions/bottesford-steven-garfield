@@ -25,7 +25,7 @@ export default function OpenGraphImage() {
             PINK MOON RECORDS
           </div>
           <div style={{ fontSize: 76, lineHeight: 1.05, marginTop: 28, maxWidth: 760 }}>
-            I buy vinyl collections
+            I buy vinyl records
           </div>
           <div style={{ fontSize: 32, marginTop: 28, color: "#3a4636" }}>
             1960s and 1970s rock, and whatever else belongs with me
