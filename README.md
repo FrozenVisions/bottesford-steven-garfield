@@ -28,7 +28,7 @@ Villages are measured in a straight line from the centre of Bottesford, using Op
 - Every village on the list has its own page at `/sell-vinyl-records/<village>`, generated from `src/lib/places.ts`, with its own title, description, canonical URL, keywords and structured data. They are all listed in `/sitemap.xml`.
 - Home page and village pages share `LocalBusiness`, `Service`, `FAQPage` and breadcrumb JSON-LD.
 - Keywords, the artist, style and label lists live in `src/lib/site.ts`.
-- Before launch, set `NEXT_PUBLIC_SITE_URL` to the real address (for example `https://www.example.co.uk`) so the sitemap, canonical links and share image point at it.
+- Sitemap, canonical links and the share image use `https://pinkmoonrecords.co.uk`, which the Pages workflow sets as `NEXT_PUBLIC_SITE_URL`.
 
 ## Putting it live on GitHub Pages
 
@@ -36,7 +36,7 @@ The repo includes `.github/workflows/pages.yml`. Once this code is in a GitHub r
 
 1. In the repository, open **Settings → Pages** and set **Source** to **GitHub Actions**.
 2. Push to `main` (or run the workflow from the **Actions** tab).
-3. The live address appears in the workflow summary, usually `https://<username>.github.io/<repository>/`.
+3. The workflow builds for `https://pinkmoonrecords.co.uk` with an empty base path, so pages and assets are at the apex root. `www.pinkmoonrecords.co.uk` is not a second site: once its DNS points at `frozenvisions.github.io` and the Pages custom domain is the apex, GitHub Pages redirects `www` to `https://pinkmoonrecords.co.uk`.
 
 GitHub Pages can only serve static files, so the Pages build leaves out the server-side enquiry route. On the live site the form checks the details and then opens an email to Steven with the note filled in. Phone and email links work as normal.
 
