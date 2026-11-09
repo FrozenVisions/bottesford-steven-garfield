@@ -4,9 +4,9 @@ import { SiteFooter, SiteHeader } from "@/components/site-chrome"
 import { formatDate, getAllPosts } from "@/lib/blog"
 import { socialMetadata } from "@/lib/social"
 
-const title = "Selling Vinyl Records near Bottesford | Pink Moon Records"
+const title = "I Buy Vinyl Record Collections | Pink Moon Records"
 const description =
-  "Notes on selling vinyl records near Bottesford, in the Vale of Belvoir. Steven Gee of Pink Moon Records buys 1960s and 1970s rock, and other collections."
+  "Notes on selling a vinyl collection, and on records from a house being cleared. I am Steven Gee of Pink Moon Records, and I buy 1960s and 1970s rock vinyl."
 
 export const metadata: Metadata = socialMetadata({
   title,
@@ -32,10 +32,9 @@ export default function BlogIndex() {
           </ol>
         </nav>
         <section className="flex max-w-3xl flex-col gap-4">
-          <h1 className="text-4xl leading-[1.05] text-balance sm:text-5xl">Selling vinyl records near Bottesford</h1>
+          <h1 className="text-4xl leading-[1.05] text-balance sm:text-5xl">Selling vinyl records</h1>
           <p className="text-lg leading-8 text-muted-foreground">
-            I am Steven Gee, a record buyer in Bottesford, in the Vale of Belvoir.
-            These are short notes on selling a vinyl collection, and on records from a house being cleared.
+            I am Steven Gee. These are short notes on selling a vinyl collection, and on records from a house being cleared.
           </p>
           <p className="leading-7 text-muted-foreground">
             Pages for{" "}

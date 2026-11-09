@@ -10,8 +10,6 @@ import { Suspense } from "react"
 import { EnquiryForm } from "@/components/enquiry-form"
 import { buttonVariants } from "@/components/ui/button"
 import {
-  compass,
-  formatMiles,
   insidePlaces,
   nearestInside,
   placeBySlug,
@@ -31,11 +29,8 @@ function copy(slug: string) {
   if (!place) return null
   const neighbour = nearestInside(place)[0]
   if (!neighbour) return null
-  const miles = formatMiles(place.miles)
   return {
     place,
-    miles,
-    direction: compass(place.bearing),
     neighbour,
     title: placeTitle(place.name),
     description: placeDescription(place, neighbour),
@@ -76,7 +71,7 @@ async function VillageContent({ params }: { params: Promise<{ village: string }>
   const { village } = await params
   const page = copy(village)
   if (!page) notFound()
-  const { place, miles, direction, neighbour } = page
+  const { place, neighbour } = page
   const neighbours = nearestInside(place)
   const url = absoluteUrl(`/sell-vinyl-records/${village}`)
 
@@ -121,14 +116,13 @@ async function VillageContent({ params }: { params: Promise<{ village: string }>
         <div className="grid items-center gap-4 rounded-3xl border border-border bg-card p-3 sm:gap-5 sm:p-4 md:grid-cols-[1.2fr_0.8fr]">
         <section className="flex flex-col gap-3">
           <p className="text-xs font-semibold tracking-[0.12em] uppercase sm:text-sm">
-            {place.name} · {place.county} · {miles} miles from Bottesford
+            {place.name} · {place.county}
           </p>
           <h1 className="text-2xl leading-[1.1] text-balance uppercase sm:text-4xl">
             Selling vinyl records in {place.name}?
           </h1>
           <p className="text-base leading-6 text-muted-foreground">
-            I am Steven Gee, a record buyer in Bottesford, NG13. {place.name} is
-            in {place.county}, {miles} miles {direction} of my home, near {neighbour.name}.
+            I am Steven Gee. {place.name} is in {place.county}, near {neighbour.name}.
             I will come and view your records at your home.
           </p>
           <p className="text-base leading-6 text-muted-foreground">

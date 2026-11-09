@@ -1,10 +1,10 @@
 ---
-title: Selling a vinyl record collection near Bottesford: how it works
-seoTitle: Selling Records near Bottesford | Pink Moon Records
+title: Selling a vinyl record collection: how it works
+seoTitle: How to Sell a Record Collection | Pink Moon Records
 date: 2026-11-04
 image: /images/druid-stones-sky.webp
 imageAlt: The standing stones of Stonehenge under a wide sky, by Iryna Marienko on Unsplash
-description: How to sell a vinyl record collection near Bottesford, NG13. Steven Gee of Pink Moon Records buys 1960s and 1970s rock, and other records, from your home.
+description: How to sell a vinyl record collection. I am Steven Gee of Pink Moon Records. I buy 1960s and 1970s rock, and other records, from the comfort of your home.
 ---
 
 I am Steven Gee. I live in Bottesford, NG13, in the Vale of Belvoir, and I buy vinyl record collections.
