@@ -4,7 +4,7 @@ type SocialImage = { url: string; alt: string }
 
 const defaultImage: SocialImage = {
   url: "/opengraph-image",
-  alt: "Pink Moon Records. Steven Gee buys vinyl records near Bottesford.",
+  alt: "Pink Moon Records. I buy vinyl record collections.",
 }
 
 /** Title, description, canonical, Open Graph and Twitter for one page. */

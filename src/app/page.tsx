@@ -57,10 +57,10 @@ export default function Home() {
               I buy vinyl collections
             </h1>
             <p className="max-w-xl text-base leading-6 text-muted-foreground">
-              I am Steven Gee, a record buyer in Bottesford, NG13, in the Vale of
-              Belvoir. If you want to sell vinyl records, I will come to your
-              home and view them. Rock from the nineteen-sixties and seventies
-              is what I have loved longest. Other records are welcome too.
+              I am Steven Gee. If you want to sell vinyl records, I will come to
+              your home and view them. Rock from the nineteen-sixties and
+              seventies is what I have loved longest. Other records are welcome
+              too.
             </p>
             <div className="flex flex-col gap-2 sm:flex-row">
               <a href={`mailto:${contact.email}`} className={callClass}>

@@ -1,13 +1,13 @@
 ---
-title: Clearing a house of records near Bottesford, or a collection you have inherited
-seoTitle: Clearing Records near Bottesford | Pink Moon Records
+title: Clearing a house of records, or a collection you have inherited
+seoTitle: Clearing a House of Vinyl Records | Pink Moon Records
 date: 2026-11-06
 image: /images/pink-moon.webp
 imageAlt: A very large pink full moon rising over a dark forest, by Maciek Sulkowski on Unsplash
-description: House clearance or inherited records near Bottesford. Steven Gee of Pink Moon Records buys 1960s and 1970s rock vinyl, and other records, from your home.
+description: House clearance, or a collection you have inherited. I am Steven Gee of Pink Moon Records. I buy 1960s and 1970s rock vinyl, and other records, from your home.
 ---
 
-If you are clearing a house near Bottesford, moving to somewhere smaller, or sorting records that a parent or relative left behind, you do not have to work out every sleeve before you speak to me.
+If you are clearing a house, moving to somewhere smaller, or sorting records that a parent or relative left behind, you do not have to work out every sleeve before you speak to me.
 
 I am Steven Gee. I live in Bottesford, NG13, in the Vale of Belvoir. Pink Moon is just me. There is no shop, and this is not a business. I buy vinyl for my own shelves. I will come and see them in the comfort of your own home. Any situation or quantity is always considered.
 

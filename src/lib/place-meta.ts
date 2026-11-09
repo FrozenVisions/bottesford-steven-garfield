@@ -27,10 +27,10 @@ const descriptionTemplates = [
   "Sell vinyl records in {name}, {county}. Steven Gee of Pink Moon Records buys 1960s and 1970s rock vinyl, and other records, near {near}.",
   "Sell vinyl records in {name}, {county}. Steven Gee of Pink Moon Records buys 1960s and 1970s rock and other vinyl from homes near {near}.",
   "Sell vinyl records in {name}, {county}. A record buyer, Steven Gee of Pink Moon Records, buys 1960s and 1970s rock and other vinyl near {near}.",
-  "Sell vinyl records in {name}, {county}. Steven Gee of Pink Moon Records, a record buyer in Bottesford, buys 1960s and 1970s rock and other vinyl near {near}.",
+  "Sell vinyl records in {name}, {county}. Steven Gee of Pink Moon Records, a collector of vinyl records, buys 1960s and 1970s rock and other vinyl near {near}.",
   "Sell vinyl records in {name}, {county}. Record buyer Steven Gee of Pink Moon Records buys 1960s and 1970s rock vinyl and other records near {near}.",
-  "Sell vinyl records in {name}. Steven Gee, a record buyer in Bottesford, buys 1960s and 1970s rock vinyl and other records near {near}.",
-  "Sell vinyl records in {name}. Record buyer Steven Gee of Pink Moon Records in Bottesford buys 1960s and 1970s rock vinyl and other records near {near}.",
+  "Sell vinyl records in {name}. Steven Gee, a collector of vinyl records, buys 1960s and 1970s rock vinyl and other records near {near}.",
+  "Sell vinyl records in {name}. Record buyer Steven Gee of Pink Moon Records buys 1960s and 1970s rock vinyl and other records near {near}.",
 ]
 
 export function placeDescription(place: Place, neighbour: Place) {

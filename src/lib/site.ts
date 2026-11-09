@@ -20,9 +20,9 @@ export const site = {
 }
 
 export const seo = {
-  title: "Pink Moon Records | Sell Vinyl Records near Bottesford, NG13",
+  title: "Pink Moon Records | I buy vinyl record collections | Steven Gee",
   description:
-    "I am Steven Gee, a record buyer in Bottesford, NG13. Sell vinyl records to Pink Moon Records. I buy 1960s and 1970s rock, and other records, from your home.",
+    "I am Steven Gee of Pink Moon Records. I buy vinyl record collections for my own shelves, especially 1960s and 1970s rock, and other records, from your home.",
   keywords: [
     "sell vinyl records",
     "record buyer",
@@ -31,8 +31,6 @@ export const seo = {
     "records wanted",
     "1960s rock vinyl",
     "1970s rock vinyl",
-    "Bottesford",
-    "Vale of Belvoir",
     "Pink Moon Records",
     "Steven Gee",
   ],
@@ -40,9 +38,9 @@ export const seo = {
 
 export const faqs = [
   {
-    question: "Who buys vinyl record collections near Bottesford?",
+    question: "Who buys vinyl record collections?",
     answer:
-      "I do. I am Steven Gee, and I live in Bottesford, NG13, in the Vale of Belvoir. I will come and see them in the comfort of your own home.",
+      "I do. I am Steven Gee. I will come and see them in the comfort of your own home.",
   },
   {
     question: "Does Steven Gee buy 1960s and 1970s rock?",

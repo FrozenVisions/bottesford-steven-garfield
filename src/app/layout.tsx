@@ -37,10 +37,6 @@ export const metadata: Metadata = {
     description: seo.description,
   },
   robots: { index: true, follow: true },
-  other: {
-    "geo.region": "GB-LEC",
-    "geo.placename": "Bottesford",
-  },
 }
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
