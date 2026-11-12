@@ -65,9 +65,9 @@ Selling records in Nottingham does not mean bringing them to a counter. There is
 
 Write from Nottingham and tell me the place. [Radcliffe-on-Trent](/sell-vinyl-records/radcliffe-on-trent/) is on the way towards Nottingham. [Bingham](/sell-vinyl-records/bingham/) is a place I visit as well. If the records are in either of those, or in the city, say so.
 
-Anywhere nearby, a few records are worth an email. For a good collection I will travel any distance, and that includes a collection in Nottingham. I am a record collection buyer Nottingham people can write to. A house being cleared, a move to somewhere smaller, or shelves that have sat for years: say which it is, if you know. If you do not know the story, say there are boxes and you would like me to see them.
+Anywhere nearby, a few records are worth an email. For a good collection I will travel any distance, and that includes a collection in Nottingham. If you are looking for a record collection buyer in Nottingham, you can write to me. A house being cleared, a move to somewhere smaller, or shelves that have sat for years: say which it is, if you know. If you do not know the story, say there are boxes and you would like me to see them.
 
-A useful email can be short. You can write that you want to sell vinyl records Nottingham, with a rough count and a phone photo of the shelves. I have also written about [how a visit works](/blog/selling-a-record-collection-near-bottesford/), and about [a few records, or a longer journey](/blog/a-few-records-or-further-away/). What I hope to find is on the [home page](/).
+A useful email can be short. You can simply write that you want to sell vinyl records in Nottingham, with a rough count and a phone photo of the shelves. I have also written about [how a visit works](/blog/selling-a-record-collection-near-bottesford/), and about [a few records, or a longer journey](/blog/a-few-records-or-further-away/). What I hope to find is on the [home page](/).
 
 ## A short checklist
 
