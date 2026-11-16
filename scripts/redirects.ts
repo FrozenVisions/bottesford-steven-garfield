@@ -1,7 +1,7 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs"
 import path from "node:path"
 import { insidePlaces, isTownPage, placeSlug, townPages } from "../src/lib/places"
-import { redirectSources, villageRedirects } from "../src/lib/redirects"
+import { buildVillageRedirects, redirectSources, villageRedirects } from "../src/lib/redirects"
 
 const root = path.join(import.meta.dirname, "..")
 const vercelPath = path.join(root, "vercel.json")
@@ -43,18 +43,31 @@ function assertComplete() {
   if (problems.length) throw new Error(problems.join("\n"))
 }
 
+function sameRedirects(actual: unknown) {
+  const expected = vercelDocument()
+  return JSON.stringify(actual) === JSON.stringify(expected)
+}
+
 function checkVercel() {
   assertComplete()
-  const expected = `${JSON.stringify(vercelDocument(), null, 2)}\n`
-  const actual = readFileSync(vercelPath, "utf8")
-  if (actual !== expected) {
-    throw new Error("vercel.json does not match the redirect map. Run: node --experimental-strip-types scripts/redirects.ts --write-vercel")
+  const actual = JSON.parse(readFileSync(vercelPath, "utf8")) as unknown
+  if (!sameRedirects(actual)) {
+    throw new Error("vercel.json does not match src/lib/village-redirects.json. Run: npx tsx scripts/redirects.ts --write-vercel")
   }
 }
 
 function writeVercel() {
-  assertComplete()
-  writeFileSync(vercelPath, `${JSON.stringify(vercelDocument(), null, 2)}\n`)
+  const fresh = buildVillageRedirects()
+  writeFileSync(
+    path.join(root, "src/lib/village-redirects.json"),
+    `${JSON.stringify(fresh, null, 2)}\n`,
+  )
+  writeFileSync(vercelPath, `${JSON.stringify({
+    redirects: fresh.flatMap(({ slug, destination }) => [
+      { source: `/sell-vinyl-records/${slug}`, destination, statusCode: 301 },
+      { source: `/sell-vinyl-records/${slug}/`, destination, statusCode: 301 },
+    ]),
+  }, null, 2)}\n`)
 }
 
 function writeHtml() {

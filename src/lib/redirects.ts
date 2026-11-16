@@ -1,3 +1,4 @@
+import rows from "./village-redirects.json"
 import {
   distance,
   homePlace,
@@ -13,7 +14,12 @@ export type RedirectRule = {
   destination: string
 }
 
-const destinations = () => [
+export type VillageRedirect = {
+  slug: string
+  destination: string
+}
+
+const kept = () => [
   { place: homePlace, href: "/" },
   ...townPages().map((place) => ({
     place,
@@ -23,9 +29,9 @@ const destinations = () => [
 
 /** Nearest kept town, or the Bottesford home page when that is nearer. */
 export function nearestKept(place: Place) {
-  let best = destinations()[0]
+  let best = kept()[0]
   let bestApart = Number.POSITIVE_INFINITY
-  for (const candidate of destinations()) {
+  for (const candidate of kept()) {
     if (candidate.place.name === place.name) continue
     const apart = distance(place, candidate.place)
     if (apart < bestApart) {
@@ -36,18 +42,19 @@ export function nearestKept(place: Place) {
   return best
 }
 
-export function villageRedirects() {
+/** Recompute from coordinates. Used only to refresh the committed JSON. */
+export function buildVillageRedirects(): VillageRedirect[] {
   return insidePlaces
     .filter((place) => !isTownPage(place))
-    .map((place) => {
-      const target = nearestKept(place)
-      return {
-        slug: placeSlug(place),
-        name: place.name,
-        destination: target.href,
-        targetName: target.place.name,
-      }
-    })
+    .map((place) => ({
+      slug: placeSlug(place),
+      destination: nearestKept(place).href,
+    }))
+}
+
+/** Committed map. Builds read this so the redirect targets do not drift. */
+export function villageRedirects(): VillageRedirect[] {
+  return rows
 }
 
 /** Both slash forms. GitHub Pages also 301s a path with no slash onto the slash form. */
