@@ -21,11 +21,11 @@ Notes left through the form are written to `data/enquiries.json` on the machine 
 
 ## The area pages
 
-Each place in `src/lib/places.ts` has a page at `/sell-vinyl-records/<place>/`. The enquiry form accepts those places, and any other location someone types in.
+The towns in `townPageNames` in `src/lib/places.ts` each have a page at `/sell-vinyl-records/<place>/`, with its own wording. Smaller places on the longer list redirect to the nearest of those towns, or to the home page when Bottesford is nearer. The enquiry form offers the towns, and accepts a village name, or any other location someone types in.
 
 ## SEO
 
-- Every place on the list has its own page at `/sell-vinyl-records/<place>/`, generated from `src/lib/places.ts`, with its own title, description, canonical URL and structured data. They are all listed in `/sitemap.xml`.
+- Each kept town has its own page at `/sell-vinyl-records/<place>/`, with its own title, description, canonical URL and structured data. Those pages, and not the redirected villages, are listed in `/sitemap.xml`.
 - Home page and village pages share `LocalBusiness`, `Service`, `FAQPage` and breadcrumb JSON-LD.
 - Keywords, the artist, style and label lists live in `src/lib/site.ts`.
 - Sitemap, canonical links and the share image use `https://pinkmoonrecords.co.uk`, which the Pages workflow sets as `NEXT_PUBLIC_SITE_URL`.

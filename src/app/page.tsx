@@ -6,7 +6,7 @@ import { Photo } from "@/components/photo"
 import { PhotoCredits } from "@/components/photo-credits"
 import { buttonVariants } from "@/components/ui/button"
 import Link from "next/link"
-import { insidePlaces, placeSlug } from "@/lib/places"
+import { contactPlaces, placeSlug } from "@/lib/places"
 import { structuredData } from "@/lib/structured-data"
 import { contact, faqs, site, wanted } from "@/lib/site"
 import { cn } from "cn"
@@ -16,20 +16,7 @@ const callClass = cn(
   "h-10 px-4 text-sm"
 )
 
-const featuredPlaces = [
-  "Grantham",
-  "Newark-on-Trent",
-  "Bingham",
-  "Muston",
-  "Redmile",
-  "Orston",
-  "Belvoir",
-].map((name) => {
-  const place = insidePlaces.find((item) => item.name === name)
-  if (!place) throw new Error(`Missing place ${name}`)
-  return place
-})
-
+const featuredPlaces = contactPlaces()
 
 export default function Home() {
   const data = structuredData()
@@ -164,24 +151,25 @@ export default function Home() {
         </figure>
 
         <SectionRule className="-my-10" />
-        <p id="places" className="max-w-2xl leading-7 text-muted-foreground">
-          I will come nearby for a few records, and any distance for a good collection, including{" "}
-          {featuredPlaces.map((place, index) => {
-            const label = place.aliases?.[0] ?? place.name
-            const separator = index === 0 ? "" : index === featuredPlaces.length - 1 ? " and " : ", "
-            return (
-              <span key={place.name}>
-                {separator}
+        <section id="places" className="flex max-w-3xl flex-col gap-4">
+          <h2 className="text-3xl sm:text-4xl">Where I will come</h2>
+          <p className="leading-7 text-muted-foreground">
+            I will come nearby for a few records, and any distance for a good collection.
+            I cover the surrounding villages as well.
+          </p>
+          <ul className="flex flex-wrap gap-3">
+            {featuredPlaces.map((place) => (
+              <li key={place.name}>
                 <Link
-                  href={`/sell-vinyl-records/${placeSlug(place)}`}
-                  className="underline underline-offset-4"
+                  href={place.miles === 0 ? "/" : `/sell-vinyl-records/${placeSlug(place)}`}
+                  className="inline-block border border-foreground px-4 py-2 underline-offset-4 hover:underline"
                 >
-                  {label}
+                  {place.aliases?.[0] ?? place.name}
                 </Link>
-              </span>
-            )
-          })}.
-        </p>
+              </li>
+            ))}
+          </ul>
+        </section>
 
         <section>
           <h2 className="text-3xl sm:text-4xl">What people ask me</h2>

@@ -143,7 +143,60 @@ function matches(input: string, place: Place) {
   })
 }
 
+/** Bottesford itself. The home page is its page, so it is not under /sell-vinyl-records/. */
+export const homePlace: Place = {
+  name: origin.name,
+  county: "Leicestershire",
+  miles: 0,
+  bearing: 0,
+}
+
+/**
+ * Settlements that keep a page, chosen from the existing list by distance
+ * from Bottesford and by how large the place is. Bottesford stays on the
+ * home page. Every other village redirects to the nearest kept place.
+ */
+export const townPageNames = [
+  "Long Bennington",
+  "Barrowby",
+  "Bingham",
+  "Balderton",
+  "Farndon",
+  "Grantham",
+  "Lowdham",
+  "Newark-on-Trent",
+  "Radcliffe-on-Trent",
+  "Cotgrave",
+  "Southwell",
+  "Melton Mowbray",
+  "Nottingham",
+  "Oakham",
+] as const
+
+export function allPlaces() {
+  return [...insidePlaces, ...outsidePlaces]
+}
+
+export function townPages() {
+  return townPageNames
+    .map((name) => {
+      const place = allPlaces().find((item) => item.name === name)
+      if (!place) throw new Error(`Missing town ${name}`)
+      return place
+    })
+    .sort((a, b) => a.miles - b.miles)
+}
+
+export function isTownPage(place: Place) {
+  return (townPageNames as readonly string[]).includes(place.name)
+}
+
+export function contactPlaces() {
+  return [homePlace, ...townPages()]
+}
+
 export function findPlace(input: string) {
+  if (matches(input, homePlace)) return { place: homePlace, inside: true as const }
   const inside = insidePlaces.find((place) => matches(input, place))
   if (inside) return { place: inside, inside: true as const }
   const outside = outsidePlaces.find((place) => matches(input, place))
@@ -163,7 +216,7 @@ export function placeSlug(place: Place) {
 }
 
 export function placeBySlug(slug: string) {
-  return insidePlaces.find((place) => placeSlug(place) === slug)
+  return allPlaces().find((place) => placeSlug(place) === slug)
 }
 
 const compassPoints = [
@@ -186,15 +239,17 @@ function xy(place: Place) {
   return { x: place.miles * Math.sin(rad), y: place.miles * Math.cos(rad) }
 }
 
-export function nearestInside(place: Place, count = 4) {
-  const a = xy(place)
-  return insidePlaces
+export function distance(a: Place, b: Place) {
+  const pa = xy(a)
+  const pb = xy(b)
+  return Math.hypot(pa.x - pb.x, pa.y - pb.y)
+}
+
+export function nearbyTowns(place: Place, count = 4) {
+  return townPages()
     .filter((other) => other.name !== place.name)
-    .map((other) => {
-      const b = xy(other)
-      return { other, apart: Math.hypot(a.x - b.x, a.y - b.y) }
-    })
-    .sort((l, r) => l.apart - r.apart)
+    .map((other) => ({ other, apart: distance(place, other) }))
+    .sort((left, right) => left.apart - right.apart)
     .slice(0, count)
     .map((entry) => entry.other)
 }

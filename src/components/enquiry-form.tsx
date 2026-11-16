@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { validateEnquiry } from "@/lib/enquiry"
-import { insidePlaces } from "@/lib/places"
+import { contactPlaces } from "@/lib/places"
 import { contact } from "@/lib/site"
 
 const staticSite = process.env.NEXT_PUBLIC_STATIC_SITE === "true"
@@ -18,7 +18,7 @@ type FormStatus =
   | { state: "error"; message: string; field?: string }
 
 export function EnquiryForm() {
-  const [villageChoice, setVillageChoice] = useState(insidePlaces[0]?.name ?? "")
+  const [villageChoice, setVillageChoice] = useState(contactPlaces()[0]?.name ?? "")
   const [status, setStatus] = useState<FormStatus>({ state: "idle" })
 
   async function onSubmit(event: React.FormEvent<HTMLFormElement>) {
@@ -82,7 +82,7 @@ export function EnquiryForm() {
         return
       }
       form.reset()
-      setVillageChoice(insidePlaces[0]?.name ?? "")
+      setVillageChoice(contactPlaces()[0]?.name ?? "")
       setStatus({ state: "success", message: body.message })
     } catch {
       setStatus({
@@ -150,7 +150,7 @@ export function EnquiryForm() {
           aria-describedby={status.state === "error" && status.field === "village" ? errorId : undefined}
           className="h-11 w-full rounded-lg border border-input bg-card px-2.5 text-base outline-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50"
         >
-          {insidePlaces.map((place) => (
+          {contactPlaces().map((place) => (
             <option key={place.name} value={place.name}>
               {place.name}, {place.county}
             </option>
