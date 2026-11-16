@@ -154,6 +154,7 @@ export default function Home() {
         <section id="places" className="flex max-w-3xl flex-col gap-4">
           <h2 className="text-3xl sm:text-4xl">Where I will come</h2>
           <p className="leading-7 text-muted-foreground">
+            I buy record collections within about 30 miles of Bottesford.
             I will come nearby for a few records, and any distance for a good collection.
             I cover the surrounding villages as well.
           </p>
