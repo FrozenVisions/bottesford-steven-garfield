@@ -9,7 +9,7 @@ description: How to sell vinyl records Newark. I am Steven Gee of Pink Moon Reco
 
 If you want to sell vinyl records Newark, you do not need a long clear-out first. I am Steven Gee. I live in Bottesford, NG13, in the Vale of Belvoir. Pink Moon Records is just me. There is no shop, and this is not a business. I buy vinyl record collections for my own shelves. I will come and see them in the comfort of your own home.
 
-[Newark-on-Trent](/sell-vinyl-records/newark-on-trent/) is in Nottinghamshire, near [Hawton](/sell-vinyl-records/hawton/). Tell me the records are there, and I will come and view them at your home. I would rather view your vinyl records where they are than have them posted to me.
+[Newark-on-Trent](/sell-vinyl-records/newark-on-trent/) is in Nottinghamshire, near Hawton. Tell me the records are there, and I will come and view them at your home. I would rather view your vinyl records where they are than have them posted to me.
 
 ## Before you sell vinyl records Newark
 
@@ -31,9 +31,9 @@ Tell me about the whole collection, not only the rock. I collect all kinds of mu
 
 ## Newark and the places beside it
 
-If the vinyl records are in [Hawton](/sell-vinyl-records/hawton/), [Balderton](/sell-vinyl-records/balderton/), [Farndon](/sell-vinyl-records/farndon/) or [Coddington](/sell-vinyl-records/coddington/), say so. Those are places I also visit. Newark is one of the places I will come to. Anywhere nearby, a few records are worth an email. For a good collection I will travel any distance.
+If the vinyl records are in Hawton, [Balderton](/sell-vinyl-records/balderton/), [Farndon](/sell-vinyl-records/farndon/) or Coddington, say so. Those are places I also visit. Newark is one of the places I will come to. Anywhere nearby, a few records are worth an email. For a good collection I will travel any distance.
 
-The home page names [Grantham](/sell-vinyl-records/grantham/), Newark, [Bingham](/sell-vinyl-records/bingham/), [Muston](/sell-vinyl-records/muston/), [Redmile](/sell-vinyl-records/redmile/), [Orston](/sell-vinyl-records/orston/) and [Belvoir](/sell-vinyl-records/belvoir/). If the records are in one of those, or back in [Bottesford](/), tell me the place. I would still rather view them in your home than have them posted.
+The home page names [Grantham](/sell-vinyl-records/grantham/), Newark, [Bingham](/sell-vinyl-records/bingham/), Muston, Redmile, Orston and Belvoir. If the records are in one of those, or back in [Bottesford](/), tell me the place. I would still rather view them in your home than have them posted.
 
 There is a page for [selling vinyl records in Newark-on-Trent](/sell-vinyl-records/newark-on-trent/). You can write from there, or from the [contact section on the home page](/#contact). I have also written about [selling a collection in Grantham](/blog/sell-my-record-collection-grantham/), about [clearing a house or records you have inherited](/blog/clearing-or-inheriting-records-near-bottesford/), and about [a few records, or a longer journey](/blog/a-few-records-or-further-away/).
 

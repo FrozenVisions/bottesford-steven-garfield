@@ -9,41 +9,58 @@ import { notFound } from "next/navigation"
 import { Suspense } from "react"
 import { EnquiryForm } from "@/components/enquiry-form"
 import { buttonVariants } from "@/components/ui/button"
-import {
-  insidePlaces,
-  nearestInside,
-  placeBySlug,
-  placeSlug,
-} from "@/lib/places"
-import { placeDescription, placeTitle } from "@/lib/place-meta"
-import { absoluteUrl, contact, site, wanted } from "@/lib/site"
+import { nearbyTowns, placeBySlug, placeSlug, townPages } from "@/lib/places"
+import { placeTitle } from "@/lib/place-meta"
+import { townCopy } from "@/lib/town-copy"
+import { absoluteUrl, contact, site } from "@/lib/site"
 import { socialMetadata } from "@/lib/social"
 import { cn } from "cn"
 
+export const dynamicParams = false
+
 export function generateStaticParams() {
-  return insidePlaces.map((place) => ({ village: placeSlug(place) }))
+  return townPages().map((place) => ({ village: placeSlug(place) }))
 }
 
-function copy(slug: string) {
+function articleFor(slug: string) {
   const place = placeBySlug(slug)
-  if (!place) return null
-  const neighbour = nearestInside(place)[0]
-  if (!neighbour) return null
-  return {
-    place,
-    neighbour,
-    title: placeTitle(place.name),
-    description: placeDescription(place, neighbour),
-  }
+  const article = townCopy[slug]
+  if (!place || !article) return null
+  return { place, article, title: placeTitle(place.name) }
+}
+
+function RichText({ text }: { text: string }) {
+  const parts = text.split(/(\[\[[^\]|]+\|[^\]]+\]\])/)
+  return parts.map((part, index) => {
+    const link = /^\[\[([^\]|]+)\|([^\]]+)\]\]$/.exec(part)
+    if (!link) return <span key={index}>{part}</span>
+    const href = link[1]
+    const external = href.startsWith("mailto:") || href.startsWith("tel:")
+    const className = external
+      ? "text-foreground underline decoration-primary underline-offset-4 break-all"
+      : "underline underline-offset-4"
+    if (external) {
+      return (
+        <a key={index} href={href} className={className}>
+          {link[2]}
+        </a>
+      )
+    }
+    return (
+      <Link key={index} href={href} className={className}>
+        {link[2]}
+      </Link>
+    )
+  })
 }
 
 export async function generateMetadata(props: PageProps<"/sell-vinyl-records/[village]">): Promise<Metadata> {
   const { village } = await props.params
-  const page = copy(village)
+  const page = articleFor(village)
   if (!page) return {}
   return socialMetadata({
     title: page.title,
-    description: page.description,
+    description: page.article.description,
     path: `/sell-vinyl-records/${village}/`,
     keywords: [
       `sell vinyl records ${page.place.name}`,
@@ -69,10 +86,11 @@ export default function VillagePage(props: PageProps<"/sell-vinyl-records/[villa
 
 async function VillageContent({ params }: { params: Promise<{ village: string }> }) {
   const { village } = await params
-  const page = copy(village)
+  const page = articleFor(village)
   if (!page) notFound()
-  const { place, neighbour } = page
-  const neighbours = nearestInside(place)
+  const { place, article } = page
+  const [lede, second, ...rest] = article.paragraphs
+  const neighbours = nearbyTowns(place)
   const url = absoluteUrl(`/sell-vinyl-records/${village}`)
 
   const data = {
@@ -82,7 +100,7 @@ async function VillageContent({ params }: { params: Promise<{ village: string }>
         "@type": "Service",
         "@id": `${url}#service`,
         name: `Buying vinyl record collections in ${place.name}`,
-        description: page.description,
+        description: article.description,
         provider: { "@id": `${absoluteUrl("/")}#business` },
         areaServed: { "@type": "Place", name: `${place.name}, ${place.county}` },
         url,
@@ -114,76 +132,44 @@ async function VillageContent({ params }: { params: Promise<{ village: string }>
         </nav>
 
         <div className="grid items-center gap-4 rounded-3xl border border-border bg-card p-3 sm:gap-5 sm:p-4 md:grid-cols-[1.2fr_0.8fr]">
-        <section className="flex flex-col gap-3">
-          <p className="text-xs font-semibold tracking-[0.12em] uppercase sm:text-sm">
-            {place.name} · {place.county}
-          </p>
-          <h1 className="text-2xl leading-[1.1] text-balance uppercase sm:text-4xl">
-            Selling vinyl records in {place.name}?
-          </h1>
-          <p className="text-base leading-6 text-muted-foreground">
-            I am Steven Gee. {place.name} is in {place.county}, near {neighbour.name}.
-            I will come and view your records at your home.
-          </p>
-          <p className="text-base leading-6 text-muted-foreground">
-            Sixties and seventies rock vinyl is what I want first, and I collect
-            other records too. If you have a few boxes in {place.name} that have
-            not been played for years, email me before they go to the tip.
-          </p>
-          <div className="flex flex-col gap-2 sm:flex-row">
-            <a href={`mailto:${contact.email}`} className={cn(buttonVariants({ size: "lg" }), "h-10 px-4 text-sm")}>
-              Email me
-            </a>
-            <a
-              href={contact.phoneHref}
-              className={cn(buttonVariants({ size: "lg", variant: "outline" }), "h-10 px-4 text-sm")}
-            >
-              Or call {contact.phoneDisplay}
-            </a>
-          </div>
-        </section>
+          <section className="flex flex-col gap-3">
+            <p className="text-xs font-semibold tracking-[0.12em] uppercase sm:text-sm">
+              {place.name} · {place.county}
+            </p>
+            <h1 className="text-2xl leading-[1.1] text-balance uppercase sm:text-4xl">
+              Selling vinyl records in {place.name}?
+            </h1>
+            <p className="text-base leading-6 text-muted-foreground"><RichText text={lede} /></p>
+            {second && !second.startsWith("## ") ? (
+              <p className="text-base leading-6 text-muted-foreground"><RichText text={second} /></p>
+            ) : null}
+            <div className="flex flex-col gap-2 sm:flex-row">
+              <a href={`mailto:${contact.email}`} className={cn(buttonVariants({ size: "lg" }), "h-10 px-4 text-sm")}>
+                Email me
+              </a>
+              <a
+                href={contact.phoneHref}
+                className={cn(buttonVariants({ size: "lg", variant: "outline" }), "h-10 px-4 text-sm")}
+              >
+                Or call {contact.phoneDisplay}
+              </a>
+            </div>
+          </section>
           <Photo src="/images/holding-record.webp" alt="Someone holding a record from a home collection" className="aspect-[4/5] w-full rounded-2xl object-cover" />
         </div>
 
-        <section className="grid gap-10 md:grid-cols-2">
-          <div>
-            <h2 className="text-3xl">What I am hoping to find in {place.name}</h2>
-            <p className="mt-4 leading-7 text-muted-foreground">
-              Albums, singles and box sets, in their sleeves if you still have
-              them. Original UK pressings and gatefold sleeves are a joy to me,
-              but I will look at plain, played, well-loved copies too.
-            </p>
-          </div>
-          <div>
-            <h2 className="text-3xl">Every other kind of record too</h2>
-            <p className="mt-4 leading-7 text-muted-foreground">
-              I collect for my own shelves, so I never turn a good record away.
-              From {place.name} I am happy to look at:
-            </p>
-            <ul className="mt-5 grid gap-x-6 gap-y-1 text-lg sm:grid-cols-2">
-              {wanted.other.map((name) => (
-                <li key={name} className="border-b border-border py-2">
-                  {name}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
+        <article className="flex max-w-3xl flex-col gap-4">
+          {(second?.startsWith("## ") ? [second, ...rest] : rest).map((paragraph) =>
+            paragraph.startsWith("## ") ? (
+              <h2 key={paragraph} className="mt-4 text-3xl">{paragraph.replace(/^##\s+/, "")}</h2>
+            ) : (
+              <p key={paragraph} className="leading-7 text-muted-foreground"><RichText text={paragraph} /></p>
+            )
+          )}
+        </article>
 
         <section className="max-w-3xl">
-          <h2 className="text-3xl">Nearby villages I also visit</h2>
-          <p className="mt-4 leading-7 text-muted-foreground">
-            If a neighbour in one of these places has records to sell, send them
-            my way. I have also written about{" "}
-            <Link href="/blog/selling-a-record-collection-near-bottesford" className="underline underline-offset-4">
-              selling a record collection
-            </Link>{" "}
-            and about{" "}
-            <Link href="/blog/clearing-or-inheriting-records-near-bottesford" className="underline underline-offset-4">
-              house clearances and inherited records
-            </Link>
-            .
-          </p>
+          <h2 className="text-3xl">Other places with a page</h2>
           <ul className="mt-5 flex flex-wrap gap-3">
             {neighbours.map((other) => (
               <li key={other.name}>
@@ -198,6 +184,11 @@ async function VillageContent({ params }: { params: Promise<{ village: string }>
             <li>
               <Link href="/" className="inline-block border border-foreground px-4 py-2 underline-offset-4 hover:underline">
                 Bottesford
+              </Link>
+            </li>
+            <li>
+              <Link href="/blog" className="inline-block border border-foreground px-4 py-2 underline-offset-4 hover:underline">
+                Notes on selling records
               </Link>
             </li>
           </ul>

@@ -1,0 +1,354 @@
+[
+  {
+    "slug": "easthorpe",
+    "destination": "/"
+  },
+  {
+    "slug": "muston",
+    "destination": "/"
+  },
+  {
+    "slug": "alverton",
+    "destination": "/"
+  },
+  {
+    "slug": "normanton",
+    "destination": "/sell-vinyl-records/long-bennington/"
+  },
+  {
+    "slug": "elton-on-the-hill",
+    "destination": "/"
+  },
+  {
+    "slug": "kilvington",
+    "destination": "/sell-vinyl-records/long-bennington/"
+  },
+  {
+    "slug": "orston",
+    "destination": "/"
+  },
+  {
+    "slug": "barkestone-le-vale",
+    "destination": "/"
+  },
+  {
+    "slug": "staunton-in-the-vale",
+    "destination": "/sell-vinyl-records/long-bennington/"
+  },
+  {
+    "slug": "redmile",
+    "destination": "/"
+  },
+  {
+    "slug": "flawborough",
+    "destination": "/sell-vinyl-records/long-bennington/"
+  },
+  {
+    "slug": "sedgebrook",
+    "destination": "/sell-vinyl-records/barrowby/"
+  },
+  {
+    "slug": "allington",
+    "destination": "/sell-vinyl-records/long-bennington/"
+  },
+  {
+    "slug": "woolsthorpe-by-belvoir",
+    "destination": "/sell-vinyl-records/barrowby/"
+  },
+  {
+    "slug": "thoroton",
+    "destination": "/"
+  },
+  {
+    "slug": "granby",
+    "destination": "/sell-vinyl-records/bingham/"
+  },
+  {
+    "slug": "shelton",
+    "destination": "/sell-vinyl-records/long-bennington/"
+  },
+  {
+    "slug": "plungar",
+    "destination": "/"
+  },
+  {
+    "slug": "belvoir",
+    "destination": "/"
+  },
+  {
+    "slug": "whatton-in-the-vale",
+    "destination": "/sell-vinyl-records/bingham/"
+  },
+  {
+    "slug": "foston",
+    "destination": "/sell-vinyl-records/long-bennington/"
+  },
+  {
+    "slug": "aslockton",
+    "destination": "/sell-vinyl-records/bingham/"
+  },
+  {
+    "slug": "scarrington",
+    "destination": "/sell-vinyl-records/bingham/"
+  },
+  {
+    "slug": "harston",
+    "destination": "/sell-vinyl-records/barrowby/"
+  },
+  {
+    "slug": "knipton",
+    "destination": "/sell-vinyl-records/barrowby/"
+  },
+  {
+    "slug": "sibthorpe",
+    "destination": "/sell-vinyl-records/farndon/"
+  },
+  {
+    "slug": "barnstone",
+    "destination": "/sell-vinyl-records/bingham/"
+  },
+  {
+    "slug": "stathern",
+    "destination": "/"
+  },
+  {
+    "slug": "screveton",
+    "destination": "/sell-vinyl-records/bingham/"
+  },
+  {
+    "slug": "denton",
+    "destination": "/sell-vinyl-records/barrowby/"
+  },
+  {
+    "slug": "dry-doddington",
+    "destination": "/sell-vinyl-records/long-bennington/"
+  },
+  {
+    "slug": "great-gonerby",
+    "destination": "/sell-vinyl-records/barrowby/"
+  },
+  {
+    "slug": "langar",
+    "destination": "/sell-vinyl-records/bingham/"
+  },
+  {
+    "slug": "branston",
+    "destination": "/"
+  },
+  {
+    "slug": "car-colston",
+    "destination": "/sell-vinyl-records/bingham/"
+  },
+  {
+    "slug": "flintham",
+    "destination": "/sell-vinyl-records/farndon/"
+  },
+  {
+    "slug": "marston",
+    "destination": "/sell-vinyl-records/long-bennington/"
+  },
+  {
+    "slug": "hougham",
+    "destination": "/sell-vinyl-records/long-bennington/"
+  },
+  {
+    "slug": "harby",
+    "destination": "/sell-vinyl-records/bingham/"
+  },
+  {
+    "slug": "eaton",
+    "destination": "/"
+  },
+  {
+    "slug": "harlaxton",
+    "destination": "/sell-vinyl-records/barrowby/"
+  },
+  {
+    "slug": "elston",
+    "destination": "/sell-vinyl-records/farndon/"
+  },
+  {
+    "slug": "syerston",
+    "destination": "/sell-vinyl-records/farndon/"
+  },
+  {
+    "slug": "croxton-kerrial",
+    "destination": "/sell-vinyl-records/barrowby/"
+  },
+  {
+    "slug": "eastwell",
+    "destination": "/sell-vinyl-records/melton-mowbray/"
+  },
+  {
+    "slug": "claypole",
+    "destination": "/sell-vinyl-records/balderton/"
+  },
+  {
+    "slug": "manthorpe",
+    "destination": "/sell-vinyl-records/grantham/"
+  },
+  {
+    "slug": "hose",
+    "destination": "/sell-vinyl-records/melton-mowbray/"
+  },
+  {
+    "slug": "fernwood",
+    "destination": "/sell-vinyl-records/balderton/"
+  },
+  {
+    "slug": "colston-bassett",
+    "destination": "/sell-vinyl-records/bingham/"
+  },
+  {
+    "slug": "east-stoke",
+    "destination": "/sell-vinyl-records/farndon/"
+  },
+  {
+    "slug": "newton",
+    "destination": "/sell-vinyl-records/bingham/"
+  },
+  {
+    "slug": "kneeton",
+    "destination": "/sell-vinyl-records/lowdham/"
+  },
+  {
+    "slug": "east-bridgford",
+    "destination": "/sell-vinyl-records/bingham/"
+  },
+  {
+    "slug": "stubton",
+    "destination": "/sell-vinyl-records/balderton/"
+  },
+  {
+    "slug": "cropwell-butler",
+    "destination": "/sell-vinyl-records/bingham/"
+  },
+  {
+    "slug": "hawton",
+    "destination": "/sell-vinyl-records/farndon/"
+  },
+  {
+    "slug": "belton",
+    "destination": "/sell-vinyl-records/grantham/"
+  },
+  {
+    "slug": "syston",
+    "destination": "/sell-vinyl-records/grantham/"
+  },
+  {
+    "slug": "cropwell-bishop",
+    "destination": "/sell-vinyl-records/bingham/"
+  },
+  {
+    "slug": "goadby-marwood",
+    "destination": "/sell-vinyl-records/melton-mowbray/"
+  },
+  {
+    "slug": "barkston",
+    "destination": "/sell-vinyl-records/grantham/"
+  },
+  {
+    "slug": "hoveringham",
+    "destination": "/sell-vinyl-records/lowdham/"
+  },
+  {
+    "slug": "gunthorpe",
+    "destination": "/sell-vinyl-records/lowdham/"
+  },
+  {
+    "slug": "saltby",
+    "destination": "/sell-vinyl-records/barrowby/"
+  },
+  {
+    "slug": "waltham-on-the-wolds",
+    "destination": "/sell-vinyl-records/melton-mowbray/"
+  },
+  {
+    "slug": "caythorpe",
+    "destination": "/sell-vinyl-records/lowdham/"
+  },
+  {
+    "slug": "fiskerton",
+    "destination": "/sell-vinyl-records/farndon/"
+  },
+  {
+    "slug": "bleasby",
+    "destination": "/sell-vinyl-records/southwell/"
+  },
+  {
+    "slug": "long-clawson",
+    "destination": "/sell-vinyl-records/melton-mowbray/"
+  },
+  {
+    "slug": "stonesby",
+    "destination": "/sell-vinyl-records/melton-mowbray/"
+  },
+  {
+    "slug": "honington",
+    "destination": "/sell-vinyl-records/grantham/"
+  },
+  {
+    "slug": "barnby-in-the-willows",
+    "destination": "/sell-vinyl-records/balderton/"
+  },
+  {
+    "slug": "owthorpe",
+    "destination": "/sell-vinyl-records/cotgrave/"
+  },
+  {
+    "slug": "great-ponton",
+    "destination": "/sell-vinyl-records/grantham/"
+  },
+  {
+    "slug": "shelford",
+    "destination": "/sell-vinyl-records/radcliffe-on-trent/"
+  },
+  {
+    "slug": "morton",
+    "destination": "/sell-vinyl-records/southwell/"
+  },
+  {
+    "slug": "rolleston",
+    "destination": "/sell-vinyl-records/farndon/"
+  },
+  {
+    "slug": "thurgarton",
+    "destination": "/sell-vinyl-records/lowdham/"
+  },
+  {
+    "slug": "gonalston",
+    "destination": "/sell-vinyl-records/lowdham/"
+  },
+  {
+    "slug": "hickling",
+    "destination": "/sell-vinyl-records/cotgrave/"
+  },
+  {
+    "slug": "kinoulton",
+    "destination": "/sell-vinyl-records/cotgrave/"
+  },
+  {
+    "slug": "sproxton",
+    "destination": "/sell-vinyl-records/melton-mowbray/"
+  },
+  {
+    "slug": "scalford",
+    "destination": "/sell-vinyl-records/melton-mowbray/"
+  },
+  {
+    "slug": "carlton-scroop",
+    "destination": "/sell-vinyl-records/grantham/"
+  },
+  {
+    "slug": "bulcote",
+    "destination": "/sell-vinyl-records/lowdham/"
+  },
+  {
+    "slug": "coddington",
+    "destination": "/sell-vinyl-records/balderton/"
+  },
+  {
+    "slug": "frieston",
+    "destination": "/sell-vinyl-records/long-bennington/"
+  }
+]

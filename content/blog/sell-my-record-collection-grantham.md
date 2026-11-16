@@ -9,7 +9,7 @@ description: How to sell my record collection Grantham. I am Steven Gee of Pink 
 
 If you want to sell my record collection Grantham, you do not need a long clear-out first. I am Steven Gee. I live in Bottesford, NG13, in the Vale of Belvoir. Pink Moon Records is just me. There is no shop, and this is not a business. I buy vinyl records for my own shelves. I will come and see them in the comfort of your own home.
 
-[Grantham](/sell-vinyl-records/grantham/) is in Lincolnshire, near [Manthorpe](/sell-vinyl-records/manthorpe/). Tell me the records are there, and I will come and view them at your home.
+[Grantham](/sell-vinyl-records/grantham/) is in Lincolnshire, near Manthorpe. Tell me the records are there, and I will come and view them at your home.
 
 ## Before you sell my record collection Grantham
 
@@ -29,7 +29,7 @@ Tell me about the whole collection, not only the rock. I collect all kinds of mu
 
 ## Grantham and the places beside it
 
-If the vinyl records are in [Manthorpe](/sell-vinyl-records/manthorpe/), [Great Gonerby](/sell-vinyl-records/great-gonerby/), [Barrowby](/sell-vinyl-records/barrowby/) or [Belton](/sell-vinyl-records/belton/), say so. Those are places I also visit. Anywhere nearby, a few records are worth an email, and Grantham is one of the places I will come to. For a good collection I will travel any distance.
+If the vinyl records are in Manthorpe, Great Gonerby, [Barrowby](/sell-vinyl-records/barrowby/) or Belton, say so. Those are places I also visit. Anywhere nearby, a few records are worth an email, and Grantham is one of the places I will come to. For a good collection I will travel any distance.
 
 There is a page for [selling vinyl records in Grantham](/sell-vinyl-records/grantham/). You can write from there, or from the [contact form on the home page](/#contact). I have also written about [how a visit works](/blog/selling-a-record-collection-near-bottesford/), about [clearing a house or records you have inherited](/blog/clearing-or-inheriting-records-near-bottesford/), about [a few records, or a longer journey](/blog/a-few-records-or-further-away/), and about [getting a collection ready in Nottingham](/blog/sell-a-record-collection-in-nottingham/).
 

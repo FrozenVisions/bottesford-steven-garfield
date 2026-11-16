@@ -1,10 +1,5 @@
+import { placeSlug, townPages } from "@/lib/places"
 import { absoluteUrl, contact, faqs, seo, site, siteUrl } from "@/lib/site"
-
-const towns = [
-  ["Grantham", "/sell-vinyl-records/grantham"],
-  ["Newark-on-Trent", "/sell-vinyl-records/newark-on-trent"],
-  ["Bingham", "/sell-vinyl-records/bingham"],
-] as const
 
 export function structuredData() {
   const url = absoluteUrl("/")
@@ -54,13 +49,11 @@ export function structuredData() {
         areaServed: [
           { "@type": "Place", name: "Bottesford, Leicestershire" },
           { "@type": "Place", name: "Vale of Belvoir" },
-          ...towns.map(([name, path]) => ({
-            "@type": "City",
-            name,
-            url: absoluteUrl(path),
+          ...townPages().map((place) => ({
+            "@type": "Place",
+            name: `${place.name}, ${place.county}`,
+            url: absoluteUrl(`/sell-vinyl-records/${placeSlug(place)}`),
           })),
-          { "@type": "City", name: "Melton Mowbray" },
-          { "@type": "City", name: "Nottingham" },
         ],
         knowsAbout: ["1960s rock vinyl", "1970s rock vinyl", "vinyl record collections"],
         makesOffer: {

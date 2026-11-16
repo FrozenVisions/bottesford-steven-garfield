@@ -17,13 +17,13 @@ Anywhere nearby, a few records are worth an email. I do not need a room lined wi
 
 Downsizing is often how those boxes appear. The smaller place will not take the old shelves, and your records are what get left until last. The same happens when you have inherited them and never meant to own a stack of vinyl. You do not have to learn the names on the labels. Say they were a relative's, or that they came with the house, if that helps. Or simply say there are boxes and you would like me to see them.
 
-If you are in [Bottesford](/), or in a Vale village such as [Muston](/sell-vinyl-records/muston/), [Redmile](/sell-vinyl-records/redmile/), [Orston](/sell-vinyl-records/orston/) or [Belvoir](/sell-vinyl-records/belvoir/), tell me where you are and I will come. The same is true in [Bingham](/sell-vinyl-records/bingham/), [Grantham](/sell-vinyl-records/grantham/) and [Newark](/sell-vinyl-records/newark-on-trent/). I would rather view your records where they are than have them posted to me. A short note is enough to start: "I want to sell my records", and the name of the place.
+If you are in [Bottesford](/), or in a Vale village such as Muston, Redmile, Orston or Belvoir, tell me where you are and I will come. The same is true in [Bingham](/sell-vinyl-records/bingham/), [Grantham](/sell-vinyl-records/grantham/) and [Newark](/sell-vinyl-records/newark-on-trent/). I would rather view your records where they are than have them posted to me. A short note is enough to start: "I want to sell my records", and the name of the place.
 
 ## Further away, when the records are worth the journey
 
 For a good collection I will travel any distance. Write from Nottingham, Melton Mowbray, or wherever the house is. If you are clearing a family home there, or your records will not fit the place you are moving to, name the town and I will come and see them.
 
-The villages along the way are just as welcome. [Radcliffe-on-Trent](/sell-vinyl-records/radcliffe-on-trent/) is on the way towards Nottingham. [Long Clawson](/sell-vinyl-records/long-clawson/) is out towards Melton Mowbray. If your records are in either place, or in a village close by, say so.
+The villages along the way are just as welcome. [Radcliffe-on-Trent](/sell-vinyl-records/radcliffe-on-trent/) is on the way towards Nottingham. Long Clawson is out towards [Melton Mowbray](/sell-vinyl-records/melton-mowbray/). If your records are in either place, or in a village close by, say so.
 
 ## Played copies are welcome
 

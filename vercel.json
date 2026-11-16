@@ -1,0 +1,884 @@
+{
+  "redirects": [
+    {
+      "source": "/sell-vinyl-records/easthorpe",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/easthorpe/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/muston",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/muston/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/alverton",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/alverton/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/normanton",
+      "destination": "/sell-vinyl-records/long-bennington/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/normanton/",
+      "destination": "/sell-vinyl-records/long-bennington/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/elton-on-the-hill",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/elton-on-the-hill/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/kilvington",
+      "destination": "/sell-vinyl-records/long-bennington/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/kilvington/",
+      "destination": "/sell-vinyl-records/long-bennington/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/orston",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/orston/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/barkestone-le-vale",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/barkestone-le-vale/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/staunton-in-the-vale",
+      "destination": "/sell-vinyl-records/long-bennington/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/staunton-in-the-vale/",
+      "destination": "/sell-vinyl-records/long-bennington/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/redmile",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/redmile/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/flawborough",
+      "destination": "/sell-vinyl-records/long-bennington/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/flawborough/",
+      "destination": "/sell-vinyl-records/long-bennington/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/sedgebrook",
+      "destination": "/sell-vinyl-records/barrowby/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/sedgebrook/",
+      "destination": "/sell-vinyl-records/barrowby/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/allington",
+      "destination": "/sell-vinyl-records/long-bennington/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/allington/",
+      "destination": "/sell-vinyl-records/long-bennington/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/woolsthorpe-by-belvoir",
+      "destination": "/sell-vinyl-records/barrowby/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/woolsthorpe-by-belvoir/",
+      "destination": "/sell-vinyl-records/barrowby/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/thoroton",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/thoroton/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/granby",
+      "destination": "/sell-vinyl-records/bingham/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/granby/",
+      "destination": "/sell-vinyl-records/bingham/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/shelton",
+      "destination": "/sell-vinyl-records/long-bennington/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/shelton/",
+      "destination": "/sell-vinyl-records/long-bennington/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/plungar",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/plungar/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/belvoir",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/belvoir/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/whatton-in-the-vale",
+      "destination": "/sell-vinyl-records/bingham/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/whatton-in-the-vale/",
+      "destination": "/sell-vinyl-records/bingham/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/foston",
+      "destination": "/sell-vinyl-records/long-bennington/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/foston/",
+      "destination": "/sell-vinyl-records/long-bennington/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/aslockton",
+      "destination": "/sell-vinyl-records/bingham/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/aslockton/",
+      "destination": "/sell-vinyl-records/bingham/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/scarrington",
+      "destination": "/sell-vinyl-records/bingham/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/scarrington/",
+      "destination": "/sell-vinyl-records/bingham/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/harston",
+      "destination": "/sell-vinyl-records/barrowby/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/harston/",
+      "destination": "/sell-vinyl-records/barrowby/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/knipton",
+      "destination": "/sell-vinyl-records/barrowby/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/knipton/",
+      "destination": "/sell-vinyl-records/barrowby/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/sibthorpe",
+      "destination": "/sell-vinyl-records/farndon/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/sibthorpe/",
+      "destination": "/sell-vinyl-records/farndon/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/barnstone",
+      "destination": "/sell-vinyl-records/bingham/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/barnstone/",
+      "destination": "/sell-vinyl-records/bingham/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/stathern",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/stathern/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/screveton",
+      "destination": "/sell-vinyl-records/bingham/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/screveton/",
+      "destination": "/sell-vinyl-records/bingham/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/denton",
+      "destination": "/sell-vinyl-records/barrowby/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/denton/",
+      "destination": "/sell-vinyl-records/barrowby/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/dry-doddington",
+      "destination": "/sell-vinyl-records/long-bennington/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/dry-doddington/",
+      "destination": "/sell-vinyl-records/long-bennington/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/great-gonerby",
+      "destination": "/sell-vinyl-records/barrowby/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/great-gonerby/",
+      "destination": "/sell-vinyl-records/barrowby/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/langar",
+      "destination": "/sell-vinyl-records/bingham/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/langar/",
+      "destination": "/sell-vinyl-records/bingham/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/branston",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/branston/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/car-colston",
+      "destination": "/sell-vinyl-records/bingham/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/car-colston/",
+      "destination": "/sell-vinyl-records/bingham/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/flintham",
+      "destination": "/sell-vinyl-records/farndon/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/flintham/",
+      "destination": "/sell-vinyl-records/farndon/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/marston",
+      "destination": "/sell-vinyl-records/long-bennington/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/marston/",
+      "destination": "/sell-vinyl-records/long-bennington/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/hougham",
+      "destination": "/sell-vinyl-records/long-bennington/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/hougham/",
+      "destination": "/sell-vinyl-records/long-bennington/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/harby",
+      "destination": "/sell-vinyl-records/bingham/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/harby/",
+      "destination": "/sell-vinyl-records/bingham/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/eaton",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/eaton/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/harlaxton",
+      "destination": "/sell-vinyl-records/barrowby/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/harlaxton/",
+      "destination": "/sell-vinyl-records/barrowby/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/elston",
+      "destination": "/sell-vinyl-records/farndon/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/elston/",
+      "destination": "/sell-vinyl-records/farndon/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/syerston",
+      "destination": "/sell-vinyl-records/farndon/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/syerston/",
+      "destination": "/sell-vinyl-records/farndon/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/croxton-kerrial",
+      "destination": "/sell-vinyl-records/barrowby/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/croxton-kerrial/",
+      "destination": "/sell-vinyl-records/barrowby/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/eastwell",
+      "destination": "/sell-vinyl-records/melton-mowbray/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/eastwell/",
+      "destination": "/sell-vinyl-records/melton-mowbray/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/claypole",
+      "destination": "/sell-vinyl-records/balderton/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/claypole/",
+      "destination": "/sell-vinyl-records/balderton/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/manthorpe",
+      "destination": "/sell-vinyl-records/grantham/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/manthorpe/",
+      "destination": "/sell-vinyl-records/grantham/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/hose",
+      "destination": "/sell-vinyl-records/melton-mowbray/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/hose/",
+      "destination": "/sell-vinyl-records/melton-mowbray/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/fernwood",
+      "destination": "/sell-vinyl-records/balderton/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/fernwood/",
+      "destination": "/sell-vinyl-records/balderton/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/colston-bassett",
+      "destination": "/sell-vinyl-records/bingham/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/colston-bassett/",
+      "destination": "/sell-vinyl-records/bingham/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/east-stoke",
+      "destination": "/sell-vinyl-records/farndon/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/east-stoke/",
+      "destination": "/sell-vinyl-records/farndon/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/newton",
+      "destination": "/sell-vinyl-records/bingham/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/newton/",
+      "destination": "/sell-vinyl-records/bingham/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/kneeton",
+      "destination": "/sell-vinyl-records/lowdham/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/kneeton/",
+      "destination": "/sell-vinyl-records/lowdham/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/east-bridgford",
+      "destination": "/sell-vinyl-records/bingham/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/east-bridgford/",
+      "destination": "/sell-vinyl-records/bingham/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/stubton",
+      "destination": "/sell-vinyl-records/balderton/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/stubton/",
+      "destination": "/sell-vinyl-records/balderton/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/cropwell-butler",
+      "destination": "/sell-vinyl-records/bingham/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/cropwell-butler/",
+      "destination": "/sell-vinyl-records/bingham/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/hawton",
+      "destination": "/sell-vinyl-records/farndon/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/hawton/",
+      "destination": "/sell-vinyl-records/farndon/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/belton",
+      "destination": "/sell-vinyl-records/grantham/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/belton/",
+      "destination": "/sell-vinyl-records/grantham/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/syston",
+      "destination": "/sell-vinyl-records/grantham/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/syston/",
+      "destination": "/sell-vinyl-records/grantham/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/cropwell-bishop",
+      "destination": "/sell-vinyl-records/bingham/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/cropwell-bishop/",
+      "destination": "/sell-vinyl-records/bingham/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/goadby-marwood",
+      "destination": "/sell-vinyl-records/melton-mowbray/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/goadby-marwood/",
+      "destination": "/sell-vinyl-records/melton-mowbray/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/barkston",
+      "destination": "/sell-vinyl-records/grantham/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/barkston/",
+      "destination": "/sell-vinyl-records/grantham/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/hoveringham",
+      "destination": "/sell-vinyl-records/lowdham/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/hoveringham/",
+      "destination": "/sell-vinyl-records/lowdham/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/gunthorpe",
+      "destination": "/sell-vinyl-records/lowdham/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/gunthorpe/",
+      "destination": "/sell-vinyl-records/lowdham/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/saltby",
+      "destination": "/sell-vinyl-records/barrowby/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/saltby/",
+      "destination": "/sell-vinyl-records/barrowby/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/waltham-on-the-wolds",
+      "destination": "/sell-vinyl-records/melton-mowbray/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/waltham-on-the-wolds/",
+      "destination": "/sell-vinyl-records/melton-mowbray/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/caythorpe",
+      "destination": "/sell-vinyl-records/lowdham/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/caythorpe/",
+      "destination": "/sell-vinyl-records/lowdham/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/fiskerton",
+      "destination": "/sell-vinyl-records/farndon/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/fiskerton/",
+      "destination": "/sell-vinyl-records/farndon/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/bleasby",
+      "destination": "/sell-vinyl-records/southwell/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/bleasby/",
+      "destination": "/sell-vinyl-records/southwell/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/long-clawson",
+      "destination": "/sell-vinyl-records/melton-mowbray/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/long-clawson/",
+      "destination": "/sell-vinyl-records/melton-mowbray/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/stonesby",
+      "destination": "/sell-vinyl-records/melton-mowbray/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/stonesby/",
+      "destination": "/sell-vinyl-records/melton-mowbray/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/honington",
+      "destination": "/sell-vinyl-records/grantham/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/honington/",
+      "destination": "/sell-vinyl-records/grantham/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/barnby-in-the-willows",
+      "destination": "/sell-vinyl-records/balderton/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/barnby-in-the-willows/",
+      "destination": "/sell-vinyl-records/balderton/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/owthorpe",
+      "destination": "/sell-vinyl-records/cotgrave/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/owthorpe/",
+      "destination": "/sell-vinyl-records/cotgrave/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/great-ponton",
+      "destination": "/sell-vinyl-records/grantham/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/great-ponton/",
+      "destination": "/sell-vinyl-records/grantham/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/shelford",
+      "destination": "/sell-vinyl-records/radcliffe-on-trent/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/shelford/",
+      "destination": "/sell-vinyl-records/radcliffe-on-trent/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/morton",
+      "destination": "/sell-vinyl-records/southwell/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/morton/",
+      "destination": "/sell-vinyl-records/southwell/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/rolleston",
+      "destination": "/sell-vinyl-records/farndon/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/rolleston/",
+      "destination": "/sell-vinyl-records/farndon/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/thurgarton",
+      "destination": "/sell-vinyl-records/lowdham/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/thurgarton/",
+      "destination": "/sell-vinyl-records/lowdham/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/gonalston",
+      "destination": "/sell-vinyl-records/lowdham/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/gonalston/",
+      "destination": "/sell-vinyl-records/lowdham/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/hickling",
+      "destination": "/sell-vinyl-records/cotgrave/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/hickling/",
+      "destination": "/sell-vinyl-records/cotgrave/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/kinoulton",
+      "destination": "/sell-vinyl-records/cotgrave/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/kinoulton/",
+      "destination": "/sell-vinyl-records/cotgrave/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/sproxton",
+      "destination": "/sell-vinyl-records/melton-mowbray/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/sproxton/",
+      "destination": "/sell-vinyl-records/melton-mowbray/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/scalford",
+      "destination": "/sell-vinyl-records/melton-mowbray/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/scalford/",
+      "destination": "/sell-vinyl-records/melton-mowbray/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/carlton-scroop",
+      "destination": "/sell-vinyl-records/grantham/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/carlton-scroop/",
+      "destination": "/sell-vinyl-records/grantham/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/bulcote",
+      "destination": "/sell-vinyl-records/lowdham/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/bulcote/",
+      "destination": "/sell-vinyl-records/lowdham/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/coddington",
+      "destination": "/sell-vinyl-records/balderton/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/coddington/",
+      "destination": "/sell-vinyl-records/balderton/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/frieston",
+      "destination": "/sell-vinyl-records/long-bennington/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sell-vinyl-records/frieston/",
+      "destination": "/sell-vinyl-records/long-bennington/",
+      "statusCode": 301
+    }
+  ]
+}
