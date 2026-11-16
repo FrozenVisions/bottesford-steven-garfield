@@ -9,6 +9,7 @@ export type TownArticle = {
 /**
  * Unique page copy for each kept town. Facts are only those already published
  * on the site, or straight-line miles and compass bearings stored in places.ts.
+ * The about-30-mile round is the coverage stated on the home page.
  */
 export const townCopy: Record<string, TownArticle> = {
   "long-bennington": {
@@ -239,7 +240,7 @@ export const townCopy: Record<string, TownArticle> = {
     description:
       "Sell vinyl records in Oakham, Leicestershire. Steven Gee of Pink Moon Records will travel from Bottesford for a good collection of 1960s and 1970s rock vinyl.",
     paragraphs: [
-      "Oakham is the furthest town I have given its own page. It is listed here as Leicestershire, about 18.9 miles south of Bottesford in a straight line. Melton Mowbray is also south, and closer. I am Steven Gee. I live in Bottesford, NG13, in the Vale of Belvoir. For a good collection I will travel any distance. Write from Oakham, or from wherever the house is, and name the town.",
+      "Oakham is listed here as Leicestershire, about 18.9 miles south of Bottesford in a straight line. Melton Mowbray is also south, and closer. [[/sell-vinyl-records/leicester|Leicester]] is further to the south-west. I am Steven Gee. I live in Bottesford, NG13, in the Vale of Belvoir. For a good collection I will travel any distance. Write from Oakham, or from wherever the house is, and name the town.",
       "Pink Moon Records is just me. There is no shop, and this is not a business. I buy vinyl for my own shelves. I will come and see the records in the comfort of your own home. I would rather view them there than have them posted to me.",
       "## If the journey is the thing that has stopped you writing",
       "People often wait when the house is in Nottingham or Melton Mowbray, because the journey from Bottesford feels awkward. Oakham is further still. It is still worth the email. Tell me what you have, and that it is in Oakham. A good collection is a journey I will make.",
@@ -250,6 +251,90 @@ export const townCopy: Record<string, TownArticle> = {
       "The note that covers a longer journey is [[/blog/a-few-records-or-further-away|a few records, or further away]]. [[/blog/selling-a-record-collection-near-bottesford|How a visit works]] is the same whether I am in Bottesford or further south. [[/blog/clearing-or-inheriting-records-near-bottesford|Clearing a house, or records you have inherited]] is the one to read if the collection was never really yours.",
       "## Email me first",
       "Email [[mailto:diotima2003@yahoo.co.uk|diotima2003@yahoo.co.uk]] and tell me the records are in Oakham. I am happy to take a phone call on [[tel:+447359456528|07359 456528]]. A rough idea, or a few photos, is plenty. No full list is needed, as I can come round and look. My card is also on the notice board at the Post Office in the High Street, Bottesford.",
+    ],
+  },
+  sleaford: {
+    description:
+      "Sell vinyl records in Sleaford, Lincolnshire. Steven Gee of Pink Moon Records buys 1960s and 1970s rock vinyl and views the collection at your own home.",
+    paragraphs: [
+      "Sleaford is in Lincolnshire, about 16.8 miles east of Bottesford in a straight line. Grantham is also east, and much closer to me. I am Steven Gee. I live in Bottesford, NG13, in the Vale of Belvoir. I buy record collections within about 30 miles of Bottesford, so Sleaford is a town I will come to.",
+      "You do not bring the records to a counter. There is no shop. Pink Moon Records is just me, and this is not a business. I buy vinyl for my own shelves. I will come and view them at your home, and I would rather do that than have them posted to me.",
+      "## Grantham is nearer, and the villages count too",
+      "There is already a page for [[/sell-vinyl-records/grantham|selling vinyl records in Grantham]], and a longer note on [[/blog/sell-my-record-collection-grantham|how to sell a record collection in Grantham]]. If the house is in Grantham, use that. If it is in Sleaford, tell me so. If it is in a village around Sleaford, name the village. I cover the surrounding villages as well.",
+      "A few boxes that have sat unplayed are reason enough. Email me before they go to the tip. The records may be in the loft, still on the shelves, or piled in a room that is being cleared. They may have come with the house, or with a parent or relative. You do not have to learn the collection before you write. Any situation or quantity is always considered.",
+      "## You do not have to know the years",
+      "If the records belonged to someone else, you may not know the names, or which years they come from. That is all right. Say there are boxes in Sleaford and you would like me to see them. A few photos and the name of the place are plenty to start.",
+      "What I hope to find is the same music I look for at home. Late 1960s and early 1970s rock, any type of it: albums, singles and box sets, in their sleeves if you still have them. I will look at plain, played copies. Soul and Motown, country, folk, reggae, and mixed boxes from the loft are welcome as well. A good record is never turned away.",
+      "I have also written about [[/blog/clearing-or-inheriting-records-near-bottesford|clearing a house or records you have inherited]], and about [[/blog/selling-a-record-collection-near-bottesford|how a visit from Bottesford works]].",
+      "## Email me first",
+      "A short email is enough. Write to [[mailto:diotima2003@yahoo.co.uk|diotima2003@yahoo.co.uk]] and say the records are in Sleaford. I am happy to take a call on [[tel:+447359456528|07359 456528]]. No full list is needed, as I can come round and look. My card is on the notice board at the Post Office in the High Street, Bottesford.",
+    ],
+  },
+  loughborough: {
+    description:
+      "Sell vinyl records in Loughborough, Leicestershire. Steven Gee of Pink Moon Records buys 1960s and 1970s rock vinyl, and other records, from your home.",
+    paragraphs: [
+      "Loughborough is in Leicestershire, about 20.6 miles south-west of Bottesford in a straight line. Nottingham is closer to me, and more to the west. I am Steven Gee. I live in Bottesford, NG13, in the Vale of Belvoir. I buy record collections within about 30 miles of Bottesford.",
+      "Pink Moon Records is just me. There is no shop, and this is not a business. I buy vinyl for my own shelves. Tell me the records are in Loughborough and I will come and see them in the comfort of your own home. I would rather stand in the room and look than have the boxes posted.",
+      "## Further out than Nottingham, and still in reach",
+      "[[/sell-vinyl-records/nottingham|Nottingham]] is a place I will come to, and [[/sell-vinyl-records/cotgrave|Cotgrave]] is on that western side as well. Loughborough is further from me, and more to the south-west. If you have been waiting because it feels a step past Nottingham, write and tell me what you have. A few records are worth an email.",
+      "Say if this is a house being cleared, a move to somewhere smaller, or records a parent or relative left behind. You do not need a full list. If you are in a village around Loughborough, tell me the name of the place. I cover the surrounding villages as well. [[/sell-vinyl-records/leicester|Leicester]] is further from me again, still to the south-west, if the house is in the city rather than the town.",
+      "## Played copies, and the rest of the shelf",
+      "Please do not apologise for the condition. Dust is nothing to worry about, and I will look at plain, played, well-loved copies. Original UK pressings and gatefold sleeves make me smile. Late 1960s and early 1970s rock is what I have loved longest, any type of it, on album, single or box set.",
+      "Leave the collection together until I have looked. I collect soul and Motown, country, folk, reggae, and mixed boxes from the loft, not only the rock. A good record is never turned away. Any situation or quantity is always considered. Email me before they go to the tip.",
+      "The Nottingham note, on getting a collection ready, is [[/blog/sell-a-record-collection-in-nottingham|here]]. I have also written about [[/blog/a-few-records-or-further-away|a few records, or a longer journey]], and about [[/blog/selling-a-record-collection-near-bottesford|how a visit works]].",
+      "## Email me first",
+      "Start with an email to [[mailto:diotima2003@yahoo.co.uk|diotima2003@yahoo.co.uk]]. A phone call is fine as well, on [[tel:+447359456528|07359 456528]]. Give me a rough idea of what is there, or attach a few photos. No full list is needed, because I can come round and look. Say that you are in Loughborough. My card is on the Post Office notice board in the High Street, Bottesford.",
+    ],
+  },
+  lincoln: {
+    description:
+      "Sell vinyl records in Lincoln. Steven Gee of Pink Moon Records buys 1960s and 1970s rock vinyl, and other records, and comes from Bottesford to your home.",
+    paragraphs: [
+      "Lincoln is in Lincolnshire, about 22.6 miles north-east of Bottesford in a straight line. Newark-on-Trent is north of me, and much closer. I am Steven Gee. I live in Bottesford, NG13, in the Vale of Belvoir. I buy record collections within about 30 miles of Bottesford, and Lincoln is inside that.",
+      "I come to the house. There is no shop. Pink Moon Records is just me, and this is not a business. I buy vinyl for my own shelves. I would rather view your records where they are than have them posted to me.",
+      "## Newark is closer, to the north",
+      "I have already written about [[/blog/sell-vinyl-records-newark|selling vinyl records in Newark]]. [[/sell-vinyl-records/newark-on-trent|Newark-on-Trent]] is one of the places I will come to. Lincoln is further north-east. [[/sell-vinyl-records/sleaford|Sleaford]] is the other Lincolnshire town on these pages, and it lies more to the east. If the house is in Newark, Sleaford, Lincoln, or a village around Lincoln, tell me the name. I cover the surrounding villages as well.",
+      "## Leave them together",
+      "A few boxes that have not been played for years are reason enough to write. Email me before they go to the tip. Leave the records together until I have looked. If you want to keep some, keep them and say so. You do not need a full list. A photo of the shelves, the boxes, or one sleeve on top will do. Any situation or quantity is always considered.",
+      "Rock from the 1960s and 1970s is what I have loved longest, any type of it. Albums, singles and box sets. I will look at plain, played, well-loved copies, not only clean original UK pressings and gatefold sleeves. I may be interested in more than that rock. Soul and Motown, country, folk, reggae, and mixed boxes from the loft are welcome. If you are not sure they are my sort, I would rather see them than have you decide for me. A good record is never turned away.",
+      "The note for a longer journey is [[/blog/a-few-records-or-further-away|a few records, or further away]]. [[/blog/clearing-or-inheriting-records-near-bottesford|Clearing a house, or records you have inherited]] is the one to read if the collection was never really yours. [[/blog/selling-a-record-collection-near-bottesford|How a visit works]] is the same from Lincoln as it is from the Vale.",
+      "## Email me first",
+      "You can simply write that you want to sell vinyl records in Lincoln. Email [[mailto:diotima2003@yahoo.co.uk|diotima2003@yahoo.co.uk]]. A call is fine too, on [[tel:+447359456528|07359 456528]]. Lincoln is enough, or the village if that is where the house is. No full list is needed, as I can come round and look. My card is on the notice board at the Post Office in the High Street, Bottesford.",
+    ],
+  },
+  stamford: {
+    description:
+      "Sell vinyl records in Stamford, Lincolnshire. Steven Gee of Pink Moon Records buys 1960s and 1970s rock and other vinyl, and he views them at your home.",
+    paragraphs: [
+      "Stamford is in Lincolnshire, about 24.1 miles south-east of Bottesford in a straight line. Oakham is closer to me, and more due south. I am Steven Gee. I live in Bottesford, NG13, in the Vale of Belvoir. I buy record collections within about 30 miles of Bottesford. Stamford is inside that.",
+      "Pink Moon Records is just me. There is no shop, and this is not a business. I buy vinyl for my own shelves. I will come and see the records in the comfort of your own home. I would rather view them there than have them posted to me.",
+      "## South-east of the Vale",
+      "[[/sell-vinyl-records/oakham|Oakham]] is closer to me, and it is the nearest of these towns to Stamford. [[/sell-vinyl-records/grantham|Grantham]] is much closer to me, to the east. [[/sell-vinyl-records/melton-mowbray|Melton Mowbray]] is also south, and closer than Stamford. If the records are in one of those, say so. If they are in Stamford, or in a village around the town, name the place. I cover the surrounding villages as well.",
+      "Do not wait on a perfect list. A rough idea is enough. Anywhere nearby, a few records are worth an email. Say if this is a house being cleared, a move to somewhere smaller, or records you inherited. Email me before they go to the tip. Any situation or quantity is always considered.",
+      "## Labels, sleeves, and played copies",
+      "Late 1960s and early 1970s rock is what I hope to find first, any type of it: albums, singles and box sets. Original UK pressings, gatefold sleeves and the old label designs make me smile. Island pink label, Vertigo swirl, Harvest, Charisma, Deram, Atlantic plum, Parlophone and Immediate are names I like to see. Played copies are welcome. You do not have to check each one.",
+      "Bring the whole collection into the email, not a shortlist of the rock. Soul and Motown, country, folk, reggae, and mixed boxes from the loft all belong in the note. A good record is never turned away. If you want to keep a few for yourself, keep them and tell me.",
+      "[[/blog/a-few-records-or-further-away|A few records, or a longer journey]] is the note for a house further off. [[/blog/selling-a-record-collection-near-bottesford|How a visit works]] covers the call itself. There is also [[/blog/sell-my-record-collection-grantham|a note on selling a collection in Grantham]], the Lincolnshire town closer to me.",
+      "## Email me first",
+      "Email [[mailto:diotima2003@yahoo.co.uk|diotima2003@yahoo.co.uk]] and say Stamford. I am happy to take a phone call on [[tel:+447359456528|07359 456528]]. Tell me the village if the house is not in the town. No full list is needed, as I can come round and look. My card is also on the notice board at the Post Office in the High Street, Bottesford.",
+    ],
+  },
+  leicester: {
+    description:
+      "Sell vinyl records in Leicester. Steven Gee of Pink Moon Records buys 1960s and 1970s rock vinyl and comes from Bottesford to view them at your own home.",
+    paragraphs: [
+      "Leicester is the furthest town on these pages. It is in Leicestershire, about 25.3 miles south-west of Bottesford in a straight line. I am Steven Gee. I live in Bottesford, NG13, in the Vale of Belvoir. I buy record collections within about 30 miles of Bottesford, and Leicester is inside that.",
+      "There is no shop to bring the records to. Pink Moon Records is just me, and this is not a business. I buy vinyl for my own shelves. If the records are in Leicester, I will come and view them at your home. I would rather do that than have them posted to me.",
+      "## If the city feels too far to ask",
+      "People wait when the house is in a city, because the journey from the Vale feels awkward. Write anyway, and tell me what you have. Anywhere nearby, a few records are worth an email. Email me before they go to the tip. Any situation or quantity is always considered.",
+      "[[/sell-vinyl-records/loughborough|Loughborough]] is also south-west, and closer to me. [[/sell-vinyl-records/melton-mowbray|Melton Mowbray]] is more due south, and closer again. If the house is in either of those, say so. If you are in a village around Leicester, name the village. I cover the surrounding villages as well.",
+      "## What I am hoping to find",
+      "Rock from the 1960s and 1970s is the music I have loved longest, and I mean any type of it. Albums, singles and box sets, in their sleeves if you still have them. Original UK pressings and gatefold sleeves make me smile. Plain, played, well-loved copies are welcome too.",
+      "Tell me about the whole collection, not only the rock. I collect soul and Motown, country, folk, reggae, and mixed boxes from the loft. A good record is never turned away. You do not have to learn the names on the labels. A house being emptied, a move to somewhere smaller, or records a parent or relative left behind: say which it is.",
+      "I have written about [[/blog/a-few-records-or-further-away|a few records, or a longer journey]], which is the note for a house that feels further off. There is also [[/blog/selling-a-record-collection-near-bottesford|how a visit works]], and [[/blog/clearing-or-inheriting-records-near-bottesford|clearing a house or records you have inherited]].",
+      "## Email me first",
+      "Email is best: [[mailto:diotima2003@yahoo.co.uk|diotima2003@yahoo.co.uk]]. I am happy to take a phone call too, on [[tel:+447359456528|07359 456528]]. Tell me you are in Leicester, or name the village. A rough idea, or a few photos of the shelves or the boxes, is plenty. No full list is needed, as I can come round and look. My card is also on the notice board at the Post Office in the High Street, Bottesford.",
     ],
   },
 }

@@ -119,7 +119,12 @@ export const outsidePlaces: Place[] = [
   { name: "Southwell", county: "Nottinghamshire", miles: 11.19, bearing: 326 },
   { name: "Melton Mowbray", county: "Leicestershire", miles: 12.72, bearing: 196, aliases: ["Melton"] },
   { name: "Nottingham", county: "Nottinghamshire", miles: 14.86, bearing: 274 },
+  { name: "Sleaford", county: "Lincolnshire", miles: 16.8, bearing: 76 },
   { name: "Oakham", county: "Leicestershire", miles: 18.93, bearing: 171 },
+  { name: "Loughborough", county: "Leicestershire", miles: 20.59, bearing: 236 },
+  { name: "Lincoln", county: "Lincolnshire", miles: 22.63, bearing: 29 },
+  { name: "Stamford", county: "Lincolnshire", miles: 24.11, bearing: 146 },
+  { name: "Leicester", county: "Leicestershire", miles: 25.25, bearing: 213 },
 ]
 
 export function formatMiles(miles: number) {
@@ -171,6 +176,11 @@ export const townPageNames = [
   "Melton Mowbray",
   "Nottingham",
   "Oakham",
+  "Sleaford",
+  "Loughborough",
+  "Lincoln",
+  "Stamford",
+  "Leicester",
 ] as const
 
 export function allPlaces() {
