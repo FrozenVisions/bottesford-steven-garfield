@@ -156,7 +156,7 @@ export default function Home() {
           <p className="leading-7 text-muted-foreground">
             I buy record collections within about 30 miles of Bottesford.
             I will come nearby for a few records, and any distance for a good collection.
-            I cover the surrounding villages as well.
+            I cover the surrounding villages as well. See <Link href="/sell-vinyl-records" className="underline underline-offset-4">every place with its own page</Link>.
           </p>
           <ul className="flex flex-wrap gap-3">
             {featuredPlaces.map((place) => (

@@ -7,6 +7,8 @@ export const dynamic = "force-static"
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     { url: absoluteUrl("/"), changeFrequency: "monthly", priority: 1 },
+    // Hub only. Village redirect stubs are permanent stand-ins and must stay out.
+    { url: absoluteUrl("/sell-vinyl-records"), changeFrequency: "monthly", priority: 0.8 },
     ...townPages().map((place) => ({
       url: absoluteUrl(`/sell-vinyl-records/${placeSlug(place)}`),
       changeFrequency: "monthly" as const,

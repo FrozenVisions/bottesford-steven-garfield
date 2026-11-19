@@ -109,7 +109,8 @@ async function VillageContent({ params }: { params: Promise<{ village: string }>
         "@type": "BreadcrumbList",
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "Pink Moon Records", item: absoluteUrl("/") },
-          { "@type": "ListItem", position: 2, name: `Sell vinyl records in ${place.name}`, item: url },
+          { "@type": "ListItem", position: 2, name: "Sell vinyl records", item: absoluteUrl("/sell-vinyl-records") },
+          { "@type": "ListItem", position: 3, name: `Sell vinyl records in ${place.name}`, item: url },
         ],
       },
     ],
@@ -125,6 +126,10 @@ async function VillageContent({ params }: { params: Promise<{ village: string }>
           <ol className="flex flex-wrap gap-2">
             <li>
               <Link href="/" className="underline underline-offset-4">Home</Link>
+            </li>
+            <li aria-hidden="true">/</li>
+            <li>
+              <Link href="/sell-vinyl-records" className="underline underline-offset-4">Sell vinyl records</Link>
             </li>
             <li aria-hidden="true">/</li>
             <li aria-current="page">{place.name}</li>

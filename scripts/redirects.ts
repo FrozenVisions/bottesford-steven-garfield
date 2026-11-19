@@ -50,6 +50,7 @@ function sameRedirects(actual: unknown) {
 
 function checkVercel() {
   assertComplete()
+  assertRedirectHtml()
   const actual = JSON.parse(readFileSync(vercelPath, "utf8")) as unknown
   if (!sameRedirects(actual)) {
     throw new Error("vercel.json does not match src/lib/village-redirects.json. Run: npx tsx scripts/redirects.ts --write-vercel")
@@ -70,32 +71,94 @@ function writeVercel() {
   }, null, 2)}\n`)
 }
 
-function writeHtml() {
-  assertComplete()
-  const out = path.join(root, "out", "sell-vinyl-records")
-  if (!existsSync(out)) return
-  const site = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://pinkmoonrecords.co.uk").replace(/\/$/, "")
-  for (const item of villageRedirects()) {
-    const directory = path.join(out, item.slug)
-    mkdirSync(directory, { recursive: true })
-    const absolute = item.destination === "/" ? `${site}/` : `${site}${item.destination}`
-    const html = `<!DOCTYPE html>
+/**
+ * GitHub Pages cannot send a 301. Google treats an instant (0 second) meta
+ * refresh to an absolute URL as a permanent redirect, and follows
+ * location.replace the same way. A noindex tag makes Search Console report
+ * the stub as "Excluded by noindex" instead, including when the URL was
+ * submitted in an earlier sitemap, so the stub must not carry one.
+ */
+export function redirectHtml(destination: string, site: string) {
+  const origin = site.replace(/\/$/, "")
+  const absolute = destination === "/" ? `${origin}/` : `${origin}${destination}`
+  return `<!DOCTYPE html>
 <html lang="en-GB">
 <head>
 <meta charset="utf-8">
 <title>Redirecting…</title>
 <link rel="canonical" href="${absolute}">
-<meta name="robots" content="noindex">
-<meta http-equiv="refresh" content="0; url=${item.destination}">
-<script>location.replace(${JSON.stringify(item.destination)})</script>
+<meta http-equiv="refresh" content="0; url=${absolute}">
+<script>location.replace(${JSON.stringify(absolute)})</script>
 </head>
 <body>
-<p>This page has moved. <a href="${item.destination}">Continue</a>.</p>
+<p>This page has moved. <a href="${absolute}">Continue</a>.</p>
 </body>
 </html>
 `
-    writeFileSync(path.join(directory, "index.html"), html)
+}
+
+function assertRedirectHtml() {
+  const site = "https://pinkmoonrecords.co.uk"
+  const problems: string[] = []
+  for (const item of villageRedirects()) {
+    const html = redirectHtml(item.destination, site)
+    const origin = site.replace(/\/$/, "")
+    const absolute = item.destination === "/" ? `${origin}/` : `${origin}${item.destination}`
+    if (/noindex/i.test(html)) problems.push(`${item.slug} stub contains noindex`)
+    if (!html.includes(`rel="canonical" href="${absolute}"`)) problems.push(`${item.slug} canonical is not absolute`)
+    if (!html.includes(`http-equiv="refresh" content="0; url=${absolute}"`)) {
+      problems.push(`${item.slug} meta refresh is not an instant absolute URL`)
+    }
+    if (!html.includes(`location.replace(${JSON.stringify(absolute)})`)) {
+      problems.push(`${item.slug} location.replace is not absolute`)
+    }
   }
+  const legacy = redirectHtml("/", site)
+  if (/noindex/i.test(legacy) || !legacy.includes("https://pinkmoonrecords.co.uk/")) {
+    problems.push("legacy base-path stub is not an absolute redirect to the home page")
+  }
+  if (problems.length) throw new Error(problems.join("\n"))
+}
+
+/** Redirect stubs must not be submitted. The hub page must be. */
+function assertSitemapOmitsStubs() {
+  const sitemapPath = path.join(root, "out", "sitemap.xml")
+  if (!existsSync(sitemapPath)) return
+  const xml = readFileSync(sitemapPath, "utf8")
+  const locs = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => match[1])
+  const problems: string[] = []
+  for (const item of villageRedirects()) {
+    if (locs.some((loc) => loc.endsWith(`/sell-vinyl-records/${item.slug}/`))) {
+      problems.push(`sitemap lists redirect stub ${item.slug}`)
+    }
+  }
+  if (locs.some((loc) => loc.includes("/bottesford-steven-garfield"))) {
+    problems.push("sitemap lists the old base path")
+  }
+  if (!locs.some((loc) => loc.endsWith("/sell-vinyl-records/"))) {
+    problems.push("sitemap is missing /sell-vinyl-records/")
+  }
+  if (problems.length) throw new Error(problems.join("\n"))
+}
+
+function writeHtml() {
+  assertComplete()
+  assertRedirectHtml()
+  const out = path.join(root, "out", "sell-vinyl-records")
+  if (!existsSync(out)) return
+  assertSitemapOmitsStubs()
+  const site = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://pinkmoonrecords.co.uk").replace(/\/$/, "")
+  for (const item of villageRedirects()) {
+    const directory = path.join(out, item.slug)
+    mkdirSync(directory, { recursive: true })
+    writeFileSync(path.join(directory, "index.html"), redirectHtml(item.destination, site))
+  }
+  // Old project base path from before a7ab7c5. Only the directory root can be
+  // an HTML redirect. Hashed /_next assets under that prefix are gone, and a
+  // static host cannot 301 a whole prefix, so those stay 404.
+  const legacy = path.join(root, "out", "bottesford-steven-garfield")
+  mkdirSync(legacy, { recursive: true })
+  writeFileSync(path.join(legacy, "index.html"), redirectHtml("/", site))
 }
 
 const command = process.argv[2]

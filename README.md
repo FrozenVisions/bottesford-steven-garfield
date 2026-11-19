@@ -21,11 +21,12 @@ Notes left through the form are written to `data/enquiries.json` on the machine 
 
 ## The area pages
 
-The towns in `townPageNames` in `src/lib/places.ts` each have a page at `/sell-vinyl-records/<place>/`, with its own wording. Smaller places on the longer list redirect to the nearest of those towns, or to the home page when Bottesford is nearer. The enquiry form offers the towns, and accepts a village name, or any other location someone types in.
+The towns in `townPageNames` in `src/lib/places.ts` each have a page at `/sell-vinyl-records/<place>/`, with its own wording. `/sell-vinyl-records/` lists those pages. Smaller places on the longer list redirect to the nearest of those towns, or to the home page when Bottesford is nearer. The enquiry form offers the towns, and accepts a village name, or any other location someone types in.
 
 ## SEO
 
-- Each kept town has its own page at `/sell-vinyl-records/<place>/`, with its own title, description, canonical URL and structured data. Those pages, and not the redirected villages, are listed in `/sitemap.xml`.
+- Each kept town has its own page at `/sell-vinyl-records/<place>/`, with its own title, description, canonical URL and structured data. `/sell-vinyl-records/` and those town pages are listed in `/sitemap.xml`. The redirected villages are not.
+- On GitHub Pages the old village URL is a small HTML file: a canonical link, an instant meta refresh, and `location.replace`, each pointing at the absolute town or home URL. There is no `noindex` tag, so Google can treat the file as a permanent redirect. The same file is written for `/bottesford-steven-garfield/`, the old project prefix. Hashed files that used to live under that prefix are not recreated.
 - Home page and village pages share `LocalBusiness`, `Service`, `FAQPage` and breadcrumb JSON-LD.
 - Keywords, the artist, style and label lists live in `src/lib/site.ts`.
 - Sitemap, canonical links and the share image use `https://pinkmoonrecords.co.uk`, which the Pages workflow sets as `NEXT_PUBLIC_SITE_URL`.

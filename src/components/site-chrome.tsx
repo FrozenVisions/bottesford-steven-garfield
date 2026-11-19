@@ -14,7 +14,10 @@ export function SiteHeader() {
       <div className="mx-auto flex max-w-5xl flex-col items-center px-5 pt-2 pb-1.5 sm:pt-3 sm:pb-2">
         <BrandName href="/" />
         <div className="mt-1 flex w-full items-center justify-between gap-3">
-          <nav aria-label="Main">
+          <nav aria-label="Main" className="flex gap-4">
+            <Link href="/sell-vinyl-records" className="text-sm font-semibold underline-offset-4 hover:underline">
+              Places
+            </Link>
             <Link href="/blog" className="text-sm font-semibold underline-offset-4 hover:underline">
               Blog
             </Link>
